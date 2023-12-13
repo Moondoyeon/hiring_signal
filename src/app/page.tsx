@@ -1,28 +1,48 @@
+import Project from "./components/Project";
+import Signal from "./components/Signal";
+import Study from "./components/Study";
+import Typing from "./components/Typing";
 import Video from "./components/Video";
-import { connectDB } from "./util/database";
+import Work from "./components/Work";
+import SrollMove from "./components/SrollMove";
+import Image from "next/image";
+
 export default async function Home() {
-  // let db = connectDB.db(process.env.DB_NAME);
-  // let works = await db.collection("works").find().toArray();
-  // if (console) console.log(works);
   return (
     <main>
-      <div className="h-screen">
+      <section className="h-screen relative">
         <Video />
-      </div>
-      <ul className="text-3xl font-bold">
-        <li id="/main/#work" className="h-[550px]">
-          WORK
-        </li>
-        <li id="/main/#project" className="h-[550px]">
-          PROJECT
-        </li>
-        <li id="/main/#study" className="h-[550px]">
-          STUDY
-        </li>
-        <li id="/main/#signal" className="h-[550px]">
-          SIGNAL
-        </li>
-      </ul>
+        <Typing />
+        <SrollMove to="/main/#work">
+          <span className="absolute z-98 top-[85%] left-1/2 text-white cursor-pointer">
+            <Image
+              className="animate-bounce"
+              src={"/images/down-arrow.png"}
+              alt={"down arrow"}
+              width={30}
+              height={21}
+            />
+            <span>Click</span>
+          </span>
+        </SrollMove>
+      </section>
+
+      <section className="flex justify-center items-center">
+        <ul className="w-2/3 text-3xl font-bold bg-pink-50">
+          <li id="/main/#work" className="h-[950px]">
+            <Work />
+          </li>
+          <li id="/main/#project" className="h-[950px]">
+            <Project />
+          </li>
+          <li id="/main/#study" className="h-[950px]">
+            <Study />
+          </li>
+          <li id="/main/#signal" className="h-[950px]">
+            <Signal />
+          </li>
+        </ul>
+      </section>
     </main>
   );
 }
