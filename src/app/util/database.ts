@@ -12,13 +12,16 @@ declare global {
 
 // 개발환경: 전역변수 _mongo 만들어 mongoClient 중복실행 방지
 if (process.env.NODE_ENV === "development") {
-  if (!globalThis._mongo) {
-    globalThis._mongo = await new MongoClient(DB_URI).connect();
+  if (!global._mongo) {
+    global._mongo = await new MongoClient(DB_URI, {
+      maxConnecting: 10,
+      maxPoolSize: 10,
+    }).connect();
   }
-  connectDB = globalThis._mongo;
+  connectDB = global._mongo;
 } else {
   // 프로덕션 상태는 중복실행 될 일이 별로 없음
   connectDB = await new MongoClient(DB_URI).connect();
 }
-// console.log(globalThis._mongo);
+
 export { connectDB };
