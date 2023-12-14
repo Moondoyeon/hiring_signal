@@ -7,9 +7,9 @@ interface Props {
   activeStyle?: CSSProperties | undefined;
   children: ReactNode;
 }
-export default function SrollMove({ to, children }: Props) {
+export default function SrollMove({ to, activeStyle, children }: Props) {
   return (
-    <Link to={to} smooth={true} spy={true}>
+    <Link to={to} smooth={true} spy={true} activeStyle={activeStyle}>
       {children}
     </Link>
   );

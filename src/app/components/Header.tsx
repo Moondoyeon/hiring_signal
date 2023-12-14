@@ -34,6 +34,11 @@ export default function Header() {
     };
   }, [handleCurrentScrollY]);
 
+  const headBorderStyles: { [key: string]: any } = {
+    white: { borderBottom: "1px white solid" },
+    black: { borderBottom: "1px black solid" },
+  };
+
   if (visible)
     return (
       <header
@@ -52,27 +57,28 @@ export default function Header() {
         >
           <SrollMove
             to="/main/#work"
-            activeStyle={{ borderBottom: `2px ${headColor.current} solid` }}
+            activeStyle={headBorderStyles[headColor.current]}
           >
-            <li className="ml-6 cursor-pointer">WORK</li>
+            <li className="ml-4 cursor-pointer">WORK</li>
+            {/* <span className="active"></span> */}
           </SrollMove>
           <SrollMove
             to="/main/#project"
-            activeStyle={{ borderBottom: `2px ${headColor.current} solid` }}
+            activeStyle={headBorderStyles[headColor.current]}
           >
-            <li className="ml-6 cursor-pointer">PROJECT</li>
+            <li className="ml-4 cursor-pointer">PROJECT</li>
           </SrollMove>
           <SrollMove
             to="/main/#study"
-            activeStyle={{ borderBottom: `2px ${headColor.current} solid` }}
+            activeStyle={headBorderStyles[headColor.current]}
           >
-            <li className="ml-6 cursor-pointer">STUDY</li>
+            <li className="ml-4 cursor-pointer">STUDY</li>
           </SrollMove>
           <SrollMove
             to="/main/#signal"
-            activeStyle={{ borderBottom: `2px ${headColor.current} solid` }}
+            activeStyle={headBorderStyles[headColor.current]}
           >
-            <li className="ml-6 cursor-pointer">SIGNAL</li>
+            <li className="ml-4 cursor-pointer">SIGNAL</li>
           </SrollMove>
         </ul>
       </header>
