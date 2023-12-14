@@ -27,12 +27,12 @@ export default async function Home() {
         </SrollMove>
       </section>
 
-      <section className="flex justify-center items-center">
-        <ul className="w-2/3 text-3xl font-bold bg-pink-50">
-          <li id="/main/#work" className="h-[950px]">
+      <section className=" flex justify-center items-center">
+        <ul className="max-w-[1280px]">
+          <li id="/main/#work">
             <Work />
           </li>
-          <li id="/main/#project" className="h-[950px]">
+          <li id="/main/#project">
             <Project />
           </li>
           <li id="/main/#study" className="h-[950px]">
