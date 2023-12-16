@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import SrollMove from "./SrollMove";
-import useBgColor from "../hooks/useBgColor";
+import useBgColor from "../hooks/useGlobalBgColor";
 import Link from "next/link";
 import { sections } from "../constant";
 import {

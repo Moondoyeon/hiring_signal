@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import "./globals.css";
 import Footer from "./components/Footer";
 import RecoilRootWrapper from "./recoil/RecoilRootWrapper";
-import useBgColor from "./hooks/useBgColor";
+import useBgColor from "./hooks/useGlobalBgColor";
 
 export const metadata: Metadata = {
   title: "채용시그널",
