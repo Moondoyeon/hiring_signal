@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 import { bgColorModeState } from "../recoil";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { bgColorMode } from "../types";
 
 export default function useBgColor() {
@@ -24,9 +24,12 @@ export default function useBgColor() {
     }
   }, [bgColor]);
 
-  const handleBgColorChange = (mode: bgColorMode) => {
-    setBgColor(mode);
-  };
+  const handleBgColorChange = useCallback(
+    (mode: bgColorMode) => {
+      setBgColor(mode);
+    },
+    [setBgColor]
+  );
 
   return { bgColor, handleBgColorChange };
 }

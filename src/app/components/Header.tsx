@@ -49,13 +49,15 @@ export default function Header() {
 
   // 3.배경색깔 변경
   const { handleBgColorChange } = useBgColor();
-  if (currentScrollY >= 1330 && currentScrollY < 2200) {
-    handleBgColorChange("purple-mode");
-  } else if (currentScrollY >= 3400) {
-    handleBgColorChange("orange-mode");
-  } else {
-    handleBgColorChange("default-mode");
-  }
+  useEffect(() => {
+    if (currentScrollY >= 1330 && currentScrollY < 2200) {
+      handleBgColorChange("purple-mode");
+    } else if (currentScrollY >= 4000) {
+      handleBgColorChange("orange-mode");
+    } else {
+      handleBgColorChange("default-mode");
+    }
+  }, [currentScrollY, handleBgColorChange]);
 
   if (visible)
     return (
