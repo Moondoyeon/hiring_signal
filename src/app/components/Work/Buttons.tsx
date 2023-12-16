@@ -14,19 +14,19 @@ export default function Buttons({
   curIdx,
   n,
 }: CarouselButtonProps) {
-  let leftHidden = curIdx === 0 ? "invisible " : "";
-  let rightHidden = curIdx === n - 1 ? "invisible " : "";
   return (
     <>
       <Button
         onClick={prev}
-        style={`z-10 absolute top-[40%] left-[-2%] ${leftHidden}`}
+        theme={curIdx === 0 ? "grey" : "black"}
+        style="z-10 absolute top-[40%] left-[-2%]"
       >
         &lt;
       </Button>
       <Button
         onClick={next}
-        style={`z-10 absolute top-[40%] left-[98%] ${rightHidden}`}
+        theme={curIdx === n - 1 ? "grey" : "black"}
+        style="z-10 absolute top-[40%] left-[98%]"
       >
         &gt;
       </Button>

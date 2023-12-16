@@ -4,12 +4,30 @@ import { Link } from "react-scroll";
 
 interface Props {
   to: string;
+  activeClass?: string | undefined;
   activeStyle?: CSSProperties | undefined;
   children: ReactNode;
+  onSetActive?: () => void;
+  onSetInactive?: () => void;
 }
-export default function SrollMove({ to, activeStyle, children }: Props) {
+export default function SrollMove({
+  to,
+  activeClass,
+  activeStyle,
+  onSetActive,
+  onSetInactive,
+  children,
+}: Props) {
   return (
-    <Link to={to} smooth={true} spy={true} activeStyle={activeStyle}>
+    <Link
+      to={to}
+      smooth={true}
+      spy={true}
+      activeStyle={activeStyle}
+      activeClass={activeClass}
+      onSetActive={onSetActive}
+      onSetInactive={onSetInactive}
+    >
       {children}
     </Link>
   );

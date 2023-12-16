@@ -1,5 +1,3 @@
-import { ObjectId } from "mongodb";
-
 export interface IWork {
   _id: string;
   companyName: string;
@@ -15,3 +13,14 @@ export interface IProject {
   thumbnail: string;
   link: string;
 }
+
+export interface IStudy {
+  _id: string;
+  category: string;
+  title: string;
+  content: string;
+  image_url: string;
+}
+
+// 전역 state
+export type bgColorMode = "purple-mode" | "orange-mode" | "default-mode";

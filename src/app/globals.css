@@ -3,10 +3,56 @@
 @tailwind utilities;
 
 /* @layer utilities {
-  .hi {
+  .border-black {
+    border-bottom: 2px black solid;
+  }
+  .border-white {
     border-bottom: 2px black solid;
   }
 } */
+/* @layer components { */
+.purple-mode {
+  animation-name: colorChangeToPurple;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  color: white;
+}
+.orange-mode {
+  animation-name: colorChangeToOrange;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+.default-mode {
+  background-color: white;
+  animation-name: colorChangeToDefault;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes colorChangeToPurple {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: #d6bbe7;
+  }
+}
+@keyframes colorChangeToOrange {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: #ffbfb7;
+  }
+}
+@keyframes colorChangeToDefault {
+  from {
+    background-color: #d6bbe7;
+  }
+  to {
+    background-color: white;
+  }
+}
 
 * {
   box-sizing: border-box;

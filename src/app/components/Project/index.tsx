@@ -1,4 +1,4 @@
-import { connectDB } from "@/app/util/database";
+// import { connectDB } from "@/app/util/database";
 import { ObjectId } from "mongodb";
 import ProjectItem from "./ProjectItem";
 
@@ -30,8 +30,8 @@ export default async function Project() {
     },
   ];
   return (
-    <section className="pt-24 pb-18">
-      <h2 className="pb-12 text-4xl font-bold">PROJECT</h2>
+    <section id="/main/#project" className="pt-36 pb-18 ">
+      <h2 className="pb-12 text-5xl font-bold">PROJECT</h2>
       <ProjectItem projects={projects} />
     </section>
   );

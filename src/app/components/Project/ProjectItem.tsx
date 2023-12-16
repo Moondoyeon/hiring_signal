@@ -20,7 +20,7 @@ export default function ProjectItem({ projects }: Props) {
   };
 
   return (
-    <div>
+    <div className="relative">
       <Buttons
         prev={prev}
         next={next}

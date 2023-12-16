@@ -26,8 +26,8 @@ export default async function Work() {
   ];
 
   return (
-    <section className="pt-24 pb-18">
-      <h2 className="pb-12 text-4xl font-bold">WORK</h2>
+    <section className="pt-36 pb-18">
+      <h2 className="pb-12 text-5xl font-bold">WORK</h2>
       <WorkItem works={works} />
     </section>
   );
