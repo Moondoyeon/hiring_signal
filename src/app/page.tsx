@@ -6,6 +6,7 @@ import Video from "./components/Video";
 import Work from "./components/Work";
 import SrollMove from "./components/SrollMove";
 import Image from "next/image";
+import Education from "./components/Education";
 
 export default async function Home() {
   return (
@@ -35,10 +36,13 @@ export default async function Home() {
           <li id="/main/#project">
             <Project />
           </li>
-          <li id="/main/#study" className="h-[950px]">
+          <li id="/main/#education">
+            <Education />
+          </li>
+          <li id="/main/#study" className="">
             <Study />
           </li>
-          <li id="/main/#signal" className="h-[950px]">
+          <li id="/main/#signal" className="h-[980px]">
             <Signal />
           </li>
         </ul>

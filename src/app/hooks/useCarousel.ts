@@ -20,6 +20,9 @@ export default function useCarousel(n: number, w: number) {
     moveTransitions[i] = `-translate-x-[${i * w}px]`;
     pxTransitions[i] = `-${i * w}px`;
   }
+  const move = (idx: number) => {
+    setCurIdx(idx);
+  };
 
-  return { curIdx, next, prev, moveTransitions, pxTransitions };
+  return { curIdx, next, prev, move, moveTransitions, pxTransitions };
 }
