@@ -19,7 +19,7 @@ export default function WorkItem({ works }: Props) {
     <div className="relative">
       <Buttons next={next} prev={prev} curIdx={curIdx} n={works.length} />
 
-      <div id="container" className="max-w-[1280px] overflow-hidden">
+      <div id="carousel-container" className="max-w-[1280px] overflow-hidden">
         <div
           id="carousel"
           className="flex transition duration-300 ease-in-out"

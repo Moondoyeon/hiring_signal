@@ -27,7 +27,7 @@ export default function ProjectItem({ projects }: Props) {
         curIdx={curIdx}
         n={Math.ceil(projects.length / 2)}
       />
-      <div id="container" className="max-w-[1280px] overflow-hidden">
+      <div id="carousel-container" className="max-w-[1280px] overflow-hidden">
         <div
           id="carousel"
           className={`flex transition duration-300 ease-in-out`}
