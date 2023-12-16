@@ -7,7 +7,7 @@ import Image from "next/image";
 interface Props {
   listName: string;
   list: IStudy[];
-  theme: string;
+  theme: "bg-yellow-500" | "bg-blue-500";
 }
 
 export default function StudyItem({ listName, list, theme }: Props) {
@@ -27,7 +27,7 @@ export default function StudyItem({ listName, list, theme }: Props) {
 
       <section className="relative flex-col w-[550px] mb-28">
         <div
-          id="container"
+          id="carousel-container"
           className="max-w-[550px] overflow-hidden border border-black border-solid "
         >
           <div
@@ -65,9 +65,11 @@ export default function StudyItem({ listName, list, theme }: Props) {
             <li
               key={idx}
               onClick={() => move(idx)}
-              className={`h-4 w-4 rounded-full bg-${theme}-500 cursor-pointer ${
-                idx === curIdx ? "opacity-95" : "opacity-30"
-              }`}
+              className={
+                idx === curIdx
+                  ? `h-4 w-4 rounded-full cursor-pointer opacity-95 ${theme}`
+                  : `h-4 w-4 rounded-full cursor-pointer opacity-30 ${theme}`
+              }
             ></li>
           ))}
         </ul>

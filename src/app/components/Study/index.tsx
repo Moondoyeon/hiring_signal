@@ -65,8 +65,8 @@ export default async function Study() {
     <section className="pt-36 pb-18 ">
       <h2 className="pb-12 text-5xl font-bold">STUDY</h2>
       <div className="flex">
-        <StudyItem listName={"도서"} list={books} theme="yellow" />
-        <StudyItem listName={"강의"} list={courses} theme="blue" />
+        <StudyItem listName={"도서"} list={books} theme="bg-yellow-500" />
+        <StudyItem listName={"강의"} list={courses} theme="bg-blue-500" />
       </div>
     </section>
   );
