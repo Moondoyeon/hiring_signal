@@ -16,7 +16,7 @@ export default function Button({
     color: {
       black: "bg-black text-white",
       white: "bg-white text-black border-black",
-      grey: "bg-[#DCDCDC] text-white opacity-50",
+      grey: "bg-[#DCDCDC] text-white",
     },
     size: {
       big: "w-12 h-12",
