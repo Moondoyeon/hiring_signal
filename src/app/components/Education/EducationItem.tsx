@@ -30,10 +30,10 @@ export default function EducationItem({ eduList }: Props) {
           willBg={eduItemColorArray[idx]}
           bg={"bg-[#f7f7f7]"}
         >
-          <div className="relative">
+          <div className="relative w-full">
             <div className=" flex mb-6">
               <div className="flex-col p-4 w-1/3 h-[220px] justify-start items-center">
-                <h2 className="font-bold text-xl ">{edu.category}</h2>
+                <h2 className="font-bold text-xl">{edu.category}</h2>
                 <div className="relative w-[65px] h-[65px] left-[40%] top-[18%]">
                   <Image
                     src={`${

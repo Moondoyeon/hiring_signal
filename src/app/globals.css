@@ -11,9 +11,16 @@
   }
 } */
 
+@font-face {
+  font-family: "EF_watermelonSalad";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_watermelonSalad.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .bg-color-container {
   position: relative;
-  background: #f7f7f7;
 }
 .bg-color-container::before {
   content: "";
@@ -103,6 +110,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
+  font-family: EF_watermelonSalad;
 }
 
 ol,

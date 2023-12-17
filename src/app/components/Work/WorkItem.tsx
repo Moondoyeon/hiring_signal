@@ -5,6 +5,7 @@ import { IWork } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
 import Buttons from "./Buttons";
+import BgColorAnimation from "../BgColorAnimation/BgColorAnimation";
 
 interface Props {
   works: IWork[];
@@ -46,13 +47,18 @@ export default function WorkItem({ works }: Props) {
                 <div className="w-full bg-black h-0.5 mb-4" />
                 <p className="mb-16">{work.content}</p>
                 {work.notionLink && (
-                  <Link
-                    href={work.notionLink}
-                    target="_blank"
-                    className="underline"
+                  <BgColorAnimation
+                    willBg="before:bg-yellow-500"
+                    customStyle="w-fit hover:text-black before:duration-75"
                   >
-                    상세설명링크
-                  </Link>
+                    <Link
+                      href={work.notionLink}
+                      target="_blank"
+                      className="underline relative "
+                    >
+                      상세설명링크
+                    </Link>
+                  </BgColorAnimation>
                 )}
               </div>
             </div>
