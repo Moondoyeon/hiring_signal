@@ -70,14 +70,14 @@ export default function Header() {
           <h1
             className={`w-fit text-3xl font-semibold ${
               textColors[headColor.current]
-            } border-y ${borderColors[headColor.current]}`}
+            } border-y pt-2 pb-1 ${borderColors[headColor.current]}`}
           >
-            채용시그널
+            오퍼시그널
           </h1>
         </Link>
 
         <ul
-          className={`relative flex justify-between text-2xl font-semibold ${
+          className={`relative flex justify-between text-2xl font-semibold font-['EF_watermelonSalad'] ${
             textColors[headColor.current]
           }`}
         >

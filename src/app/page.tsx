@@ -17,18 +17,18 @@ export default async function Home() {
         <SrollMove to="/main/#work">
           <span className="absolute z-98 top-[85%] left-1/2 text-white cursor-pointer">
             <Image
-              className="animate-bounce"
+              className="animate-bounce mb-2"
               src={"/images/down-arrow.png"}
               alt={"down arrow"}
               width={30}
               height={21}
             />
-            <span>Click</span>
+            <span>click</span>
           </span>
         </SrollMove>
       </section>
 
-      <section className=" flex justify-center items-center">
+      <section className="flex justify-center items-center">
         <ul className="max-w-[1280px]">
           <li id="/main/#work">
             <Work />
