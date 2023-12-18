@@ -14,15 +14,46 @@ export default function useCarousel(n: number, w: number) {
       else return curIdx + 1;
     });
   };
-  const moveTransitions: { [key: number]: string } = {};
+  // const moveTransitions: { [key: number]: string } = {};
   const pxTransitions: { [key: number]: string } = {};
   for (let i = 0; i < n; i++) {
-    moveTransitions[i] = `-translate-x-[${i * w}px]`;
+    // moveTransitions[i] = `-translate-x-[${i * w}px]`;
     pxTransitions[i] = `-${i * w}px`;
   }
   const move = (idx: number) => {
     setCurIdx(idx);
   };
 
-  return { curIdx, next, prev, move, moveTransitions, pxTransitions };
+  const [currentX, setCurrentX] = useState(0);
+  const [beforeX, setBeforeX] = useState(0);
+  const slide = () => {
+    if (currentX <= beforeX) next();
+    else prev();
+  };
+  const getCurrentMouseX = (e: any) => {
+    setCurrentX(e.clientX);
+    slide();
+  };
+  const getBeforeMouseX = (e: any) => {
+    setBeforeX(e.clientX);
+  };
+
+  const getCurrentTouchMouseX = (e: any) => {
+    setCurrentX(e.changedTouches[0].clientX);
+    slide();
+  };
+  const getBeforeTouchMouseX = (e: any) => {
+    setCurrentX(e.changedTouches[0].clientX);
+  };
+  return {
+    curIdx,
+    next,
+    prev,
+    move,
+    pxTransitions,
+    getCurrentMouseX,
+    getBeforeMouseX,
+    getCurrentTouchMouseX,
+    getBeforeTouchMouseX,
+  };
 }

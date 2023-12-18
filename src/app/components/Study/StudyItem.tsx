@@ -2,7 +2,6 @@
 
 import useCarousel from "@/app/hooks/useCarousel";
 import { IStudy } from "@/app/types";
-import Image from "next/image";
 
 interface Props {
   listName: string;
@@ -11,10 +10,16 @@ interface Props {
 }
 
 export default function StudyItem({ listName, list, theme }: Props) {
-  const { curIdx, move, pxTransitions } = useCarousel(
-    Math.ceil(list.length),
-    550
-  );
+  const {
+    curIdx,
+    move,
+    pxTransitions,
+    getBeforeMouseX,
+    getCurrentMouseX,
+    getBeforeTouchMouseX,
+    getCurrentTouchMouseX,
+  } = useCarousel(Math.ceil(list.length), 550);
+
   const moveStyle = {
     transform: `translate(${pxTransitions[curIdx]})`,
   };
@@ -22,12 +27,16 @@ export default function StudyItem({ listName, list, theme }: Props) {
   return (
     <div className="flex-col w-full">
       <section className="w-[550px]">
-        <h2 className="text-4xl font-semibold mb-4 ">{listName}</h2>
+        <h2 className="text-3xl font-semibold mb-4">{listName}</h2>
       </section>
 
       <section className="relative flex-col w-[550px] mb-28">
         <div
           id="carousel-container"
+          onMouseDown={getBeforeMouseX}
+          onMouseUp={getCurrentMouseX}
+          onTouchStart={getBeforeTouchMouseX}
+          onTouchEnd={getCurrentTouchMouseX}
           className="max-w-[550px] overflow-hidden border border-black border-solid "
         >
           <div
@@ -42,14 +51,17 @@ export default function StudyItem({ listName, list, theme }: Props) {
               >
                 <div className="flex-col h-3/4 w-[80%]">
                   <div className="py-8">
-                    <div className="relative w-24 h-24 mx-auto">
+                    <div
+                      className={`w-24 h-24 ${theme} rounded-full opacity-30 mx-auto`}
+                    ></div>
+                    {/* <div className="relative w-24 h-24 mx-auto">
                       <Image
                         src="/images/coding.jpg"
                         alt={item.title}
                         fill={true}
                         className="rounded-full "
                       ></Image>
-                    </div>
+                    </div> */}
                   </div>
                   <h3 className="text-2xl font-bold text-center mb-8">
                     {item.title}

@@ -11,7 +11,14 @@ interface Props {
   works: IWork[];
 }
 export default function WorkItem({ works }: Props) {
-  const { curIdx, pxTransitions, next, prev } = useCarousel(works.length, 1280);
+  const {
+    curIdx,
+    pxTransitions,
+    next,
+    prev,
+    getCurrentMouseX,
+    getBeforeMouseX,
+  } = useCarousel(works.length, 1280);
   const moveStyle = {
     transform: `translate(${pxTransitions[curIdx]})`,
   };
@@ -20,7 +27,12 @@ export default function WorkItem({ works }: Props) {
     <div className="relative">
       <Buttons next={next} prev={prev} curIdx={curIdx} n={works.length} />
 
-      <div id="carousel-container" className="max-w-[1280px] overflow-hidden">
+      <div
+        id="carousel-container"
+        onMouseDown={getBeforeMouseX}
+        onMouseUp={getCurrentMouseX}
+        className="max-w-[1280px] overflow-hidden"
+      >
         <div
           id="carousel"
           className="flex transition duration-300 ease-in-out"
@@ -37,6 +49,7 @@ export default function WorkItem({ works }: Props) {
                 width={300}
                 height={300}
                 alt="work at artwa"
+                draggable={false}
               />
 
               <div className="h-full basis-3/5 mx-6">
