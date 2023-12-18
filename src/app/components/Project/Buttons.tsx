@@ -20,6 +20,7 @@ export default function Buttons({
         onClick={prev}
         theme={curIdx === 0 ? "grey" : "black"}
         style="z-10 absolute bottom-[112%] left-[84%]"
+        disabled={curIdx === 0}
       >
         &lt;
       </Button>
@@ -27,6 +28,7 @@ export default function Buttons({
         onClick={next}
         theme={curIdx === n - 1 ? "grey" : "black"}
         style="z-10 absolute bottom-[112%] left-[88.7%]"
+        disabled={curIdx === n - 1}
       >
         &gt;
       </Button>

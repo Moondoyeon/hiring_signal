@@ -11,11 +11,12 @@ export default function Button({
   size = "big",
   onClick,
   style = "",
+  disabled,
 }: ButtonProps) {
   const config = {
     color: {
       black: "bg-black text-white",
-      white: "bg-white text-black border-black",
+      white: "bg-white text-black border-black border border-solid",
       grey: "bg-[#DCDCDC] text-white",
     },
     size: {
@@ -28,6 +29,7 @@ export default function Button({
     <button
       onClick={onClick}
       className={`${config.color[theme]} ${config.size[size]} ${style}`}
+      disabled={disabled}
     >
       {children}
     </button>
