@@ -1,9 +1,7 @@
 "use client";
 
-import useBgColorAnimation from "@/app/hooks/useBgColorAnimation";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import BgColorAnimation from "../BgColorAnimation/BgColorAnimation";
+import HighlightBgColor from "../HighlightBgColor";
 
 interface IEducation {
   _id: string;
@@ -25,36 +23,36 @@ export default function EducationItem({ eduList }: Props) {
   return (
     <section>
       {eduList.map((edu, idx) => (
-        <BgColorAnimation
+        <HighlightBgColor
           key={edu._id}
           willBg={eduItemColorArray[idx]}
           bg={"bg-[#f7f7f7]"}
         >
           <div className="relative w-full">
-            <div className=" flex mb-6">
-              <div className="flex-col p-4 w-1/3 h-[220px] justify-start items-center">
+            <div className="flex mb-6 h-[180px]">
+              <div className="flex-col p-4 w-1/3 justify-start items-center">
                 <h2 className="font-bold text-xl">{edu.category}</h2>
-                <div className="relative w-[65px] h-[65px] left-[40%] top-[18%]">
+                <div className="relative w-[65px] h-[65px] m-auto top-[10%]">
                   <Image
                     src={`${
                       edu.category === "대학교"
-                        ? "/images/edu-uni.png"
-                        : "/images/edu-aca.png"
+                        ? "/icons/edu-uni.png"
+                        : "/icons/edu-aca.png"
                     }`}
                     alt={edu.title}
-                    fill={true}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
               </div>
-              <div className=" flex-col h-[180px]  w-2/3 py-[5%]">
+              <div className="flex-col w-2/3 my-auto">
                 <p className="font-bold text-2xl">{edu.title}</p>
                 <p className="text-lg">{edu.period}</p>
                 <p className="text-lg">{edu.content}</p>
               </div>
             </div>
           </div>
-          {/* </div> */}
-        </BgColorAnimation>
+        </HighlightBgColor>
       ))}
     </section>
   );

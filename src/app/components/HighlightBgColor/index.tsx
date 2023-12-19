@@ -9,7 +9,7 @@ interface Props {
   customStyle?: string;
   children: ReactNode;
 }
-export default function BgColorAnimation({
+export default function HighlightBgColor({
   bg = "bg-transparent",
   willBg,
   customStyle,

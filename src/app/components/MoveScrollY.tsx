@@ -10,7 +10,7 @@ interface Props {
   onSetActive?: () => void;
   onSetInactive?: () => void;
 }
-export default function SrollMove({
+export default function MoveScrollY({
   to,
   activeClass,
   activeStyle,
