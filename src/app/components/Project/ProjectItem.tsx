@@ -4,8 +4,9 @@ import useCarousel from "@/app/hooks/useCarousel";
 import { IProject } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
-
 import Buttons from "./Buttons";
+import useInterSectionObserver from "@/app/hooks/useIntersectionObserver";
+import { returnIntersectionCallback } from "@/app/util";
 
 interface Props {
   projects: IProject[];
@@ -19,15 +20,23 @@ export default function ProjectItem({ projects }: Props) {
     transform: `translate(${pxTransitions[curIdx]})`,
   };
 
+  const targetRef = useInterSectionObserver({
+    handleIntersect: returnIntersectionCallback("purple-mode"),
+    threshold: 1,
+  });
+
   return (
-    <div className="relative">
+    <div className="relative" ref={targetRef}>
       <Buttons
         prev={prev}
         next={next}
         curIdx={curIdx}
         n={Math.ceil(projects.length / 2)}
       />
-      <div id="carousel-container" className="max-w-[1280px] overflow-hidden">
+      <div
+        id="carousel-container"
+        className="max-w-[1280px] overflow-hidden pt-6"
+      >
         <div
           id="carousel"
           className={`flex transition duration-300 ease-in-out`}
@@ -43,7 +52,9 @@ export default function ProjectItem({ projects }: Props) {
               <Image
                 src={project.thumbnail}
                 style={{ objectFit: "cover" }}
-                fill={true}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
                 alt={project.projectName}
                 className="brightness-75 transition duration-200 linear hover:scale-125"
               />

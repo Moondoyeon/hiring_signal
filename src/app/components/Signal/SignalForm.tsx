@@ -6,6 +6,8 @@ import Button from "../Button";
 import Image from "next/image";
 import InputText from "../Form/InputText";
 import Textarea from "../Form/TextArea";
+import useInterSectionObserver from "@/app/hooks/useIntersectionObserver";
+import { returnIntersectionCallback } from "@/app/util";
 
 export interface IForm {
   name: string;
@@ -13,6 +15,9 @@ export interface IForm {
   message: string;
 }
 export default function SignalForm() {
+  const targetRef = useInterSectionObserver({
+    handleIntersect: returnIntersectionCallback("peach-mode"),
+  });
   const {
     // register,
     // formState: { errors },
@@ -42,7 +47,7 @@ export default function SignalForm() {
   };
 
   return (
-    <section className="flex">
+    <section className="flex" ref={targetRef}>
       <div className="w-1/6">
         <Label style="py-3 mb-9">당신의 이름</Label>
         <Label style="py-2 mb-9">연락가능한 수단</Label>

@@ -38,17 +38,7 @@
 }
 .purple-mode {
   animation-name: globalBgToPurple;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-}
-.purple-white-mode {
-  animation-name: globalBgPurpleToWhite;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-}
-.peach-white-mode {
-  animation-name: globalBgPeachToWhite;
-  animation-duration: 0.2s;
+  animation-duration: 0.1s;
   animation-fill-mode: forwards;
 }
 
@@ -66,22 +56,6 @@
   }
   to {
     background-color: #ffbfb7;
-  }
-}
-@keyframes globalBgPurpleToWhite {
-  from {
-    background-color: #d6bbe7;
-  }
-  to {
-    background-color: white;
-  }
-}
-@keyframes globalBgPeachToWhite {
-  from {
-    background-color: #ffbfb7;
-  }
-  to {
-    background-color: white;
   }
 }
 
