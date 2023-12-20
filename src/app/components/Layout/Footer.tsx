@@ -8,7 +8,7 @@ export default function Footer() {
     window.alert("이메일이 복사되었습니다 🥰");
   }
   return (
-    <footer className="h-20 relative -translate-y-full flex justify-center items-center border-t-2 border-black">
+    <footer className="h-20 relative -translate-y-full flex justify-center items-center border-t border-black">
       <div className="w-52 flex justify-between font-bold underline cursor-pointer">
         <Link href="https://github.com/Moondoyeon" target="_blank">
           GitHub

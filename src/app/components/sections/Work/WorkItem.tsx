@@ -1,11 +1,14 @@
 "use client";
 
 import useCarousel from "@/app/hooks/useCarousel";
-import { IWork } from "@/app/types";
+import { IWork, section } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
 import Buttons from "./Buttons";
-import HighlightBgColor from "../HighlightBgColor";
+import HighlightBgColor from "../../HighlightBgColor";
+
+import { useSetRecoilState } from "recoil";
+import { currentSectionState } from "@/app/recoil";
 
 interface Props {
   works: IWork[];

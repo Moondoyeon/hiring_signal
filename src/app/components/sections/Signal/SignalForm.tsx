@@ -1,13 +1,13 @@
 "use client";
 
 import { useFieldArray, useForm } from "react-hook-form";
-import Label from "../Form/Label";
-import Button from "../Button";
+import Label from "../../Form/Label";
+import Button from "../../Form/Button";
 import Image from "next/image";
-import InputText from "../Form/InputText";
-import Textarea from "../Form/TextArea";
+import InputText from "../../Form/InputText";
+import Textarea from "../../Form/TextArea";
 import useInterSectionObserver from "@/app/hooks/useIntersectionObserver";
-import { returnIntersectionCallback } from "@/app/util";
+import { observeGlobalBgChange } from "@/app/util";
 
 export interface IForm {
   name: string;
@@ -16,7 +16,8 @@ export interface IForm {
 }
 export default function SignalForm() {
   const targetRef = useInterSectionObserver({
-    handleIntersect: returnIntersectionCallback("peach-mode"),
+    handleIntersect: observeGlobalBgChange("peach-mode"),
+    threshold: 0.5,
   });
   const {
     // register,

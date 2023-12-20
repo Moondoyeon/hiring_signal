@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import HighlightBgColor from "../HighlightBgColor";
+import HighlightBgColor from "../../HighlightBgColor";
 
 interface IEducation {
   _id: string;

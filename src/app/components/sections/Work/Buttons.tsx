@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "../Button";
+import Button from "../../Form/Button";
 
 export interface CarouselButtonProps {
   next: () => void;
