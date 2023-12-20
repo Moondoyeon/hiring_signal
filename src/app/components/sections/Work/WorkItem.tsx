@@ -1,27 +1,20 @@
-"use client";
+'use client';
 
-import useCarousel from "@/app/hooks/useCarousel";
-import { IWork, section } from "@/app/types";
-import Image from "next/image";
-import Link from "next/link";
-import Buttons from "./Buttons";
-import HighlightBgColor from "../../HighlightBgColor";
-
-import { useSetRecoilState } from "recoil";
-import { currentSectionState } from "@/app/recoil";
+import useCarousel from '@/app/hooks/useCarousel';
+import { IWork } from '@/app/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import Buttons from './Buttons';
+import HighlightBgColor from '../../HighlightBgColor';
 
 interface Props {
   works: IWork[];
 }
 export default function WorkItem({ works }: Props) {
-  const {
-    curIdx,
-    pxTransitions,
-    next,
-    prev,
-    getCurrentMouseX,
-    getBeforeMouseX,
-  } = useCarousel(works.length, 1280);
+  const { curIdx, pxTransitions, next, prev, getCurrentMouseX, getBeforeMouseX } = useCarousel(
+    works.length,
+    1280,
+  );
   const moveStyle = {
     transform: `translate(${pxTransitions[curIdx]})`,
   };
@@ -34,18 +27,12 @@ export default function WorkItem({ works }: Props) {
         id="carousel-container"
         onMouseDown={getBeforeMouseX}
         onMouseUp={getCurrentMouseX}
-        className="max-w-[1280px] overflow-hidden"
-      >
-        <div
-          id="carousel"
-          className="flex transition duration-300 ease-in-out"
-          style={moveStyle}
-        >
+        className="max-w-[1280px] overflow-hidden">
+        <div id="carousel" className="flex transition duration-300 ease-in-out" style={moveStyle}>
           {works.map((work) => (
             <div
               key={work._id}
-              className="h-[330px] flex justify-evenly py-6 px-4 min-w-[1280px] border border-solid border-black"
-            >
+              className="h-[330px] flex justify-evenly py-6 px-4 min-w-[1280px] border border-solid border-black">
               <Image
                 className="basis-2/5 mx-6"
                 src="/images/work-artwa.jpeg"
@@ -65,13 +52,8 @@ export default function WorkItem({ works }: Props) {
                 {work.notionLink && (
                   <HighlightBgColor
                     willBg="before:bg-[#FF5995]"
-                    customStyle="w-fit hover:text-black before:duration-75"
-                  >
-                    <Link
-                      href={work.notionLink}
-                      target="_blank"
-                      className="underline relative "
-                    >
+                    customStyle="w-fit hover:text-black before:duration-75">
+                    <Link href={work.notionLink} target="_blank" className="underline relative ">
                       상세설명링크
                     </Link>
                   </HighlightBgColor>

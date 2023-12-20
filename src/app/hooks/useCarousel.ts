@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function useCarousel(n: number, w: number) {
   const [curIdx, setCurIdx] = useState(0);

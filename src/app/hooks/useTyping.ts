@@ -1,11 +1,9 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 
 export default function useTyping(words: string[]) {
-  let processedWords = words.map((word) => word + " ");
+  const processedWords = words.map((word) => word + ' ');
 
-  const [typing, setTyping] = useState("");
+  const [typing, setTyping] = useState('');
   const wordIdx = useRef(0);
   const currentTypeIdx = useRef(0);
   const flag = useRef(0);
@@ -40,7 +38,7 @@ export default function useTyping(words: string[]) {
         }
 
         if (flag.current === 2) {
-          prev = "";
+          prev = '';
           wordIdx.current++;
           if (wordIdx.current >= processedWords.length) wordIdx.current = 0;
           target = processedWords[wordIdx.current];

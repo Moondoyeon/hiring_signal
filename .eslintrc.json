@@ -1,3 +1,42 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react"],
+  "rules": {
+    "react/react-in-jsx-scope": "off", //jsx파일에서 React를 import 하지 않아도 됨.
+    "no-unused-vars": "off", //타입스크립트 사용시 interface의 변수명을 eslint가 잡지 않도록 함.
+    "@typescript-eslint/no-unused-vars": "warn" //대신 사용하지 않는 변수는 @typescript/eslint를 통해 잡아줌.
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+      // ㄴ프로젝트에 설치된 리액트 버전을 자동으로 감지하도록 설정
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".{ts,tsx}"]
+    }, // ㄴ TypeScript 파일을 분석할 때는 @typescript-eslint/parser를 사용하도록 설정한다.
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": { "alwaysTryTypes": true }
+      // ㄴtrue일 경우, TypeScript 확장자(.ts, .tsx)가 포함된 파일의 경우,
+      // 타입 선언 파일(.d.ts)이 존재하지 않더라도 항상 타입 체크를 시도하겠다는 의미입니다.
+    }
+  }
 }

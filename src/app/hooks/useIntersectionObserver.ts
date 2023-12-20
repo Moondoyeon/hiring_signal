@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 interface Props {
   handleIntersect: IntersectionObserverCallback;
@@ -8,7 +8,7 @@ interface Props {
 export default function useInterSectionObserver({
   handleIntersect,
   threshold = 0.5,
-  rootMargin = "",
+  rootMargin = '',
 }: Props) {
   const targetRef = useRef<HTMLDivElement | null>(null);
 

@@ -1,5 +1,5 @@
-import SectionContainer from "../SectionContainer";
-import SignalForm from "./SignalForm";
+import SectionContainer from '../SectionContainer';
+import SignalForm from './SignalForm';
 
 export default function SignalSection() {
   return (

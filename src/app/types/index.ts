@@ -23,9 +23,9 @@ export interface IStudy {
 }
 
 export type section =
-  | "movie-section"
-  | "work-section"
-  | "project-section"
-  | "education-section"
-  | "study-section"
-  | "signal-section";
+  | 'movie-section'
+  | 'work-section'
+  | 'project-section'
+  | 'education-section'
+  | 'study-section'
+  | 'signal-section';

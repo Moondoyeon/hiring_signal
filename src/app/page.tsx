@@ -1,10 +1,10 @@
-import HelpButtons from "./components/sections/main/HelpButtons";
-import VideoSection from "./components/sections/Video";
-import WorkSection from "./components/sections/Work";
-import ProjectSection from "./components/sections/Project";
-import EducationSection from "./components/sections/Education";
-import StudySection from "./components/sections/Study";
-import SignalSection from "./components/sections/Signal";
+import HelpButtons from './components/sections/main/HelpButtons';
+import VideoSection from './components/sections/Video';
+import WorkSection from './components/sections/Work';
+import ProjectSection from './components/sections/Project';
+import EducationSection from './components/sections/Education';
+import StudySection from './components/sections/Study';
+import SignalSection from './components/sections/Signal';
 
 export default async function Home() {
   return (

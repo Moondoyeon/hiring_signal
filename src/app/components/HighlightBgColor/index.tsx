@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ReactNode } from "react";
-import useBgColorAnimation from "../../hooks/useBgColorAnimation";
+import { ReactNode } from 'react';
+import useBgColorAnimation from '../../hooks/useBgColorAnimation';
 
 interface Props {
   bg?: string;
@@ -10,7 +10,7 @@ interface Props {
   children: ReactNode;
 }
 export default function HighlightBgColor({
-  bg = "bg-transparent",
+  bg = 'bg-transparent',
   willBg,
   customStyle,
   children,
@@ -22,9 +22,8 @@ export default function HighlightBgColor({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative bg-color-container ${customStyle} ${bg} ${willBg} ${
-        hovered ? "hovered" : ""
-      } `}
-    >
+        hovered ? 'hovered' : ''
+      } `}>
       {children}
     </div>
   );

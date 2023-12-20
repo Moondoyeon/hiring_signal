@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useFieldArray, useForm } from "react-hook-form";
-import Label from "../../Form/Label";
-import Button from "../../Form/Button";
-import Image from "next/image";
-import InputText from "../../Form/InputText";
-import Textarea from "../../Form/TextArea";
-import useInterSectionObserver from "@/app/hooks/useIntersectionObserver";
-import { observeGlobalBgChange } from "@/app/util";
+import { useFieldArray, useForm } from 'react-hook-form';
+import Label from '../../Form/Label';
+import Button from '../../Form/Button';
+import Image from 'next/image';
+import InputText from '../../Form/InputText';
+import Textarea from '../../Form/TextArea';
+import useInterSectionObserver from '@/app/hooks/useIntersectionObserver';
+import { observeGlobalBgChange } from '@/app/util';
 
 export interface IForm {
   name: string;
@@ -16,7 +16,7 @@ export interface IForm {
 }
 export default function SignalForm() {
   const targetRef = useInterSectionObserver({
-    handleIntersect: observeGlobalBgChange("peach-mode"),
+    handleIntersect: observeGlobalBgChange('peach-mode'),
     threshold: 0.5,
   });
   const {
@@ -29,21 +29,21 @@ export default function SignalForm() {
     setFocus,
     control,
   } = useForm<IForm>({
-    mode: "onSubmit",
+    mode: 'onSubmit',
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
     },
   });
 
   const handleSubmit = (data: IForm) => {
     console.log(data);
-    window.alert("시그널을 보내셨습니다 😎⚡️");
+    window.alert('시그널을 보내셨습니다 😎⚡️');
     reset({
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
     });
   };
 
@@ -61,8 +61,8 @@ export default function SignalForm() {
           placeholder="YOUR NAME"
           control={control}
           rules={{
-            required: "반드시 입력해주세요.",
-            minLength: { value: 1, message: "1글자 이상 입력해주세요." },
+            required: '반드시 입력해주세요.',
+            minLength: { value: 1, message: '1글자 이상 입력해주세요.' },
           }}
         />
 
@@ -71,11 +71,11 @@ export default function SignalForm() {
           placeholder="EMAIL ADDRESS"
           control={control}
           rules={{
-            required: "반드시 입력해주세요.",
+            required: '반드시 입력해주세요.',
             pattern: {
               value:
                 /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
-              message: "이메일 형식에 맞지 않습니다.",
+              message: '이메일 형식에 맞지 않습니다.',
             },
           }}
         />
@@ -84,7 +84,7 @@ export default function SignalForm() {
           name="message"
           placeholder="YOUR SIGNAL MESSAGE"
           control={control}
-          rules={{ required: "반드시 입력해주세요." }}
+          rules={{ required: '반드시 입력해주세요.' }}
           errorStyle="pt-0 pb-1"
         />
 

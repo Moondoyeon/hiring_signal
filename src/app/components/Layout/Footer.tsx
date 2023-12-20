@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Footer() {
   async function handleEmailClick() {
-    await navigator.clipboard.writeText("mmmdo21@gmail.com");
-    window.alert("이메일이 복사되었습니다 🥰");
+    await navigator.clipboard.writeText('mmmdo21@gmail.com');
+    window.alert('이메일이 복사되었습니다 🥰');
   }
   return (
     <footer className="h-20 relative -translate-y-full flex justify-center items-center border-t border-black">
