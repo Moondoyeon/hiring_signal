@@ -2,24 +2,17 @@
 
 import Image from 'next/image';
 import HighlightBgColor from '../../HighlightBgColor';
+import { eduItemBgStyles } from '@/app/constant/dynamicStyles';
+import { IEducation } from '@/app/types';
 
-interface IEducation {
-  _id: string;
-  category: string;
-  title: string;
-  period: string;
-  content: string;
-  grade?: string;
-}
 interface Props {
   eduList: IEducation[];
 }
 export default function EducationItem({ eduList }: Props) {
-  const eduItemColorArray = ['before:bg-[#86E0C8]', 'before:bg-[#83ADEC]', 'before:bg-[#F3CE7A]'];
   return (
     <section>
       {eduList.map((edu, idx) => (
-        <HighlightBgColor key={edu._id} willBg={eduItemColorArray[idx]} bg={'bg-[#f7f7f7]'}>
+        <HighlightBgColor key={edu._id} willBg={eduItemBgStyles[idx]} bg={'bg-[#f7f7f7]'}>
           <div className="relative w-full">
             <div className="flex mb-6 h-[180px]">
               <div className="flex-col p-4 w-1/3 justify-start items-center">

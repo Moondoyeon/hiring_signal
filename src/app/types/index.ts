@@ -22,6 +22,15 @@ export interface IStudy {
   image_url: string;
 }
 
+export interface IEducation {
+  _id: string;
+  category: string;
+  title: string;
+  period: string;
+  content: string;
+  grade?: string;
+}
+
 export type section =
   | 'movie-section'
   | 'work-section'

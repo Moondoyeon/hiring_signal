@@ -5,7 +5,7 @@ import Footer from './components/Layout/Footer';
 import RecoilRootWrapper from './recoil/RecoilRootWrapper';
 
 export const metadata: Metadata = {
-  title: '채용시그널',
+  title: '문도연 포트폴리오 | 오퍼시그널',
   description: '나 좀 뽑아줘',
 };
 

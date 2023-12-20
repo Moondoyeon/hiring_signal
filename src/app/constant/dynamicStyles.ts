@@ -10,3 +10,8 @@ export const textColors: { [key: string]: string } = {
   white: 'text-white',
   black: 'text-black',
 };
+export const eduItemBgStyles = [
+  'before:bg-[#86E0C8]',
+  'before:bg-[#83ADEC]',
+  'before:bg-[#F3CE7A]',
+];
