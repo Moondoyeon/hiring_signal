@@ -1,8 +1,9 @@
 import { connectDB } from "@/app/util/database";
 import { ObjectId } from "mongodb";
 import EducationItem from "./EducationItem";
+import SectionContainer from "../SectionContainer";
 
-export default async function Education() {
+export default async function EducationSection() {
   // let db = connectDB.db(process.env.DB_NAME);
   // let educations = await db.collection("educations").find().toArray();
   // if (console) console.log(educations);
@@ -31,12 +32,11 @@ export default async function Education() {
       content: "습니다",
     },
   ];
-  let university = educations.filter((edu) => edu.category === "대학교");
-  let academies = educations.filter((edu) => edu.category === "교육");
+
   return (
-    <section className="pt-36 pb-18 ">
-      <h2 className="pb-12 text-5xl font-bold">EDUCATION</h2>
+    <SectionContainer observeSection="education-section" style="pt-48">
+      <h2 className="pb-12 text-4xl font-bold">EDUCATION</h2>
       <EducationItem eduList={educations} />
-    </section>
+    </SectionContainer>
   );
 }

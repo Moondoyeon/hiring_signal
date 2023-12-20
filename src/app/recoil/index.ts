@@ -1,7 +1,7 @@
 import { atom } from "recoil";
-import { bgColorMode } from "../types";
+import { section } from "../types";
 
-export const bgColorModeState = atom<bgColorMode>({
-  key: "bgColorMode",
-  default: "default-mode",
+export const currentSectionState = atom<section>({
+  key: "section",
+  default: "movie-section",
 });

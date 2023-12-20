@@ -22,5 +22,10 @@ export interface IStudy {
   image_url: string;
 }
 
-// 전역 state
-export type bgColorMode = "purple-mode" | "orange-mode" | "default-mode";
+export type section =
+  | "movie-section"
+  | "work-section"
+  | "project-section"
+  | "education-section"
+  | "study-section"
+  | "signal-section";
