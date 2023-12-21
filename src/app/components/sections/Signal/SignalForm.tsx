@@ -50,13 +50,20 @@ export default function SignalForm() {
   return (
     <section className="flex" ref={targetRef}>
       <div className="w-1/6">
-        <Label style="py-3 mb-9">당신의 이름</Label>
-        <Label style="py-2 mb-9">연락가능한 수단</Label>
-        <Label style="py-2">전하고 싶은 말</Label>
+        <Label style="py-3 mb-9" htmlFor="name">
+          당신의 이름
+        </Label>
+        <Label style="py-2 mb-9" htmlFor="email">
+          연락가능한 수단
+        </Label>
+        <Label style="py-2" htmlFor="message">
+          전하고 싶은 말
+        </Label>
       </div>
 
       <form onSubmit={onSubmit(handleSubmit)} className="flex-col w-3/4">
         <InputText<IForm>
+          id="name"
           name="name"
           placeholder="YOUR NAME"
           control={control}
@@ -67,6 +74,7 @@ export default function SignalForm() {
         />
 
         <InputText<IForm>
+          id="email"
           name="email"
           placeholder="EMAIL ADDRESS"
           control={control}
@@ -81,6 +89,7 @@ export default function SignalForm() {
         />
 
         <Textarea<IForm>
+          id="message"
           name="message"
           placeholder="YOUR SIGNAL MESSAGE"
           control={control}
