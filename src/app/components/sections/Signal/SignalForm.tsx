@@ -1,6 +1,7 @@
 'use client';
 
-import { useFieldArray, useForm } from 'react-hook-form';
+// import { useFieldArray,  } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import Label from '../../Form/Label';
 import Button from '../../Form/Button';
 import Image from 'next/image';
@@ -24,9 +25,9 @@ export default function SignalForm() {
     // formState: { errors },
     reset,
     handleSubmit: onSubmit,
-    getValues,
-    setError,
-    setFocus,
+    // getValues,
+    // setError,
+    // setFocus,
     control,
   } = useForm<IForm>({
     mode: 'onSubmit',
@@ -48,20 +49,11 @@ export default function SignalForm() {
   };
 
   return (
-    <section className="flex" ref={targetRef}>
-      <div className="w-1/6">
-        <Label style="py-3 mb-9" htmlFor="name">
+    <section ref={targetRef}>
+      <form onSubmit={onSubmit(handleSubmit)} className="flex-col w-full">
+        <Label style="py-2" htmlFor="name">
           당신의 이름
         </Label>
-        <Label style="py-2 mb-9" htmlFor="email">
-          연락가능한 수단
-        </Label>
-        <Label style="py-2" htmlFor="message">
-          전하고 싶은 말
-        </Label>
-      </div>
-
-      <form onSubmit={onSubmit(handleSubmit)} className="flex-col w-3/4">
         <InputText<IForm>
           id="name"
           name="name"
@@ -72,7 +64,9 @@ export default function SignalForm() {
             minLength: { value: 1, message: '1글자 이상 입력해주세요.' },
           }}
         />
-
+        <Label style="py-2" htmlFor="email">
+          연락가능한 수단
+        </Label>
         <InputText<IForm>
           id="email"
           name="email"
@@ -87,17 +81,21 @@ export default function SignalForm() {
             },
           }}
         />
-
+        <Label style="py-2" htmlFor="message">
+          전하고 싶은 말
+        </Label>
         <Textarea<IForm>
           id="message"
           name="message"
           placeholder="YOUR SIGNAL MESSAGE"
           control={control}
           rules={{ required: '반드시 입력해주세요.' }}
-          errorStyle="pt-0 pb-1"
+          errorStyle="pt-0 mobile:mb-2"
         />
 
-        <Button type="submit" style="w-full py-2 px-5 text-2xl font-bold">
+        <Button
+          type="submit"
+          style="w-full py-2 px-5 text-2xl font-bold mobile:text-lg mobile:h-10">
           <Image
             src="/icons/signal.png"
             alt="signal"

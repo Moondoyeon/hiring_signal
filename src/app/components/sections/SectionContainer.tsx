@@ -16,7 +16,7 @@ export default function SectionContainer({ children, observeSection, style }: Pr
     handleIntersect: ([entry]: IntersectionObserverEntry[]) => {
       if (entry.isIntersecting) setCurrentSection(observeSection);
     },
-    threshold: 0,
+    threshold: 0.8,
   });
 
   return (

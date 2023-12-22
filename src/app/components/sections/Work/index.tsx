@@ -1,7 +1,7 @@
-import WorkItem from './WorkItem';
 import { ObjectId } from 'mongodb';
 import { IWork } from '@/app/types';
 import SectionContainer from '../SectionContainer';
+import Content from './Content';
 
 export default async function WorkSection() {
   // let db = connectDB.db(process.env.DB_NAME);
@@ -26,9 +26,9 @@ export default async function WorkSection() {
   ];
 
   return (
-    <SectionContainer observeSection="work-section" style="pt-40">
-      <h2 className="pb-12 text-4xl font-bold">WORK</h2>
-      <WorkItem works={works} />
+    <SectionContainer observeSection="work-section" style="pt-40 mobile:pt-28">
+      <h2 className="pb-12 text-4xl font-bold mobile:text-2xl mobile:pb-8">WORK</h2>
+      <Content works={works} />
     </SectionContainer>
   );
 }

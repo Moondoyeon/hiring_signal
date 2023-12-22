@@ -1,6 +1,6 @@
 // import { connectDB } from "@/app/util/database";
 import { ObjectId } from 'mongodb';
-import ProjectItem from './ProjectItem';
+import Content from './Content';
 import SectionContainer from '../SectionContainer';
 
 export default async function ProjectSection() {
@@ -31,9 +31,9 @@ export default async function ProjectSection() {
     },
   ];
   return (
-    <SectionContainer observeSection="project-section" style="pt-56 z-0">
-      <h2 className="pb-12 text-4xl font-bold">PROJECT</h2>
-      <ProjectItem projects={projects} />
+    <SectionContainer observeSection="project-section" style="pt-56 mobile:pt-28">
+      <h2 className="pb-12 text-4xl font-bold mobile:text-2xl mobile:pb-8">PROJECT</h2>
+      <Content projects={projects} />
     </SectionContainer>
   );
 }

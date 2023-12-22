@@ -1,23 +1,21 @@
 'use client';
 
-import useScrollY from '@/app/hooks/useScrollY';
 import Button from '../../Form/Button';
 import { scroll } from '@/app/util';
 import { currentSectionState } from '@/app/recoil';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 export default function HelpButtons() {
-  const { currentY } = useScrollY();
-  const bottom = currentY > 3960 ? 'bottom-24' : 'bottom-4';
-  const setCurrentSection = useSetRecoilState(currentSectionState);
+  const [currentSection, setCurrentSection] = useRecoilState(currentSectionState);
+  const bottom = currentSection === 'signal-section' ? 'bottom-24' : 'bottom-4';
 
   return (
-    <div className={`${currentY < 60 ? 'hidden' : ''} `}>
+    <div className={currentSection === 'movie-section' ? 'hidden' : ''}>
       <Button
         theme="white"
         style={`mr-2 z-20 fixed ${bottom} right-16 hover:bg-black hover:text-white transition`}
         disabled>
-        하트
+        시그널
       </Button>
       <Button
         onClick={() => {

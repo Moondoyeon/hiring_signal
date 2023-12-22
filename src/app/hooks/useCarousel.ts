@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { MouseEvent, TouchEvent, useState } from 'react';
 
-export default function useCarousel(n: number, w: number) {
+export default function useCarousel(n: number, desktopW: number, mobileW: number, tabletW: number) {
   const [curIdx, setCurIdx] = useState(0);
+
   const prev = () => {
     setCurIdx(() => {
       if (curIdx === 0) return 0;
@@ -14,11 +15,14 @@ export default function useCarousel(n: number, w: number) {
       else return curIdx + 1;
     });
   };
-  // const moveTransitions: { [key: number]: string } = {};
-  const pxTransitions: { [key: number]: string } = {};
+
+  const deskTopPxTransitions: { [key: number]: string } = {};
+  const mobilePxTransitions: { [key: number]: string } = {};
+  const tabletPxTransitions: { [key: number]: string } = {};
   for (let i = 0; i < n; i++) {
-    // moveTransitions[i] = `-translate-x-[${i * w}px]`;
-    pxTransitions[i] = `-${i * w}px`;
+    deskTopPxTransitions[i] = `-${i * desktopW}px`;
+    mobilePxTransitions[i] = `-${i * mobileW}px`;
+    tabletPxTransitions[i] = `-${i * tabletW}px`;
   }
   const move = (idx: number) => {
     setCurIdx(idx);
@@ -26,34 +30,45 @@ export default function useCarousel(n: number, w: number) {
 
   const [currentX, setCurrentX] = useState(0);
   const [beforeX, setBeforeX] = useState(0);
+
   const slide = () => {
     if (currentX <= beforeX) next();
     else prev();
   };
-  const getCurrentMouseX = (e: any) => {
+  const getCurrentMouseX = (e: MouseEvent) => {
     setCurrentX(e.clientX);
     slide();
   };
-  const getBeforeMouseX = (e: any) => {
+  const getBeforeMouseX = (e: MouseEvent) => {
     setBeforeX(e.clientX);
   };
 
-  const getCurrentTouchMouseX = (e: any) => {
+  const getCurrentTouchMouseX = (e: TouchEvent) => {
     setCurrentX(e.changedTouches[0].clientX);
     slide();
   };
-  const getBeforeTouchMouseX = (e: any) => {
+  const getBeforeTouchMouseX = (e: TouchEvent) => {
     setCurrentX(e.changedTouches[0].clientX);
   };
+
+  const transitionStyles = {
+    desk: { transform: `translate(${deskTopPxTransitions[curIdx]})` },
+    mobile: { transform: `translate(${mobilePxTransitions[curIdx]})` },
+    tablet: { transform: `translate(${tabletPxTransitions[curIdx]})` },
+  };
+
   return {
     curIdx,
     next,
     prev,
     move,
-    pxTransitions,
-    getCurrentMouseX,
-    getBeforeMouseX,
-    getCurrentTouchMouseX,
-    getBeforeTouchMouseX,
+    transitionStyles,
+    deskTopPxTransitions,
+    mobilePxTransitions,
+    tabletPxTransitions,
+    handleMouseUp: getCurrentMouseX,
+    handleMouseDown: getBeforeMouseX,
+    handleTouchEnd: getCurrentTouchMouseX,
+    handleTouchStart: getBeforeTouchMouseX,
   };
 }

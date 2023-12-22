@@ -1,7 +1,8 @@
-import { connectDB } from '@/app/util/database';
+// import { connectDB } from '@/app/util/database';
 import { ObjectId } from 'mongodb';
-import StudyItem from './StudyItem';
+
 import SectionContainer from '../SectionContainer';
+import Content from './Content';
 
 export default async function StudySection() {
   // https://fastcampus.co.kr/dev_online_nextjs
@@ -59,15 +60,15 @@ export default async function StudySection() {
       image_url: '/images/course-js-algorithm',
     },
   ];
-  let books = studyings.filter((study) => study.category === 'book');
-  let courses = studyings.filter((study) => study.category === 'course');
+  const books = studyings.filter((study) => study.category === 'book');
+  const courses = studyings.filter((study) => study.category === 'course');
 
   return (
-    <SectionContainer observeSection="study-section" style="pt-48">
-      <h2 className="pb-12 text-4xl font-bold">STUDY</h2>
-      <div className="flex">
-        <StudyItem listName={'도서'} list={books} theme="bg-yellow-500" />
-        <StudyItem listName={'강의'} list={courses} theme="bg-blue-500" />
+    <SectionContainer observeSection="study-section" style="pt-48 mobile:pt-28">
+      <h2 className="pb-12 text-4xl font-bold mobile:text-2xl mobile:pb-8">STUDY</h2>
+      <div className="flex justify-between mobile:flex-col tablet:flex-col">
+        <Content contentName={'도서'} list={books} theme="bg-yellow-500" />
+        <Content contentName={'강의'} list={courses} theme="bg-blue-500" />
       </div>
     </SectionContainer>
   );

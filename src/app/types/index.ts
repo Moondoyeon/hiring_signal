@@ -1,3 +1,5 @@
+import { MouseEvent, TouchEvent } from 'react';
+
 export interface IWork {
   _id: string;
   companyName: string;
@@ -38,3 +40,6 @@ export type section =
   | 'education-section'
   | 'study-section'
   | 'signal-section';
+
+export type MouseEventType<T = Element> = MouseEvent<T>;
+export type TouchEventType<T = Element> = TouchEvent<T>;

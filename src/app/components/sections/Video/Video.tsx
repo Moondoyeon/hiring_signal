@@ -5,7 +5,7 @@ export default function Video() {
       // autoPlay
       // muted
       controls
-      className="absolute w-screen h-screen object-cover brightness-75"
+      className="absolute w-screen h-screen object-cover brightness-50"
       loop
       preload="auto"
       // poster="/images/coding.jpg"

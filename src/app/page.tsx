@@ -16,7 +16,7 @@ export default async function Home() {
       </section>
 
       <section className="flex justify-center items-center">
-        <ul className="max-w-full">
+        <ul className="max-w-full mobile:px-3">
           <li id="work-section">
             <WorkSection />
           </li>

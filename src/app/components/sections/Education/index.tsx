@@ -1,4 +1,4 @@
-import { connectDB } from '@/app/util/database';
+// import { connectDB } from '@/app/util/database';
 import { ObjectId } from 'mongodb';
 import EducationItem from './EducationItem';
 import SectionContainer from '../SectionContainer';
@@ -22,20 +22,20 @@ export default async function EducationSection() {
       category: '교육',
       title: '[원티드] pre-온보딩 프론트엔드 코스',
       period: '2022.10 - 2022.11',
-      content: '습니다',
+      content: '',
     },
     {
       _id: String(new ObjectId('657d4c7c8ff016634a0ff80d')),
       category: '교육',
       title: '[코드스테이츠] 소프트웨어 엔지니어 FE 코스',
       period: '2022.04 - 2022.10',
-      content: '습니다',
+      content: '',
     },
   ];
 
   return (
-    <SectionContainer observeSection="education-section" style="pt-48">
-      <h2 className="pb-12 text-4xl font-bold">EDUCATION</h2>
+    <SectionContainer observeSection="education-section" style="pt-48 mobile:pt-28">
+      <h2 className="pb-12 text-4xl font-bold mobile:text-2xl mobile:pb-8">EDUCATION</h2>
       <EducationItem eduList={educations} />
     </SectionContainer>
   );
