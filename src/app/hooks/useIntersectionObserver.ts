@@ -13,9 +13,7 @@ export default function useInterSectionObserver({
   const targetRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    let observer: IntersectionObserver;
-
-    observer = new IntersectionObserver(handleIntersect, {
+    const observer: IntersectionObserver = new IntersectionObserver(handleIntersect, {
       threshold: threshold,
       rootMargin: rootMargin,
     });

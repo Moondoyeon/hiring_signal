@@ -9,10 +9,8 @@ export default function useTyping(words: string[]) {
   const flag = useRef(0);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
     let target = processedWords[wordIdx.current];
-
-    intervalId = setInterval(() => {
+    const intervalId: NodeJS.Timeout = setInterval(() => {
       setTyping((prev) => {
         if (flag.current === 0 && currentTypeIdx.current < target.length) {
           if (target[currentTypeIdx.current]) {
