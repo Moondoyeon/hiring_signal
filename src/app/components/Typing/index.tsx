@@ -4,7 +4,7 @@
 // import useTyping from '@/app/hooks/useTyping';
 
 export default function Typing() {
-  // let word = useTyping(keyword);
+  // const word = useTyping(keyword);
 
   return (
     <div className="z-98 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-7xl font-bold tracking-wide whitespace-nowrap mobile:flex-col mobile:text-4xl tablet:flex-col tablet:text-6xl">

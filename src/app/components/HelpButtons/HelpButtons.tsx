@@ -1,13 +1,13 @@
 'use client';
 
-import Button from '../../Form/Button';
-import { scroll } from '@/app/util';
-import { currentSectionState, signalStatusState } from '@/app/recoil';
+import Button from '../Form/Button';
+import { scroll } from '@/app/utils';
+import { currentSectionState, signalStatusState } from '@/app/store';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { RiHeartPulseFill, RiHeartPulseLine } from '@remixicon/react';
 import { useQuery } from '@tanstack/react-query';
 import { ISignalCount } from '@/app/types';
-import { getSignalCount } from '@/app/util/fetcher';
+import { getSignalCount } from '@/app/utils/fetcher';
 
 export default function HelpButtons() {
   const querySignalCount = useQuery<ISignalCount>({

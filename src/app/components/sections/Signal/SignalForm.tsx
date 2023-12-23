@@ -8,11 +8,11 @@ import Image from 'next/image';
 import InputText from '../../Form/InputText';
 import Textarea from '../../Form/TextArea';
 import useInterSectionObserver from '@/app/hooks/useIntersectionObserver';
-import { observeGlobalBgChange } from '@/app/util';
+import { observeGlobalBgChange } from '@/app/utils';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { signalStatusState } from '@/app/recoil';
+import { signalStatusState } from '@/app/store';
 import { useSetRecoilState } from 'recoil';
-import { postSignal } from '@/app/util/fetcher';
+import { postSignal } from '@/app/utils/fetcher';
 import { ISignalForm } from '@/app/types';
 
 export default function SignalForm() {

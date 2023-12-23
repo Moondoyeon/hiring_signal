@@ -1,7 +1,7 @@
 import { IWork } from '@/app/types';
-import SectionContainer from '../SectionContainer';
+import SectionContainer from '../../Container/SectionContainer';
 import Content from './Content';
-import { connectDB } from '@/app/util/database';
+import { connectDB } from '@/app/utils/database';
 
 export default async function WorkSection() {
   const db = connectDB.db(process.env.DB_NAME);

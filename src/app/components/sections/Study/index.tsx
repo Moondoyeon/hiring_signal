@@ -1,6 +1,6 @@
 // https://fastcampus.co.kr/dev_online_nextjs
-import { connectDB } from '@/app/util/database';
-import SectionContainer from '../SectionContainer';
+import { connectDB } from '@/app/utils/database';
+import SectionContainer from '../../Container/SectionContainer';
 import Content from './Content';
 import { IStudy } from '@/app/types';
 

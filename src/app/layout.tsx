@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Header from './components/Layout/Header';
 import './globals.css';
 import Footer from './components/Layout/Footer';
-import RecoilRootWrapper from './util/RecoilRootWrapper';
-import ReactQueryProviderWrapper from './util/ReactQueryProviderWrapper';
+import RecoilRootWrapper from './components/Container/RecoilRootWrapper';
+import ReactQueryProviderWrapper from './components/Container/ReactQueryProviderWrapper';
 
 export const metadata: Metadata = {
   title: '문도연 포트폴리오 | 오퍼시그널',

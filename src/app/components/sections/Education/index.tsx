@@ -1,6 +1,6 @@
-import { connectDB } from '@/app/util/database';
+import { connectDB } from '@/app/utils/database';
 import EducationItem from './EducationItem';
-import SectionContainer from '../SectionContainer';
+import SectionContainer from '../../Container/SectionContainer';
 import { IEducation } from '@/app/types';
 
 export default async function EducationSection() {

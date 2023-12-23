@@ -3,7 +3,7 @@
 import useCarousel from '@/app/hooks/useCarousel';
 import { IProject } from '@/app/types';
 import useInterSectionObserver from '@/app/hooks/useIntersectionObserver';
-import { observeGlobalBgChange } from '@/app/util';
+import { observeGlobalBgChange } from '@/app/utils';
 import ProjectItem from './ProjectItem';
 
 import Carousel from '../../Carousel';

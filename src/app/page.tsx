@@ -1,4 +1,4 @@
-import HelpButtons from './components/sections/main/HelpButtons';
+import HelpButtons from './components/HelpButtons/HelpButtons';
 import VideoSection from './components/sections/Video';
 import WorkSection from './components/sections/Work';
 import ProjectSection from './components/sections/Project';

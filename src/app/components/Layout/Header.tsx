@@ -5,8 +5,8 @@ import { useRef, useState } from 'react';
 import { sections } from '../../constant';
 import { borderColors, textColors } from '../../constant/dynamicStyles';
 import useScrollY from '../../hooks/useScrollY';
-import { scroll } from '@/app/util';
-import { currentSectionState } from '@/app/recoil';
+import { scroll } from '@/app/utils';
+import { currentSectionState } from '@/app/store';
 import { section } from '@/app/types';
 import Image from 'next/image';
 
@@ -51,10 +51,10 @@ export default function Header() {
           }`}>
           <h1
             onClick={() => handleSectionChange('movie-section')}
-            className={`w-fit text-3xl font-semibold cursor-pointer pt-2 pb-1 border-y whitespace-nowrap mobile:text-lg mobile:pt-1 ${
+            className={`w-fit text-3xl font-semibold cursor-pointer pt-2 pb-1 border-y whitespace-nowrap mobile:text-xl mobile:pt-2 ${
               borderColors[headColor.current]
             } ${textColors[headColor.current]}`}>
-            오퍼시그널
+            채용시그널
           </h1>
           <p
             className={`laptop:hidden desktop:hidden whitespace-nowrap text-base transition cursor-pointer pb-1 ${
