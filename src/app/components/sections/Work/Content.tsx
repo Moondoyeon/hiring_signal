@@ -42,7 +42,7 @@ export default function Content({ works }: Props) {
           moveStyle={transitionStyles}>
           {works.map((work) => (
             <WorkItem
-              key={work._id}
+              key={String(work._id)}
               work={work}
               desktopWidth={'min-w-[1280px]'}
               mobileWidth={'mobile:min-w-[350px]'}

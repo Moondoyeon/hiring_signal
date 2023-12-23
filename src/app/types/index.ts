@@ -43,3 +43,12 @@ export type section =
 
 export type MouseEventType<T = Element> = MouseEvent<T>;
 export type TouchEventType<T = Element> = TouchEvent<T>;
+
+export interface ISignalCount {
+  count: number;
+}
+export interface ISignalForm {
+  name: string;
+  email: string;
+  message: string;
+}

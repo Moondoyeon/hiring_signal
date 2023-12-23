@@ -13,7 +13,7 @@ interface Props {
 export default function ProjectItem({ project, tabletWidth, mobileWidth, desktopWidth }: Props) {
   return (
     <Link
-      key={project._id}
+      key={String(project._id)}
       href={project.link}
       target="_blank"
       className={`h-[400px] mr-6 ${desktopWidth} ${mobileWidth} ${tabletWidth} mobile:h-[240px] mobile:mr-2 tablet:mr-0 relative overflow-hidden`}>

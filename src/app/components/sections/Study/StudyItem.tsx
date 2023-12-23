@@ -13,7 +13,7 @@ interface Props {
 export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabletWidth }: Props) {
   return (
     <div
-      key={item._id}
+      key={String(item._id)}
       className={`min-w-[550px] h-[480px] flex justify-center items-center ${desktopWidth} ${tabletWidth} ${mobileWidth} mobile:h-[360px] border-black border-solid border`}>
       <div className="flex-col h-3/4 w-[80%]">
         <div className="py-8 mobile:py-3">

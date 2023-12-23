@@ -12,7 +12,7 @@ export default function EducationItem({ eduList }: Props) {
   return (
     <section>
       {eduList.map((edu, idx) => (
-        <HighlightBgColor key={edu._id} willBg={eduItemBgStyles[idx]} bg={'bg-[#f7f7f7]'}>
+        <HighlightBgColor key={String(edu._id)} willBg={eduItemBgStyles[idx]} bg={'bg-[#f7f7f7]'}>
           <div className="relative w-full">
             <div className="flex mb-6 h-[180px] mobile:h-[160px]">
               <div className="flex-col p-4 w-1/3 justify-start items-center mobile:">

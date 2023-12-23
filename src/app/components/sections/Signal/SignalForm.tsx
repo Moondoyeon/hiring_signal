@@ -9,12 +9,12 @@ import InputText from '../../Form/InputText';
 import Textarea from '../../Form/TextArea';
 import useInterSectionObserver from '@/app/hooks/useIntersectionObserver';
 import { observeGlobalBgChange } from '@/app/util';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { signalStatusState } from '@/app/recoil';
+import { useSetRecoilState } from 'recoil';
+import { postSignal } from '@/app/util/fetcher';
+import { ISignalForm } from '@/app/types';
 
-export interface IForm {
-  name: string;
-  email: string;
-  message: string;
-}
 export default function SignalForm() {
   const targetRef = useInterSectionObserver({
     handleIntersect: observeGlobalBgChange('peach-mode'),
@@ -29,7 +29,7 @@ export default function SignalForm() {
     // setError,
     // setFocus,
     control,
-  } = useForm<IForm>({
+  } = useForm<ISignalForm>({
     mode: 'onSubmit',
     defaultValues: {
       name: '',
@@ -38,8 +38,19 @@ export default function SignalForm() {
     },
   });
 
-  const handleSubmit = (data: IForm) => {
-    console.log(data);
+  const queryClient = useQueryClient();
+  const signalMutation = useMutation({
+    mutationFn: postSignal,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['signalCount'] });
+    },
+  });
+
+  const setSignalStatus = useSetRecoilState(signalStatusState);
+
+  const handleSubmit = (data: ISignalForm) => {
+    setSignalStatus(true);
+    signalMutation.mutate(data);
     window.alert('시그널을 보내셨습니다 😎⚡️');
     reset({
       name: '',
@@ -54,7 +65,7 @@ export default function SignalForm() {
         <Label style="py-2" htmlFor="name">
           당신의 이름
         </Label>
-        <InputText<IForm>
+        <InputText<ISignalForm>
           id="name"
           name="name"
           placeholder="YOUR NAME"
@@ -67,7 +78,7 @@ export default function SignalForm() {
         <Label style="py-2" htmlFor="email">
           연락가능한 수단
         </Label>
-        <InputText<IForm>
+        <InputText<ISignalForm>
           id="email"
           name="email"
           placeholder="EMAIL ADDRESS"
@@ -84,7 +95,7 @@ export default function SignalForm() {
         <Label style="py-2" htmlFor="message">
           전하고 싶은 말
         </Label>
-        <Textarea<IForm>
+        <Textarea<ISignalForm>
           id="message"
           name="message"
           placeholder="YOUR SIGNAL MESSAGE"
