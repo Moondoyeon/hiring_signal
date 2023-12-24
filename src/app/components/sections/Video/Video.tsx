@@ -2,9 +2,9 @@ export default function Video() {
   return (
     <video
       id="signal video"
-      // autoPlay
-      // muted
-      controls
+      autoPlay
+      muted
+      // controls
       className="absolute w-screen h-screen object-cover brightness-50"
       loop
       preload="auto"
