@@ -4,6 +4,7 @@ export default function Video() {
       id="signal video"
       autoPlay
       muted
+      playsInline
       // controls
       className="absolute w-screen h-screen object-cover brightness-50"
       loop
