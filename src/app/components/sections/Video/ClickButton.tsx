@@ -12,7 +12,7 @@ export default function ClickButton() {
         scroll('work-section');
         setCurrentSection('work-section');
       }}
-      className="absolute top-[85%] left-1/2 text-white cursor-pointer mobile:top-[90%]">
+      className="absolute top-[85%] left-1/2 -translate-y-[85%] -translate-x-1/2 text-white cursor-pointer ">
       <Image
         className="animate-bounce mb-2 mobile:w-6"
         src={'/icons/down-arrow.png'}
