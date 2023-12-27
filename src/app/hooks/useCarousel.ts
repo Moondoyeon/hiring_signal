@@ -31,9 +31,10 @@ export default function useCarousel(n: number, desktopW: number, mobileW: number
   const [currentX, setCurrentX] = useState(0);
   const [beforeX, setBeforeX] = useState(0);
 
+  const SLIDE_MIN = 30;
   const slide = () => {
-    if (currentX <= beforeX) next();
-    else prev();
+    if (currentX - beforeX < SLIDE_MIN) next();
+    if (currentX - beforeX > SLIDE_MIN) prev();
   };
   const getCurrentMouseX = (e: MouseEvent) => {
     setCurrentX(e.clientX);
@@ -43,11 +44,13 @@ export default function useCarousel(n: number, desktopW: number, mobileW: number
     setBeforeX(e.clientX);
   };
 
-  const getCurrentTouchMouseX = (e: TouchEvent) => {
-    setCurrentX(e.changedTouches[0].clientX);
+  const handleTouchEnd = () => {
     slide();
   };
-  const getBeforeTouchMouseX = (e: TouchEvent) => {
+  const getBeforeTouchX = (e: TouchEvent) => {
+    setBeforeX(e.changedTouches[0].clientX);
+  };
+  const getCurrentTouchX = (e: TouchEvent) => {
     setCurrentX(e.changedTouches[0].clientX);
   };
 
@@ -66,9 +69,10 @@ export default function useCarousel(n: number, desktopW: number, mobileW: number
     deskTopPxTransitions,
     mobilePxTransitions,
     tabletPxTransitions,
-    handleMouseUp: getCurrentMouseX,
     handleMouseDown: getBeforeMouseX,
-    handleTouchEnd: getCurrentTouchMouseX,
-    handleTouchStart: getBeforeTouchMouseX,
+    handleMouseUp: getCurrentMouseX,
+    handleTouchStart: getBeforeTouchX,
+    handleTouchMove: getCurrentTouchX,
+    handleTouchEnd,
   };
 }

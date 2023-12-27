@@ -24,6 +24,7 @@ export default function Content({ contentName, list, theme }: Props) {
     handleMouseUp,
     handleTouchStart,
     handleTouchEnd,
+    handleTouchMove,
   } = useCarousel(
     Math.ceil(list.length),
     CAROUSEL_ITEM_WIDTH,
@@ -43,6 +44,7 @@ export default function Content({ contentName, list, theme }: Props) {
           handleMouseDown={handleMouseDown}
           handleMouseUp={handleMouseUp}
           handleTouchStart={handleTouchStart}
+          handleTouchMove={handleTouchMove}
           handleTouchEnd={handleTouchEnd}
           moveStyle={transitionStyles}>
           {list.map((item) => (
