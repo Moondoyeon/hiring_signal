@@ -26,4 +26,4 @@ export const sections: { [key: string]: setionValue } = {
     to: 'signal-section',
   },
 };
-export const keyword = ['책임감있는', '같이가는', '집요한', '유쾌한', '포기하지않는'];
+export const keyword = ['집요한', '유쾌한', '꾸준한'];
