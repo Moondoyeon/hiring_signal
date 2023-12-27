@@ -1,26 +1,33 @@
 'use client';
 
+import Image from 'next/image';
 import { useRecoilState } from 'recoil';
-import { useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { sections } from '../../constant';
 import { borderColors, textColors } from '../../constant/dynamicStyles';
-import useScrollY from '../../hooks/useScrollY';
 import { scroll } from '@/app/utils';
 import { currentSectionState } from '@/app/store';
 import { section } from '@/app/types';
-import Image from 'next/image';
+import useThrottle from '@/app/hooks/useThrottle';
 
 export default function Header() {
-  // 스크롤 업 다운시, 헤더 가시성
+  // 스크롤 방향에 따라 헤더 가시성
   const [visible, setVisible] = useState(true);
   const beforeScrollY = useRef(0);
-  const handleHeaderVisible = () => {
-    // console.log(currentY, beforeScrollY.current);
+  const handleHeaderVisible = useCallback(() => {
+    const currentY = window.scrollY;
     if (currentY > beforeScrollY.current && currentY > 50) setVisible(false);
     else setVisible(true);
     beforeScrollY.current = currentY;
-  };
-  const { currentY } = useScrollY(handleHeaderVisible);
+  }, []);
+
+  const throttledHandler = useThrottle(handleHeaderVisible, 250);
+  useEffect(() => {
+    window.addEventListener('scroll', throttledHandler);
+    return () => {
+      window.addEventListener('scroll', throttledHandler);
+    };
+  }, [throttledHandler]);
 
   // 유저가 보고있는 섹션으로 이동
   const [currentSection, setCurrentSection] = useRecoilState(currentSectionState);
@@ -85,7 +92,7 @@ export default function Header() {
               onClick={() => handleSectionChange(section.to)}>
               {section.name}
               <div
-                className={`absolute top-[145%] tablet:top-[140%] mobile:top-[128%] mobile:h-1 w-full h-2 ${
+                className={`absolute top-[145%] tablet:top-[120%] mobile:top-[128%] mobile:h-1 w-full h-2 ${
                   section.to === currentSection && !TOP_SECTION_VISIBLE ? 'bg-black' : ''
                 } ${
                   section.to === currentSection && TOP_SECTION_VISIBLE ? 'bg-white' : ''
