@@ -7,7 +7,7 @@ export default function Typing() {
   const word = useTyping(keyword);
 
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center text-white text-7xl font-bold whitespace-nowrap tracking-wide mobile:flex mobile:flex-wrap tablet:flex tablet:flex-wrap mobile:w-1/4 tablet:w-1/4  mobile:text-4xl tablet:text-6xl">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center text-white text-7xl font-bold whitespace-nowrap tracking-wide mobile:flex-col mobile:items-start mobile:w-[140px] tablet:flex-col tablet:items-start tablet:w-[240px] mobile:text-4xl tablet:text-6xl">
       <span className="">저는</span>
 
       <div className="flex mx-3 mobile:mx-0 mobile:my-3 tablet:mx-0 tablet:my-5">
