@@ -3,12 +3,11 @@
 import Image from 'next/image';
 import { useRecoilState } from 'recoil';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { sections } from '../../constant';
-import { borderColors, textColors } from '../../constant/dynamicStyles';
 import { scroll } from '@/app/utils';
 import { currentSectionState } from '@/app/store';
 import { section } from '@/app/types';
 import useThrottle from '@/app/hooks/useThrottle';
+import Menu from './Menu';
 
 export default function Header() {
   // 스크롤 방향에 따라 헤더 가시성
@@ -35,71 +34,42 @@ export default function Header() {
     scroll(destination);
     setCurrentSection(destination);
   };
-  // 특정 스크롤 위치에서 헤더색상 변경
-  const headColor = useRef('white');
+
   const TOP_SECTION_VISIBLE = currentSection === 'movie-section';
-  headColor.current = TOP_SECTION_VISIBLE ? 'white' : 'black';
 
   const [isMenuIconClicked, setMenuClick] = useState(false);
 
   if (visible) {
     return (
       <header
-        className={`fixed w-full z-50 flex justify-between items-center px-8 py-3 border-b mobile:px-4 mobile:flex-col mobile:items-start tablet:px-4 tablet:flex-col tablet:items-start ${
-          borderColors[headColor.current]
-        } ${
+        className={`fixed w-full z-50 flex justify-between items-center px-8 py-3 border-b mobile:px-4 mobile:flex-col mobile:items-start tablet:px-4 tablet:flex-col tablet:items-start
+        ${
           TOP_SECTION_VISIBLE
-            ? 'bg-transparent mobile:border-none'
-            : 'bg-white/30 backdrop-blur-sm backdrop-saturate-50'
-        } 
-        `}>
+            ? 'bg-transparent mobile:border-none border-white'
+            : 'bg-white/30 backdrop-blur-sm backdrop-saturate-50 border-black'
+        }`}>
         <div
-          className={`mobile:flex mobile:justify-between mobile:w-full mobile:items-center tablet:flex tablet:justify-between tablet:w-full tablet:items-center ${
-            !TOP_SECTION_VISIBLE ? 'mobile:hidden tablet:hidden' : ''
-          }`}>
+          className={`mobile:flex mobile:justify-between mobile:w-full mobile:items-center tablet:flex tablet:justify-between tablet:w-full tablet:items-center 
+          ${!TOP_SECTION_VISIBLE ? 'mobile:hidden tablet:hidden' : ''}`}>
           <h1
             onClick={() => handleSectionChange('movie-section')}
-            className={`w-fit text-3xl font-semibold cursor-pointer pt-2 pb-1 border-y whitespace-nowrap mobile:text-xl mobile:pt-2 ${
-              borderColors[headColor.current]
-            } ${textColors[headColor.current]}`}>
+            className={`w-fit text-3xl font-semibold cursor-pointer pt-2 pb-1 border-y whitespace-nowrap mobile:text-xl mobile:pt-2 
+            ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'}`}>
             채용시그널
           </h1>
-          <p
-            className={`laptop:hidden desktop:hidden whitespace-nowrap text-base transition cursor-pointer pb-1 ${
-              textColors[headColor.current]
-            }`}
+          <span
+            className={`laptop:hidden desktop:hidden whitespace-nowrap text-base transition cursor-pointer pb-1 
+            ${TOP_SECTION_VISIBLE ? 'white' : 'black'}`}
             onClick={() => setMenuClick(!isMenuIconClicked)}>
             {isMenuIconClicked ? (
               <Image src="/icons/close.png" alt="close" width={20} height={18} />
             ) : (
               <Image src="/icons/menu-white.png" alt="menu" width={22} height={28} />
             )}
-          </p>
+          </span>
         </div>
 
-        <nav
-          className={`relative flex justify-between text-2xl font-sans font-semibold mobile:mt-0 tablet:mt-3 ${
-            textColors[headColor.current]
-          } ${
-            !TOP_SECTION_VISIBLE || (TOP_SECTION_VISIBLE && isMenuIconClicked)
-              ? ''
-              : 'mobile:hidden tablet:hidden'
-          }`}>
-          {Object.entries(sections).map(([, section]) => (
-            <div
-              key={section.name}
-              className="relative ml-4 cursor-pointer mobile:text-[15px] mobile:ml-0 mobile:mr-3 tablet:ml-0 tablet:mr-4"
-              onClick={() => handleSectionChange(section.to)}>
-              {section.name}
-              <div
-                className={`absolute top-[145%] tablet:top-[120%] mobile:top-[128%] mobile:h-1 w-full h-2 ${
-                  section.to === currentSection && !TOP_SECTION_VISIBLE ? 'bg-black' : ''
-                } ${
-                  section.to === currentSection && TOP_SECTION_VISIBLE ? 'bg-white' : ''
-                } `}></div>
-            </div>
-          ))}
-        </nav>
+        <Menu isMenuIconClicked={isMenuIconClicked} />
       </header>
     );
   }
