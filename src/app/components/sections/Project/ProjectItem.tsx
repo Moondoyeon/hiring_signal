@@ -2,7 +2,6 @@
 
 import { IProject } from '@/app/types';
 import Image from 'next/image';
-import Link from 'next/link';
 
 interface Props {
   project: IProject;
@@ -12,11 +11,9 @@ interface Props {
 }
 export default function ProjectItem({ project, tabletWidth, mobileWidth, desktopWidth }: Props) {
   return (
-    <Link
+    <div
       key={String(project._id)}
-      href={project.link}
-      target="_blank"
-      className={`h-[400px] mr-6 ${desktopWidth} ${tabletWidth}  ${mobileWidth}  mobile:h-[240px] mobile:mr-2 tablet:mr-0 relative overflow-hidden`}>
+      className={`cursor-pointer h-[400px] relative overflow-hidden mr-6 ${desktopWidth} ${tabletWidth} ${mobileWidth} mobile:h-[380px] mobile:mr-2 tablet:mr-0 `}>
       <Image
         src={project.thumbnail}
         style={{ objectFit: 'cover' }}
@@ -33,6 +30,6 @@ export default function ProjectItem({ project, tabletWidth, mobileWidth, desktop
           {project.type}
         </span>
       </div>
-    </Link>
+    </div>
   );
 }

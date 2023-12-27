@@ -4,7 +4,7 @@ import Button from '../Form/Button';
 import { scroll } from '@/app/utils';
 import { currentSectionState, signalStatusState } from '@/app/store';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { RiHeartPulseFill, RiHeartPulseLine } from '@remixicon/react';
+import { RiFlashlightFill, RiFlashlightLine } from '@remixicon/react';
 import { useQuery } from '@tanstack/react-query';
 import { ISignalCount } from '@/app/types';
 import { getSignalCount } from '@/app/utils/fetcher';
@@ -21,15 +21,12 @@ export default function HelpButtons() {
 
   return (
     <div className={currentSection === 'movie-section' ? 'hidden' : ''}>
-      <Button
-        theme="black"
-        style={`mr-2 z-20 fixed ${bottom} right-16 transition hover:bg-white hover:text-black hover:border hover:border-black hover:border-solid`}
-        disabled>
+      <Button theme="black" style={`mr-2 z-20 fixed ${bottom} right-16 transition`} disabled>
         <div className="relative z-30">
           {sentSignal ? (
-            <RiHeartPulseFill size={36} color="#FF5995" className="mx-auto" />
+            <RiFlashlightFill size={36} color="#FF5995" className="mx-auto" />
           ) : (
-            <RiHeartPulseLine size={36} color="#DCDCDC" className="mx-auto" />
+            <RiFlashlightLine size={36} color="white" className="mx-auto" />
           )}
           <span className="text-[10px] absolute left-[70%] top-[75%]">
             {querySignalCount.data?.count}
@@ -42,7 +39,7 @@ export default function HelpButtons() {
           setCurrentSection('movie-section');
         }}
         theme="black"
-        style={`rotate-90 z-30 fixed ${bottom} right-4 hover:bg-white hover:text-black hover:border hover:border-black hover:border-solid`}>
+        style={`rotate-90 z-30 fixed ${bottom} right-4`}>
         &lt;
       </Button>
     </div>

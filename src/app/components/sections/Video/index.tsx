@@ -1,4 +1,4 @@
-import Typing from '../../Typing';
+import Typing from './Typing';
 import Video from './Video';
 import ClickButton from './ClickButton';
 import SectionContainer from '../../Container/SectionContainer';

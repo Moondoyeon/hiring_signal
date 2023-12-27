@@ -6,7 +6,7 @@ interface Props {
 }
 export default function CarouselCircleButtons({ listLength, curIdx, circleColor, move }: Props) {
   return (
-    <ul className="absolute left-1/2 -translate-x-[55%] mt-6 flex gap-4">
+    <ul className="absolute left-1/2 -translate-x-[50%] mt-6 flex gap-4">
       {Array.from({ length: listLength }).map((_, idx) => (
         <li
           key={idx}

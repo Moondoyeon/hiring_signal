@@ -2,8 +2,8 @@
 
 import { IWork } from '@/app/types';
 import Image from 'next/image';
-import HighlightBgColor from '../../HighlightBgColor';
-import Link from 'next/link';
+import { RiAddCircleFill } from '@remixicon/react';
+import useWhichDevice from '@/app/hooks/useWhichDevice';
 
 interface Props {
   work: IWork;
@@ -12,13 +12,15 @@ interface Props {
   tabletWidth: string;
 }
 export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth }: Props) {
+  const { isTablet, isDesktopOrLaptop } = useWhichDevice();
   return (
     <div
-      className={`h-[330px] flex justify-evenly py-6 px-4 ${desktopWidth} ${tabletWidth} tablet:px-0 border border-solid border-black mobile:flex-col mobile:h-auto ${mobileWidth} mobile:px-0 `}>
+      className={`cursor-pointer hover:bg-[#F1F1FF] transition duration-200 h-[330px] flex justify-evenly 
+      py-6 px-4 ${desktopWidth} ${tabletWidth} ${mobileWidth} border border-solid border-black mobile:flex-col mobile:h-auto mobile:px-0 tablet:px-0 `}>
       <Image
         className="basis-2/5 mx-6"
         src="/images/work-artwa.jpeg"
-        width={300}
+        width={isDesktopOrLaptop || isTablet ? 350 : 300}
         height={300}
         alt="work at artwa"
         draggable={false}
@@ -32,13 +34,10 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         <div className="w-full bg-black h-0.5 mb-4" />
         <p className="mb-16 mobile:h-1/5">{work.content}</p>
         {work.notionLink && (
-          <HighlightBgColor
-            willBg="before:bg-[#FF5995]"
-            customStyle="w-fit hover:text-black before:duration-75">
-            <Link href={work.notionLink} target="_blank" className="underline relative ">
-              상세설명링크
-            </Link>
-          </HighlightBgColor>
+          <div className="relative flex justify-end">
+            <RiAddCircleFill />
+            <span className="ml-1">더보기</span>
+          </div>
         )}
       </div>
     </div>

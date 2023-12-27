@@ -4,7 +4,6 @@
 import { useForm } from 'react-hook-form';
 import Label from '../../Form/Label';
 import Button from '../../Form/Button';
-import Image from 'next/image';
 import InputText from '../../Form/InputText';
 import Textarea from '../../Form/TextArea';
 import useInterSectionObserver from '@/app/hooks/useIntersectionObserver';
@@ -14,6 +13,7 @@ import { signalStatusState } from '@/app/store';
 import { useSetRecoilState } from 'recoil';
 import { postSignal } from '@/app/utils/fetcher';
 import { ISignalForm } from '@/app/types';
+import { RiFlashlightFill } from '@remixicon/react';
 
 export default function SignalForm() {
   const targetRef = useInterSectionObserver({
@@ -107,21 +107,11 @@ export default function SignalForm() {
         <Button
           type="submit"
           style="w-full py-2 px-5 text-2xl font-bold mobile:text-lg mobile:h-10">
-          <Image
-            src="/icons/signal.png"
-            alt="signal"
-            width={38}
-            height={20}
-            className="inline mr-2 pb-1"
-          />
-          SEND YOUR SIGNAL
-          <Image
-            src="/icons/signal.png"
-            alt="signal"
-            width={38}
-            height={20}
-            className="inline ml-1 pb-1"
-          />
+          <div className="flex justify-center items-center">
+            <RiFlashlightFill color="hotpink" className="mobile:pb-1" />
+            <span className="ml-1 pt-1 mobile:pt-0">SEND YOUR SIGNAL</span>
+            <RiFlashlightFill color="hotpink" className="mobile:pb-1" />
+          </div>
         </Button>
       </form>
     </section>

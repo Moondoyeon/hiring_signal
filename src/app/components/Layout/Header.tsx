@@ -15,7 +15,8 @@ export default function Header() {
   const [visible, setVisible] = useState(true);
   const beforeScrollY = useRef(0);
   const handleHeaderVisible = () => {
-    if (currentY > beforeScrollY.current) setVisible(false);
+    // console.log(currentY, beforeScrollY.current);
+    if (currentY > beforeScrollY.current && currentY > 50) setVisible(false);
     else setVisible(true);
     beforeScrollY.current = currentY;
   };
@@ -37,7 +38,7 @@ export default function Header() {
   if (visible) {
     return (
       <header
-        className={`fixed w-full z-50 flex justify-between items-center px-8 py-3 border-b mobile:px-4 mobile:flex-col mobile:items-start tablet:px-4 tablet:flex-col tablet:items-start font-['EF_watermelonSalad'] ${
+        className={`fixed w-full z-50 flex justify-between items-center px-8 py-3 border-b mobile:px-4 mobile:flex-col mobile:items-start tablet:px-4 tablet:flex-col tablet:items-start ${
           borderColors[headColor.current]
         } ${
           TOP_SECTION_VISIBLE
@@ -64,25 +65,27 @@ export default function Header() {
             {isMenuIconClicked ? (
               <Image src="/icons/close.png" alt="close" width={20} height={18} />
             ) : (
-              <Image src="/icons/menu-white.png" alt="menu" width={20} height={26} />
+              <Image src="/icons/menu-white.png" alt="menu" width={22} height={28} />
             )}
           </p>
         </div>
 
         <nav
-          className={`relative flex justify-between text-2xl font-semibold mobile:text-base mobile:mt-3 tablet:mt-3 tablet:text-2xl ${
+          className={`relative flex justify-between text-2xl font-sans font-semibold mobile:mt-0 tablet:mt-3 ${
+            textColors[headColor.current]
+          } ${
             !TOP_SECTION_VISIBLE || (TOP_SECTION_VISIBLE && isMenuIconClicked)
               ? ''
               : 'mobile:hidden tablet:hidden'
-          } ${textColors[headColor.current]}`}>
+          }`}>
           {Object.entries(sections).map(([, section]) => (
             <div
               key={section.name}
-              className="relative ml-4 cursor-pointer mobile:ml-0 mobile:mr-4 tablet:ml-0 tablet:mr-4"
+              className="relative ml-4 cursor-pointer mobile:text-[15px] mobile:ml-0 mobile:mr-3 tablet:ml-0 tablet:mr-4"
               onClick={() => handleSectionChange(section.to)}>
               {section.name}
               <div
-                className={`absolute top-[145%] tablet:top-[140%] mobile:top-[135%] mobile:h-1 w-full h-2 ${
+                className={`absolute top-[145%] tablet:top-[140%] mobile:top-[128%] mobile:h-1 w-full h-2 ${
                   section.to === currentSection && !TOP_SECTION_VISIBLE ? 'bg-black' : ''
                 } ${
                   section.to === currentSection && TOP_SECTION_VISIBLE ? 'bg-white' : ''

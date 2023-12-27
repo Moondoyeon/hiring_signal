@@ -15,11 +15,11 @@ interface Props {
 }
 export default function Content({ projects }: Props) {
   const CAROUSEL_ITEM_WIDTH = 580;
-  const CAROUSEL_ITEM_WIDTH_MOBILE = 318;
+  const CAROUSEL_ITEM_WIDTH_MOBILE = 328;
   const CAROUSEL_ITEM_WIDTH_TABLET = 800;
 
-  const { isMobile } = useWhichDevice();
-  const carouselCount = isMobile ? projects.length : Math.ceil(projects.length / 2);
+  const { isDesktopOrLaptop } = useWhichDevice();
+  const carouselCount = isDesktopOrLaptop ? Math.ceil(projects.length / 2) : projects.length;
   const { curIdx, next, prev, transitionStyles } = useCarousel(
     carouselCount,
     CAROUSEL_ITEM_WIDTH,
@@ -53,7 +53,7 @@ export default function Content({ projects }: Props) {
           <ProjectItem
             key={project._id}
             desktopWidth={'min-w-[580px]'}
-            mobileWidth={'mobile:min-w-[310px]'}
+            mobileWidth={'mobile:min-w-[320px]'}
             tabletWidth={'tablet:min-w-[800px]'}
             project={project}
           />
