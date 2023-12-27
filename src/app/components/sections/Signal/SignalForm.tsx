@@ -12,7 +12,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { signalStatusState } from '@/app/store';
 import { useSetRecoilState } from 'recoil';
 import { postSignal } from '@/app/utils/fetcher';
-import { ISignalForm } from '@/app/types';
+import { ISignalCount, ISignalForm } from '@/app/types';
 import { RiFlashlightFill } from '@remixicon/react';
 
 export default function SignalForm() {
@@ -41,7 +41,26 @@ export default function SignalForm() {
   const queryClient = useQueryClient();
   const signalMutation = useMutation({
     mutationFn: postSignal,
-    onSuccess: () => {
+    onMutate: async () => {
+      await queryClient.cancelQueries({ queryKey: ['signalCount'] });
+      const previous = queryClient.getQueriesData<ISignalCount>({ queryKey: ['signalCount'] });
+
+      queryClient.setQueriesData({ queryKey: ['signalCount'] }, (old: ISignalCount | undefined) => {
+        const newObj = { count: 0 };
+        if (old) {
+          let preValue = old.count;
+          preValue++;
+          newObj.count = preValue;
+        }
+        return newObj;
+      });
+
+      return { previous };
+    },
+    onError: (_, __, context) => {
+      queryClient.setQueriesData({ queryKey: ['signalCount'] }, context?.previous);
+    },
+    onSettled: () => {
       queryClient.invalidateQueries({ queryKey: ['signalCount'] });
     },
   });
@@ -49,8 +68,8 @@ export default function SignalForm() {
   const setSignalStatus = useSetRecoilState(signalStatusState);
 
   const handleSubmit = (data: ISignalForm) => {
-    setSignalStatus(true);
     signalMutation.mutate(data);
+    setSignalStatus(true);
     window.alert('시그널을 보내셨습니다 😎⚡️');
     reset({
       name: '',
@@ -68,7 +87,7 @@ export default function SignalForm() {
         <InputText<ISignalForm>
           id="name"
           name="name"
-          placeholder="YOUR NAME"
+          placeholder="COMPANY NAME"
           control={control}
           rules={{
             required: '반드시 입력해주세요.',
