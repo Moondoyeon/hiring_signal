@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: '채용시그널 | 문도연 포트폴리오 ',
   description: '채용시그널을 받길 염원하는 개발자 취준생의 포트폴리오 웹입니다',
   metadataBase: new URL('https://hiring-signal.vercel.app/'),
+  openGraph: {
+    images: [
+      {
+        url: 'https://hiring-signal.vercel.app/opengraph-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
