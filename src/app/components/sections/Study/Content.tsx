@@ -9,7 +9,7 @@ import StudyItem from './StudyItem';
 interface Props {
   contentName: string;
   list: IStudy[];
-  theme: 'bg-yellow-500' | 'bg-blue-500';
+  theme: 'bg-yellow-300' | 'bg-blue-300';
 }
 
 export default function Content({ contentName, list, theme }: Props) {

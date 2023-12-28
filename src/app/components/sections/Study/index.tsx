@@ -74,8 +74,8 @@ export default async function StudySection() {
     <SectionContainer observeSection="study-section" style="pt-48 mobile:pt-28">
       <h2 className="pb-12 text-4xl font-bold mobile:text-2xl mobile:pb-8">STUDY</h2>
       <div className="flex justify-between mobile:flex-col tablet:flex-col">
-        <Content contentName={'도서'} list={books} theme="bg-yellow-500" />
-        <Content contentName={'강의'} list={courses} theme="bg-blue-500" />
+        <Content contentName={'도서'} list={books} theme="bg-yellow-300" />
+        <Content contentName={'강의'} list={courses} theme="bg-blue-300" />
       </div>
     </SectionContainer>
   );

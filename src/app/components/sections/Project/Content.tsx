@@ -29,7 +29,7 @@ export default function Content({ projects }: Props) {
 
   const targetRef = useInterSectionObserver({
     handleIntersect: observeGlobalBgChange('purple-mode'),
-    threshold: 0.8,
+    threshold: 0.6,
     rootMargin: '0px 0px -100px 0px',
   });
 

@@ -62,9 +62,21 @@ export default function Header() {
             ${TOP_SECTION_VISIBLE ? 'white' : 'black'}`}
             onClick={() => setMenuClick(!isMenuIconClicked)}>
             {isMenuIconClicked ? (
-              <Image src="/icons/close.png" alt="close" width={20} height={18} />
+              <Image
+                src="/icons/close.png"
+                alt="close"
+                width={22}
+                height={20}
+                className="h-[20px] w-[22px]"
+              />
             ) : (
-              <Image src="/icons/menu-white.png" alt="menu" width={22} height={28} />
+              <Image
+                src="/icons/menu-white.png"
+                alt="menu"
+                width={24}
+                height={18}
+                className="h-[18px] w-[24px]"
+              />
             )}
           </span>
         </div>
