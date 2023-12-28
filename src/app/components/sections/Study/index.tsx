@@ -61,7 +61,7 @@ export default async function StudySection() {
     {
       _id: '657c1707a296c1a651063295',
       category: 'course',
-      title: '자바스크립트 알고리즘 문제풀이 입문',
+      title: '자바스크립트 알고리즘 입문',
       content:
         '기본적인 배열 메서드 활용 문제부터 완전탐색, 스택, 큐, 해시, 이분탐색, 정렬, DFS, BFS, DP 등 자료구조와 알고리즘 문제풀이를 진행했습니다. 문제를 해결하기 위한 논리적인 사고력을 키울 수 있었습니다. 특히 커스텀 훅을 만드는 것이 기존 대비 수월해졌습니다.',
       image_url: '/images/course-js-algorithm.png',

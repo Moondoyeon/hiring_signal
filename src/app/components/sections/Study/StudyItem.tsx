@@ -20,7 +20,13 @@ export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabl
         <div
           className={`w-28 h-28 ${theme} rounded-full mx-auto flex justify-center items-center mobile:w-20 mobile:h-20`}>
           <div className="relative w-24 h-24 mx-auto mobile:w-16 mobile:h-16">
-            <Image src={item.image_url} alt={item.title} fill={true} className="rounded-full" />
+            <Image
+              src={item.image_url}
+              alt={item.title}
+              fill={true}
+              className="rounded-full"
+              sizes="(max-width: 599px) 64px, 96px"
+            />
           </div>
         </div>
 
