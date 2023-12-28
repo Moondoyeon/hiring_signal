@@ -8,7 +8,7 @@ export default function Typing() {
 
   return (
     <div
-      className="absolute top-[45%] left-1/2 -translate-y-[45%] -translate-x-1/2 flex items-center text-white text-7xl font-bold mobile:text-5xl tablet:text-6xl
+      className="absolute top-[45%] left-1/2 -translate-y-[45%] -translate-x-1/2 flex items-center text-white text-7xl font-bold mobile:text-[40px] tablet:text-6xl
        whitespace-nowrap tracking-wide mobile:flex-col tablet:flex-col">
       <span>저는</span>
 

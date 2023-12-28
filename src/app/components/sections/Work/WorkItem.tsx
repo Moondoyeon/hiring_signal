@@ -4,6 +4,7 @@ import { IWork } from '@/app/types';
 import Image from 'next/image';
 import { RiAddCircleFill } from '@remixicon/react';
 import useWhichDevice from '@/app/hooks/useWhichDevice';
+// import useWhichDevice from '@/app/hooks/useWhichDevice';
 
 interface Props {
   work: IWork;
@@ -15,30 +16,31 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
   const { isTablet, isDesktopOrLaptop } = useWhichDevice();
   return (
     <div
-      className={`cursor-pointer hover:bg-[#F1F1FF] transition duration-200 h-[330px] flex justify-evenly 
-      py-6 px-4 ${desktopWidth} ${tabletWidth} ${mobileWidth} border border-solid border-black mobile:flex-col mobile:h-auto mobile:px-0 tablet:px-0 `}>
-      <Image
-        className="basis-2/5 mx-6"
-        src="/images/work-artwa.jpeg"
-        width={isDesktopOrLaptop || isTablet ? 350 : 300}
-        height={300}
-        alt="work at artwa"
-        draggable={false}
-      />
-
-      <div className="h-full basis-3/5 mx-6 mobile:mt-3">
-        <div className="flex justify-between h-1/2 mobile:h-1/5">
-          <span className="text-2xl font-bold mobile:text-xl">{work.companyName}</span>
-          <span className="text-lg mobile:text-base">{work.position}</span>
+      className={`cursor-pointer hover:bg-[#F1F1FF] transition duration-200 h-[330px] flex items-center justify-center
+      px-10 py-6 ${desktopWidth} ${tabletWidth} ${mobileWidth} border border-solid border-black mobile:flex-col mobile:h-[380px] mobile:p-2`}>
+      <div className="mobile:h-[100px] flex justify-center items-center my-6">
+        <Image
+          src={work.thumbnails}
+          alt="work experience"
+          draggable={false}
+          width={isDesktopOrLaptop ? 390 : isTablet ? 330 : 150}
+          height={isDesktopOrLaptop ? 400 : isTablet ? 400 : 100}
+          className="mr-6 mobile:mr-0"
+        />
+      </div>
+      <div className="basis-3/5 h-full p-4 mobile:flex-col mobile:relative mobile:h-[200px] mobile:py-2 ">
+        <div className="h-1/2 flex justify-between mobile:h-1/3">
+          <p className="text-2xl font-bold mobile:text-xl">{work.companyName}</p>
+          <p className="text-lg mobile:text-base">{work.position}</p>
         </div>
-        <div className="w-full bg-black h-0.5 mb-4" />
-        <p className="mb-16 mobile:h-1/5">{work.content}</p>
-        {work.notionLink && (
-          <div className="relative flex justify-end">
-            <RiAddCircleFill />
-            <span className="ml-1">더보기</span>
-          </div>
-        )}
+        <div className="h-1/3 mobile:h-1/3">
+          <div id="border" className="w-full bg-black h-0.5 mb-4" />
+          <p>{work.content}</p>
+        </div>
+        <div className="flex justify-end mobile:absolute top-[80%] left-[75%]">
+          <RiAddCircleFill />
+          <p className="pt-[2px] ml-1">더보기</p>
+        </div>
       </div>
     </div>
   );

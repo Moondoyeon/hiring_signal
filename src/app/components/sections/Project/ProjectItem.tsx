@@ -19,7 +19,7 @@ export default function ProjectItem({ project, tabletWidth, mobileWidth, desktop
         style={{ objectFit: 'cover' }}
         fill
         alt={project.projectName}
-        className="brightness-75 transition duration-200 linear hover:scale-125"
+        className="brightness-75 transition duration-300 linear hover:scale-110"
       />
 
       <div className="text-white ml-6">

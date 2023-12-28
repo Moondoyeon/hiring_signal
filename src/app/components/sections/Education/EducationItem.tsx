@@ -30,8 +30,8 @@ export default function EducationItem({ eduList }: Props) {
               </div>
               <div className="flex-col w-2/3 my-auto mobile:pr-4">
                 <p className="font-bold text-2xl mobile:text-lg">{edu.title}</p>
-                <p className="text-lg mobile:text-base">{edu.period}</p>
                 <p className="text-lg mobile:text-base">{edu.content}</p>
+                <p className="text-lg mobile:text-base">{edu.period}</p>
               </div>
             </div>
           </div>

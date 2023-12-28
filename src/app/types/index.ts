@@ -6,6 +6,7 @@ export interface IWork {
   content: string;
   notionLink: string;
   position: string;
+  thumbnails: string;
 }
 
 export interface IProject {
