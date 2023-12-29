@@ -34,7 +34,9 @@ export default async function ProjectSection() {
 
   return (
     <SectionContainer observeSection="project-section" threshold={0.8} style="pt-56 mobile:pt-20">
-      <h2 className="pb-12 text-4xl font-bold mobile:text-2xl mobile:pb-8">PROJECT</h2>
+      <h2 className="pb-12 text-4xl font-gown font-semibold mobile:text-2xl mobile:pb-8">
+        PROJECT
+      </h2>
       <Content projects={fake} />
     </SectionContainer>
   );

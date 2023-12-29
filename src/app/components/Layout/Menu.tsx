@@ -13,11 +13,13 @@ export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean
     scroll(destination);
     setCurrentSection(destination);
   };
-  const TOP_SECTION_VISIBLE = currentSection === 'movie-section';
+  const TOP_SECTION_VISIBLE =
+    currentSection === 'movie-section' || currentSection === 'work-section';
+
   return (
     <nav
-      className={`relative flex justify-between text-2xl font-sans font-semibold mobile:mt-0 tablet:mt-3 
-    ${TOP_SECTION_VISIBLE ? 'text-white' : 'text-black'} 
+      className={`relative flex justify-between mobile:mt-0 tablet:mt-0 
+    ${TOP_SECTION_VISIBLE ? 'text-white mobile:mt-2 tablet:mt-4' : 'text-black'} 
     ${
       !TOP_SECTION_VISIBLE || (TOP_SECTION_VISIBLE && isMenuIconClicked)
         ? ''
@@ -26,11 +28,11 @@ export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean
       {Object.entries(sections).map(([, section]) => (
         <div
           key={section.name}
-          className="relative ml-4 cursor-pointer mobile:text-[15px] mobile:ml-0 mobile:mr-3 tablet:ml-0 tablet:mr-4"
+          className="relative ml-4 cursor-pointer font-semibold text-2xl mobile:text-[15px] tablet:text-xl mobile:ml-0 mobile:mr-3 tablet:ml-0 tablet:mr-4"
           onClick={() => handleSectionChange(section.to)}>
           {section.name}
           <div
-            className={`absolute top-[145%] tablet:top-[120%] mobile:top-[128%] mobile:h-1 w-full h-2 
+            className={`absolute top-[145%] tablet:top-[128%] mobile:top-[128%] mobile:h-1 w-full h-1 
           ${section.to === currentSection && !TOP_SECTION_VISIBLE ? 'bg-black' : ''} 
           ${section.to === currentSection && TOP_SECTION_VISIBLE ? 'bg-white' : ''} `}
           />

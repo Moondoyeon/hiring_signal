@@ -34,7 +34,7 @@ export default function Content({ contentName, list, theme }: Props) {
 
   return (
     <div className="flex-col">
-      <h2 className="text-3xl font-semibold mb-4 mobile:text-xl font-sans">{contentName}</h2>
+      <h2 className="text-3xl font-semibold mb-4 mobile:text-xl font-sansKr">{contentName}</h2>
 
       <section className="relative flex-col w-[550px] mb-28 mobile:w-[350px] mobile:mx-auto tablet:mx-auto">
         <Carousel

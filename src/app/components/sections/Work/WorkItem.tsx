@@ -20,7 +20,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
       mobile:flex-col mobile:h-[380px] mobile:p-2 ${desktopWidth} ${tabletWidth} ${mobileWidth} ${
         work.notionLink ? 'cursor-pointer' : ''
       }`}>
-      <div className="flex justify-center items-center my-6 mobile:my-14 mobile:h-[120px] mobile:w-auto">
+      <div className="flex justify-center items-center my-6 mobile:my-10 mobile:h-[90px] mobile:w-auto tablet:w-auto">
         <Image
           src={work.thumbnails}
           alt="work experience"
@@ -29,11 +29,12 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
           height={0}
           className="mr-6 mobile:mr-0 w-full h-auto"
           sizes="(max-width: 599px) 300px, (max-width:1199px) 330px, 390px"
+          priority={work.companyName === '아트와'}
         />
       </div>
       <div className="basis-3/5 h-full p-4 mobile:flex-col mobile:relative tablet:relative mobile:h-[200px] mobile:py-2 ">
         <div className="h-1/2 flex justify-between mobile:h-1/3">
-          <p className="text-2xl font-bold mobile:text-xl">{work.companyName}</p>
+          <p className="font-gown text-2xl font-bold mobile:text-xl">{work.companyName}</p>
           <p className="text-lg mobile:text-base">{work.position}</p>
         </div>
         <div className="h-1/3 mobile:h-1/3">

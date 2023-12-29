@@ -4,6 +4,7 @@ import './globals.css';
 import Footer from './components/Layout/Footer';
 import RecoilRootWrapper from './components/Container/RecoilRootWrapper';
 import ReactQueryProviderWrapper from './components/Container/ReactQueryProviderWrapper';
+import { gown_batang, gown_dodum, noto_sans_kr, song_myung } from './fonts';
 
 export const metadata: Metadata = {
   title: '채용시그널 | 문도연 포트폴리오 ',
@@ -15,7 +16,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <RecoilRootWrapper>
       <ReactQueryProviderWrapper>
-        <html lang="en" className="dark z-0">
+        <html
+          lang="en"
+          className={`${noto_sans_kr.variable} ${gown_batang.variable} ${gown_dodum.variable} ${song_myung.variable}  dark z-0`}>
           <head>
             <meta
               name="google-site-verification"
@@ -26,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               content="fcc931ca848fefd19264bf52415acfb852135bb3"
             />
           </head>
-          <body className="h-screen">
+          <body className="h-screen ">
             <div className="h-auto min-h-full pb-20">
               <Header />
               <main>{children}</main>

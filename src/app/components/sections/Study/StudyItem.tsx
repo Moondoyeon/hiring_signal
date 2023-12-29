@@ -26,11 +26,15 @@ export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabl
               fill={true}
               className="rounded-full"
               sizes="(max-width: 599px) 64px, 96px"
+              priority={
+                item.title === '모던 자바스크립트 Deep Dive' || item.title === '코어 자바스크립트'
+              }
+              quality={60}
             />
           </div>
         </div>
 
-        <h3 className="text-2xl font-bold text-center my-8 mobile:my-6 mobile:text-[18px]">
+        <h3 className="font-gown text-2xl font-bold text-center my-8 mobile:my-6 mobile:text-[18px]">
           {item.title}
         </h3>
         <p className="text-lg mobile:text-base">{item.content}</p>

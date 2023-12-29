@@ -24,10 +24,11 @@ export default function ProjectItem({ project, tabletWidth, mobileWidth, desktop
         alt={project.projectName}
         sizes="(max-width:599px) 320px, (max-width:1199px),800px, 580px"
         className="brightness-75 transition duration-300 linear hover:scale-110"
+        priority={project.projectName !== '빌리지뭐'}
       />
 
       <div className="text-white ml-6">
-        <span className="absolute bottom-[18%] font-bold text-3xl mobile:text-2xl">
+        <span className="font-gown absolute bottom-[18%] font-bold text-3xl mobile:text-2xl">
           {project.projectName}
         </span>
         <span className="absolute bottom-[10%] font-light text-2xl mobile:text-lg">

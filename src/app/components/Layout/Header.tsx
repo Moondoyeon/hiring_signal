@@ -35,8 +35,8 @@ export default function Header() {
     setCurrentSection(destination);
   };
 
-  const TOP_SECTION_VISIBLE = currentSection === 'movie-section';
-
+  const TOP_SECTION_VISIBLE =
+    currentSection === 'movie-section' || currentSection === 'work-section';
   const [isMenuIconClicked, setMenuClick] = useState(false);
 
   if (visible) {
@@ -53,7 +53,7 @@ export default function Header() {
           ${!TOP_SECTION_VISIBLE ? 'mobile:hidden tablet:hidden' : ''}`}>
           <h1
             onClick={() => handleSectionChange('movie-section')}
-            className={`w-fit text-3xl font-semibold cursor-pointer pt-2 pb-1 border-y whitespace-nowrap mobile:text-xl mobile:pt-2 
+            className={`font-gown w-fit text-3xl cursor-pointer py-1 border-y whitespace-nowrap mobile:text-xl 
             ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'}`}>
             채용시그널
           </h1>
