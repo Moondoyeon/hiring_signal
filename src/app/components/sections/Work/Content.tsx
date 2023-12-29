@@ -14,7 +14,17 @@ export default function Content({ works }: Props) {
   const CAROUSEL_ITEM_WIDTH_MOBILE = 350;
   const CAROUSEL_ITEM_WIDTH_TABLET = 800;
 
-  const { curIdx, transitionStyles, next, prev } = useCarousel(
+  const {
+    curIdx,
+    transitionStyles,
+    next,
+    prev,
+    handleMouseDown,
+    handleMouseUp,
+    handleTouchStart,
+    handleTouchMove,
+    handleTouchEnd,
+  } = useCarousel(
     works.length,
     CAROUSEL_ITEM_WIDTH,
     CAROUSEL_ITEM_WIDTH_MOBILE,
@@ -37,6 +47,11 @@ export default function Content({ works }: Props) {
           desktopWidth={'max-w-[1280px]'}
           mobileWidth={'mobile:max-w-[350px]'}
           tabletWidth={'tablet:max-w-[800px]'}
+          handleMouseDown={handleMouseDown}
+          handleMouseUp={handleMouseUp}
+          handleTouchStart={handleTouchStart}
+          handleTouchMove={handleTouchMove}
+          handleTouchEnd={handleTouchEnd}
           moveStyle={transitionStyles}>
           {works.map((work) => (
             <WorkItem

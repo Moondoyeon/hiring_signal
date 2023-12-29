@@ -20,7 +20,17 @@ export default function Content({ projects }: Props) {
 
   const { isDesktopOrLaptop } = useWhichDevice();
   const carouselCount = isDesktopOrLaptop ? Math.ceil(projects.length / 2) : projects.length;
-  const { curIdx, next, prev, transitionStyles } = useCarousel(
+  const {
+    curIdx,
+    next,
+    prev,
+    transitionStyles,
+    handleMouseDown,
+    handleMouseUp,
+    handleTouchStart,
+    handleTouchMove,
+    handleTouchEnd,
+  } = useCarousel(
     carouselCount,
     CAROUSEL_ITEM_WIDTH,
     CAROUSEL_ITEM_WIDTH_MOBILE,
@@ -48,6 +58,11 @@ export default function Content({ projects }: Props) {
           desktopWidth={'max-w-[1280px]'}
           mobileWidth={'mobile:max-w-[380px]'}
           tabletWidth={'tablet:max-w-[800px]'}
+          handleMouseDown={handleMouseDown}
+          handleMouseUp={handleMouseUp}
+          handleTouchStart={handleTouchStart}
+          handleTouchMove={handleTouchMove}
+          handleTouchEnd={handleTouchEnd}
           moveStyle={transitionStyles}
           style="mobile:pt-4">
           {projects.map((project) => (

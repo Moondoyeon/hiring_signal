@@ -31,9 +31,9 @@ export default function useCarousel(n: number, desktopW: number, mobileW: number
   const [currentX, setCurrentX] = useState(0);
   const [beforeX, setBeforeX] = useState(0);
 
-  const SLIDE_MIN = 30;
+  const SLIDE_MIN = 50;
   const slide = () => {
-    if (currentX - beforeX < SLIDE_MIN) next();
+    if (currentX - beforeX < -SLIDE_MIN) next();
     if (currentX - beforeX > SLIDE_MIN) prev();
   };
   const getCurrentMouseX = (e: MouseEvent) => {
