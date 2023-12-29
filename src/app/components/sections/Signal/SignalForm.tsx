@@ -117,7 +117,7 @@ export default function SignalForm() {
         <Textarea<ISignalForm>
           id="message"
           name="message"
-          placeholder="YOUR SIGNAL MESSAGE"
+          placeholder="SIGNAL MESSAGE"
           control={control}
           rules={{ required: '반드시 입력해주세요.' }}
           errorStyle="pt-0 mobile:mb-2"
@@ -127,9 +127,9 @@ export default function SignalForm() {
           type="submit"
           style="w-full py-2 px-5 text-2xl font-bold mobile:text-lg mobile:h-10">
           <div className="flex justify-center items-center">
-            <RiFlashlightFill color="hotpink" className="mobile:pb-1" />
+            <RiFlashlightFill color="hotpink" />
             <span className="ml-1 pt-1 mobile:pt-0">SEND YOUR SIGNAL</span>
-            <RiFlashlightFill color="hotpink" className="mobile:pb-1" />
+            <RiFlashlightFill color="hotpink" />
           </div>
         </Button>
       </form>
