@@ -1,4 +1,4 @@
-import { sendEmail } from '@/app/config/nodemailer';
+import { sendEmail } from '@/config/nodemailer';
 import { MongoClient } from 'mongodb';
 import { NextRequest, NextResponse } from 'next/server';
 const DB_URI = process.env.DB_CONNECTION_STRING!;

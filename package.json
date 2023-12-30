@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "yarn eslint --fix src/",
+    "pretty": "yarn prettier --write src/"
   },
   "dependencies": {
     "@remixicon/react": "^4.0.1",
