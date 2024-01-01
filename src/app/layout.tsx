@@ -4,19 +4,34 @@ import './globals.css';
 import Footer from '@/components/Layout/Footer';
 import RecoilRootWrapper from '@/components/Container/RecoilRootWrapper';
 import ReactQueryProviderWrapper from '@/components/Container/ReactQueryProviderWrapper';
-import { gown_batang, gown_dodum, noto_sans_kr, song_myung } from './fonts';
+// import { gown_batang, noto_sans_kr } from './fonts';
 
+import { notoSansKr } from './fonts';
 export const metadata: Metadata = {
   title: '채용시그널 | 문도연 포트폴리오 ',
   description: '채용시그널을 받길 염원하는 개발자 취준생의 포트폴리오 웹입니다',
-  metadataBase: new URL('https://hiring-signal.vercel.app/'),
+  metadataBase: new URL('https://hiring-signal.vercel.app'),
 };
+
+// export const notoSansKr = localFont({
+//   src: [
+//     { path: 'fonts/NotoSansKR-Regular.ttf', weight: '400' },
+//     { path: 'fonts/NotoSansKR-SemiBold.ttf', weight: '600' },
+//     { path: 'fonts/NotoSansKR-Bold.ttf', weight: '700' },
+//   ],
+//   display: 'swap',
+// });
+// export const gowunBatang = localFont({
+//   src: [
+//     { path: 'fonts/GowunBatang-Regular.ttf', weight: '400' },
+//     { path: 'fonts/GowunBatang-Bold.ttf', weight: '700' },
+//   ],
+//   display: 'swap',
+// });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${noto_sans_kr.variable} ${gown_batang.variable} ${gown_dodum.variable} ${song_myung.variable}  dark z-0`}>
+    <html lang="en" className={`${notoSansKr.className} dark z-0`}>
       <head>
         <meta
           name="google-site-verification"

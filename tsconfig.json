@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -20,10 +20,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/app/*"]
     }
   },
-  "typeRoots": ["node_modules/@types", "src/app/types"],
+  "typeRoots": ["node_modules/@types", "src/types"],
   "include": [
     "next-env.d.ts",
     "**/*.ts",

@@ -3,12 +3,10 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      fontFamily: {
-        sansKr: ['var(--font-noto-sans-kr)'],
-        gown: ['var(--font-gown-batang)'],
-        gownDodum: ['var(--font-gown-dodum)'],
-        song: ['var(--font-song-myung)'],
-      },
+      // fontFamily: {
+      //   sansKr: ['var(--font-noto-sans-kr)'],
+      //   gown: ['var(--font-gown-batang)'],
+      // },
     },
     screens: {
       mobile: { max: '599px' },
