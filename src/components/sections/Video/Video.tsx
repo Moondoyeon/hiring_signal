@@ -10,8 +10,8 @@ export default function Video() {
       loop
       preload="auto"
       data-setup="{}">
-      <source src="/videos/sunset.mp4" type="video/mp4"></source>
-      <source src="/videos/sunsetOgv.ogv" type="video/ogv"></source>
+      <source src="/videos/signal.mp4" type="video/mp4"></source>
+      <source src="/videos/signalOgv.ogv" type="video/ogv"></source>
     </video>
   );
 }

@@ -50,8 +50,8 @@ export default function Content({ projects }: Props) {
         prev={prev}
         curIdx={curIdx}
         n={carouselCount}
-        leftStyle="bottom-[112%] left-[84%] mobile:left-[75%] mobile:bottom-[108%] mobile:w-10 mobile:h-10 tablet:left-[85%] tablet:bottom-[112%]"
-        rightStyle="bottom-[112%] left-[88.7%] mobile:left-[88%] mobile:bottom-[108%] mobile:w-10 mobile:h-10 tablet:left-[92%] tablet:bottom-[112%]"
+        leftStyle="bottom-[111%] left-[84%] mobile:left-[75%] mobile:bottom-[108%] mobile:w-10 mobile:h-10 tablet:left-[85%] tablet:bottom-[111%]"
+        rightStyle="bottom-[111%] left-[88.7%] mobile:left-[88%] mobile:bottom-[108%] mobile:w-10 mobile:h-10 tablet:left-[92%] tablet:bottom-[111%]"
       />
       <div className="mobile:flex mobile:justify-center tablet:flex tablet:justify-center">
         <Carousel

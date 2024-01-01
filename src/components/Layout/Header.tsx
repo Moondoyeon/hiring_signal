@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useRecoilState } from 'recoil';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { gowunBatang } from '@/app/fonts';
@@ -9,7 +8,7 @@ import { currentSectionState } from '@/recoil';
 import { section } from '@/types';
 import Menu from './Menu';
 import { scroll } from '@/utils';
-import { RiCloseFill, RiCloseLine, RiMenu3Line, RiMenuLine } from '@remixicon/react';
+import { RiCloseLine, RiMenuLine } from '@remixicon/react';
 
 export default function Header() {
   // 스크롤 방향에 따라 헤더 가시성
