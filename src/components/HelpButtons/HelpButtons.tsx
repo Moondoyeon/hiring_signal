@@ -18,7 +18,7 @@ export default function HelpButtons() {
   const sentSignal = useRecoilValue(signalStatusState);
 
   const [currentSection, setCurrentSection] = useRecoilState(currentSectionState);
-  const bottom = currentSection === 'signal-section' ? 'bottom-24' : 'bottom-4';
+  const bottom = currentSection === 'signal-section' ? 'bottom-28' : 'bottom-4';
 
   return (
     <div className={currentSection === 'movie-section' ? 'hidden' : ''}>
