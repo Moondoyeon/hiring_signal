@@ -8,10 +8,11 @@ import { ISignalCount } from '@/types';
 import { getSignalCount } from '@/utils/fetcher';
 import { currentSectionState, signalStatusState } from '@/recoil';
 import { scroll } from '@/utils';
+import { queryKeys } from '@/constant/queryKeys';
 
 export default function HelpButtons() {
   const querySignalCount = useQuery<ISignalCount>({
-    queryKey: ['signalCount'],
+    queryKey: [queryKeys.SIGNAL_COUNT],
     queryFn: getSignalCount,
   });
   const sentSignal = useRecoilValue(signalStatusState);

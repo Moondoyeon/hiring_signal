@@ -1,10 +1,10 @@
 'use client';
 
-import WorkItem from './WorkItem';
 import Carousel from '../../Carousel';
 import CarouselLeftRightButton from '../../Carousel/CarouselLeftRightButton';
 import { IWork } from '@/types';
 import useCarousel from '@/hooks/useCarousel';
+import WorkItem from './WorkItem';
 
 interface Props {
   works: IWork[];

@@ -1,7 +1,8 @@
 // import { connectDB } from '@/utils/database';
-import EducationItem from './EducationItem';
+
 import SectionContainer from '../../Container/SectionContainer';
 import { IEducation } from '@/types';
+import EducationItem from './EducationItem';
 
 export default async function EducationSection() {
   // const db = connectDB.db(process.env.DB_NAME);
@@ -33,7 +34,7 @@ export default async function EducationSection() {
   ];
 
   return (
-    <SectionContainer observeSection="education-section" style="pt-48 mobile:pt-20">
+    <SectionContainer observeSection="education-section" style="pt-40 mobile:pt-20">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-2xl mobile:pb-8">EDUCATION</h2>
       <EducationItem eduList={fake} />
     </SectionContainer>

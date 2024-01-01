@@ -1,7 +1,7 @@
+import SectionContainer from '../../Container/SectionContainer';
+import ClickButton from './ClickButton';
 import Typing from './Typing';
 import Video from './Video';
-import ClickButton from './ClickButton';
-import SectionContainer from '../../Container/SectionContainer';
 
 export default function VideoSection() {
   return (

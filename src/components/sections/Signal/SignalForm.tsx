@@ -14,6 +14,7 @@ import { postSignal } from '@/utils/fetcher';
 import { RiFlashlightFill } from '@remixicon/react';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { useSetRecoilState } from 'recoil';
+import { queryKeys } from '@/constant/queryKeys';
 
 export default function SignalForm() {
   const targetRef = useInterSectionObserver({
@@ -37,26 +38,31 @@ export default function SignalForm() {
   const signalMutation = useMutation({
     mutationFn: postSignal,
     onMutate: async () => {
-      await queryClient.cancelQueries({ queryKey: ['signalCount'] });
-      const previous = queryClient.getQueriesData<ISignalCount>({ queryKey: ['signalCount'] });
-
-      queryClient.setQueriesData({ queryKey: ['signalCount'] }, (old: ISignalCount | undefined) => {
-        const newObj = { count: 0 };
-        if (old) {
-          let preValue = old.count;
-          preValue++;
-          newObj.count = preValue;
-        }
-        return newObj;
+      await queryClient.cancelQueries({ queryKey: [queryKeys.SIGNAL_COUNT] });
+      const previous = queryClient.getQueriesData<ISignalCount>({
+        queryKey: [queryKeys.SIGNAL_COUNT],
       });
+
+      queryClient.setQueriesData(
+        { queryKey: [queryKeys.SIGNAL_COUNT] },
+        (old: ISignalCount | undefined) => {
+          const newObj = { count: 0 };
+          if (old) {
+            let preValue = old.count;
+            preValue++;
+            newObj.count = preValue;
+          }
+          return newObj;
+        },
+      );
 
       return { previous };
     },
     onError: (_, __, context) => {
-      queryClient.setQueriesData({ queryKey: ['signalCount'] }, context?.previous);
+      queryClient.setQueriesData({ queryKey: [queryKeys.SIGNAL_COUNT] }, context?.previous);
     },
     onSettled: () => {
-      queryClient.invalidateQueries({ queryKey: ['signalCount'] });
+      queryClient.invalidateQueries({ queryKey: [queryKeys.SIGNAL_COUNT] });
     },
   });
 

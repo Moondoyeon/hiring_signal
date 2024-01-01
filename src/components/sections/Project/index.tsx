@@ -1,7 +1,8 @@
 // import { connectDB } from '@/utils/database';
-import Content from './Content';
+
 import SectionContainer from '../../Container/SectionContainer';
 import { IProject } from '@/types';
+import Content from './Content';
 
 export default async function ProjectSection() {
   // const db = connectDB.db(process.env.DB_NAME);
@@ -33,7 +34,7 @@ export default async function ProjectSection() {
   ];
 
   return (
-    <SectionContainer observeSection="project-section" threshold={0.8} style="pt-56 mobile:pt-20">
+    <SectionContainer observeSection="project-section" threshold={0.8} style="pt-40 mobile:pt-20">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-2xl mobile:pb-8">PROJECT</h2>
       <Content projects={fake} />
     </SectionContainer>

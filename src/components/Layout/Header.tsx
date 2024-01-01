@@ -9,6 +9,7 @@ import { currentSectionState } from '@/recoil';
 import { section } from '@/types';
 import Menu from './Menu';
 import { scroll } from '@/utils';
+import { RiCloseFill, RiCloseLine, RiMenu3Line, RiMenuLine } from '@remixicon/react';
 
 export default function Header() {
   // 스크롤 방향에 따라 헤더 가시성
@@ -46,7 +47,7 @@ export default function Header() {
         className={`fixed w-full z-50 flex justify-between items-center px-8 py-3 border-b mobile:px-4 mobile:flex-col mobile:items-start tablet:px-4 tablet:flex-col tablet:items-start
         ${
           TOP_SECTION_VISIBLE
-            ? 'bg-transparent mobile:border-none border-white'
+            ? 'bg-transparent mobile:border-none tablet:border-none border-white'
             : 'bg-white/30 backdrop-blur-sm backdrop-saturate-50 border-black'
         }`}>
         <div
@@ -54,32 +55,20 @@ export default function Header() {
           ${!TOP_SECTION_VISIBLE ? 'mobile:hidden tablet:hidden' : ''}`}>
           <h1
             onClick={() => handleSectionChange('movie-section')}
-            className={`${
+            className={`w-fit text-3xl cursor-pointer py-1 border-y whitespace-nowrap mobile:text-xl 
+            ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'} ${
               gowunBatang.className
-            } w-fit text-3xl cursor-pointer py-1 border-y whitespace-nowrap mobile:text-xl 
-            ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'}`}>
+            }`}>
             채용시그널
           </h1>
           <span
-            className={`laptop:hidden desktop:hidden whitespace-nowrap text-base transition cursor-pointer pb-1 
+            className={`laptop:hidden desktop:hidden whitespace-nowrap text-base transition cursor-pointer  
             ${TOP_SECTION_VISIBLE ? 'white' : 'black'}`}
             onClick={() => setMenuClick(!isMenuIconClicked)}>
             {isMenuIconClicked ? (
-              <Image
-                src="/icons/close.png"
-                alt="close"
-                width={22}
-                height={20}
-                className="h-[20px] w-[22px]"
-              />
+              <RiCloseLine color="white" size={38} />
             ) : (
-              <Image
-                src="/icons/menu-white.png"
-                alt="menu"
-                width={24}
-                height={18}
-                className="h-[18px] w-[24px]"
-              />
+              <RiMenuLine color="white" size={32} />
             )}
           </span>
         </div>

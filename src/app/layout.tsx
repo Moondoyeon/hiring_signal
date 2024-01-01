@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Header from '@/components/Layout/Header';
-import Footer from '@/components/Layout/Footer';
 import RecoilRootWrapper from '@/components/Container/RecoilRootWrapper';
 import ReactQueryProviderWrapper from '@/components/Container/ReactQueryProviderWrapper';
 import { notoSansKr } from './fonts';
+import Header from '@/components/Layout/Header';
+import Footer from '@/components/Layout/Footer';
 
 export const metadata: Metadata = {
   title: '채용시그널 | 문도연 포트폴리오 ',
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta name="naver-site-verification" content="fcc931ca848fefd19264bf52415acfb852135bb3" />
       </head>
-      <body className="h-screen ">
+      <body className="h-screen">
         <RecoilRootWrapper>
           <ReactQueryProviderWrapper>
             <div className="h-auto min-h-full pb-20">

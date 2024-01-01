@@ -29,7 +29,7 @@ export default function SectionContainer({
   });
 
   return (
-    <section ref={targetRef} className={style}>
+    <section id={observeSection} ref={targetRef} className={style}>
       {children}
     </section>
   );
