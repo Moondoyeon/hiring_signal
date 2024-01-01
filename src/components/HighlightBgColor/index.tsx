@@ -1,7 +1,7 @@
 'use client';
 
-import { ReactNode } from 'react';
 import useBgColorAnimation from '@/hooks/useBgColorAnimation';
+import { ReactNode } from 'react';
 
 interface Props {
   bg?: string;

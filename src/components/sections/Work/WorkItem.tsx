@@ -1,10 +1,10 @@
 'use client';
 
-import { IWork } from '@/types';
 import Image from 'next/image';
 import { RiAddCircleFill } from '@remixicon/react';
 import Link from 'next/link';
-import { gowunBatang } from '@/fonts';
+import { gowunBatang } from '@/app/fonts';
+import { IWork } from '@/types';
 
 interface Props {
   work: IWork;

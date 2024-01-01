@@ -1,10 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-import HighlightBgColor from '@/components/HighlightBgColor';
+import HighlightBgColor from '../../HighlightBgColor';
 import { eduItemBgStyles } from '@/constant/dynamicStyles';
 import { IEducation } from '@/types';
-import { gowunBatang } from '@/fonts';
+import { gowunBatang } from '@/app/fonts';
 
 interface Props {
   eduList: IEducation[];

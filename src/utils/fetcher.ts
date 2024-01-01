@@ -1,4 +1,4 @@
-import { ISignalForm } from '../types';
+import { ISignalForm } from '@/types';
 
 export const getSignalCount = async () => {
   const res = await fetch(`/api/signal`, { method: 'GET' }).then((r) => r.json());

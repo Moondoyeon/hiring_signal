@@ -1,4 +1,4 @@
-import { section } from '../types';
+import { section } from '@/types';
 
 interface setionValue {
   name: string;

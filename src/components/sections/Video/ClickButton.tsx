@@ -1,7 +1,8 @@
 'use client';
-import Image from 'next/image';
-import { scroll } from '@/utils';
 import { currentSectionState } from '@/recoil';
+import { scroll } from '@/utils';
+import Image from 'next/image';
+
 import { useSetRecoilState } from 'recoil';
 
 export default function ClickButton() {

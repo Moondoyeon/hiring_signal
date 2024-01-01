@@ -5,16 +5,15 @@ import { useForm } from 'react-hook-form';
 import Label from '../../Form/Label';
 import Button from '../../Form/Button';
 import InputText from '../../Form/InputText';
-
-import useInterSectionObserver from '@/hooks/useIntersectionObserver';
-import { observeGlobalBgChange } from '@/utils';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { signalStatusState } from '@/recoil';
-import { useSetRecoilState } from 'recoil';
-import { postSignal } from '@/utils/fetcher';
-import { ISignalCount, ISignalForm } from '@/types';
-import { RiFlashlightFill } from '@remixicon/react';
 import Textarea from '@/components/Form/TextArea';
+import useInterSectionObserver from '@/hooks/useIntersectionObserver';
+import { signalStatusState } from '@/recoil';
+import { ISignalForm, ISignalCount } from '@/types';
+import { observeGlobalBgChange } from '@/utils';
+import { postSignal } from '@/utils/fetcher';
+import { RiFlashlightFill } from '@remixicon/react';
+import { useQueryClient, useMutation } from '@tanstack/react-query';
+import { useSetRecoilState } from 'recoil';
 
 export default function SignalForm() {
   const targetRef = useInterSectionObserver({

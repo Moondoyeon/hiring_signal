@@ -1,6 +1,6 @@
 'use client';
 
-import { gowunBatang } from '@/fonts';
+import { gowunBatang } from '@/app/fonts';
 import { IStudy } from '@/types';
 import Image from 'next/image';
 

@@ -1,7 +1,7 @@
 // import { connectDB } from '@/utils/database';
+import { IStudy } from '@/types';
 import SectionContainer from '../../Container/SectionContainer';
 import Content from './Content';
-import { IStudy } from '@/types';
 
 export default async function StudySection() {
   // const db = connectDB.db(process.env.DB_NAME);

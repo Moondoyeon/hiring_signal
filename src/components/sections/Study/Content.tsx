@@ -1,10 +1,9 @@
 'use client';
-import useCarousel from '@/hooks/useCarousel';
 import { IStudy } from '@/types';
-
 import Carousel from '../../Carousel';
 import CarouselCircleButtons from '../../Carousel/CarouselCircleButtons';
 import StudyItem from './StudyItem';
+import useCarousel from '@/hooks/useCarousel';
 
 interface Props {
   contentName: string;

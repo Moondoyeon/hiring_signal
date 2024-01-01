@@ -3,12 +3,12 @@
 import Image from 'next/image';
 import { useRecoilState } from 'recoil';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { scroll } from '@/utils';
+import { gowunBatang } from '@/app/fonts';
+import useThrottle from '@/hooks/useThrottle';
 import { currentSectionState } from '@/recoil';
 import { section } from '@/types';
-import useThrottle from '@/hooks/useThrottle';
 import Menu from './Menu';
-import { gowunBatang } from '@/fonts';
+import { scroll } from '@/utils';
 
 export default function Header() {
   // 스크롤 방향에 따라 헤더 가시성

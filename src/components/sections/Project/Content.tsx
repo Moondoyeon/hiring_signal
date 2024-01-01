@@ -1,14 +1,14 @@
 'use client';
 
+import Carousel from '@/components/Carousel';
+import CarouselLeftRightButton from '@/components/Carousel/CarouselLeftRightButton';
 import useCarousel from '@/hooks/useCarousel';
-import { IProject } from '@/types';
 import useInterSectionObserver from '@/hooks/useIntersectionObserver';
+import useWhichDevice from '@/hooks/useWhichDevice';
+
 import { observeGlobalBgChange } from '@/utils';
 import ProjectItem from './ProjectItem';
-
-import Carousel from '../../Carousel';
-import CarouselLeftRightButton from '../../Carousel/CarouselLeftRightButton';
-import useWhichDevice from '@/hooks/useWhichDevice';
+import { IProject } from '@/types';
 
 interface Props {
   projects: IProject[];
