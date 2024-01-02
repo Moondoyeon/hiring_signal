@@ -20,7 +20,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
       mobile:flex-col mobile:h-[380px] mobile:p-2 ${desktopWidth} ${tabletWidth} ${mobileWidth} ${
         work.notionLink ? 'cursor-pointer' : ''
       }`}>
-      <div className="flex justify-center items-center my-6 mobile:my-10 mobile:h-[90px] mobile:w-auto tablet:w-auto">
+      <div className="flex justify-center items-center my-6 mobile:my-10 mobile:h-[90px] mobile:w-auto tablet:w-auto tablet:mr-4">
         <Image
           src={work.thumbnails}
           alt="work experience"
