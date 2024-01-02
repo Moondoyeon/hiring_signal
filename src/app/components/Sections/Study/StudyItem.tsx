@@ -1,6 +1,6 @@
 'use client';
 
-import { gowunBatang } from '@/app/fonts';
+// import { gowunBatang } from '@/app/fonts';
 import { IStudy } from '@/app/types';
 import Image from 'next/image';
 
@@ -35,8 +35,7 @@ export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabl
           </div>
         </div>
 
-        <h3
-          className={`${gowunBatang.className} text-2xl font-bold text-center mt-12 mb-8 mobile:my-6 mobile:text-[18px]`}>
+        <h3 className={`text-2xl font-bold text-center mt-12 mb-8 mobile:my-6 mobile:text-[18px]`}>
           {item.title}
         </h3>
         <p className="text-lg mobile:text-base">{item.content}</p>
