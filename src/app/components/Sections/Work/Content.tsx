@@ -12,7 +12,7 @@ interface Props {
 export default function Content({ works }: Props) {
   const CAROUSEL_ITEM_WIDTH = 1280;
   const CAROUSEL_ITEM_WIDTH_MOBILE = 350;
-  const CAROUSEL_ITEM_WIDTH_TABLET = 800;
+  const CAROUSEL_ITEM_WIDTH_TABLET = 760;
 
   const {
     curIdx,
@@ -46,7 +46,7 @@ export default function Content({ works }: Props) {
         <Carousel
           desktopWidth={'max-w-[1280px]'}
           mobileWidth={'mobile:max-w-[350px]'}
-          tabletWidth={'tablet:max-w-[800px]'}
+          tabletWidth={'tablet:max-w-[760px]'}
           handleMouseDown={handleMouseDown}
           handleMouseUp={handleMouseUp}
           handleTouchStart={handleTouchStart}
@@ -59,7 +59,7 @@ export default function Content({ works }: Props) {
               work={work}
               desktopWidth={'min-w-[1280px]'}
               mobileWidth={'mobile:min-w-[350px]'}
-              tabletWidth={'tablet:min-w-[800px]'}
+              tabletWidth={'tablet:min-w-[760px]'}
             />
           ))}
         </Carousel>
