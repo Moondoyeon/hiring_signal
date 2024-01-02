@@ -13,7 +13,7 @@ export default async function Home() {
 
       <VideoSection />
       <div className="flex justify-center items-center">
-        <div className="flex-col">
+        <div className="flex-col mobile:w-[95%] tablet:w-[95%]">
           <WorkSection />
           <ProjectSection />
           <EducationSection />
