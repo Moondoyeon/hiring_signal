@@ -1,16 +1,16 @@
 'use client';
 
-import { sections } from '@/app/constant';
+import { SECTION } from '@/app/constant';
 import { section } from '@/app/types';
 import { useRecoilState } from 'recoil';
 import { currentSectionState } from '@/app/store';
-import { scroll } from '@/app/utils';
+import { handleScrollView } from '@/app/utils';
 
 export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean }) {
   const [currentSection, setCurrentSection] = useRecoilState(currentSectionState);
 
   const handleSectionChange = (destination: section) => {
-    scroll(destination);
+    handleScrollView(destination);
     setCurrentSection(destination);
   };
   const TOP_SECTION_VISIBLE =
@@ -25,7 +25,7 @@ export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean
         ? ''
         : 'mobile:hidden tablet:hidden'
     }`}>
-      {Object.entries(sections).map(([, section]) => (
+      {SECTION.map((section) => (
         <div
           key={section.name}
           className="relative ml-4 cursor-pointer font-medium text-2xl mobile:text-[15px] tablet:text-xl mobile:ml-0 mobile:mr-3 tablet:ml-0 tablet:mr-4"
@@ -33,8 +33,8 @@ export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean
           {section.name}
           <div
             className={`absolute top-[145%] tablet:top-[128%] mobile:top-[128%] mobile:h-1 w-full h-1 
-          ${section.to === currentSection && !TOP_SECTION_VISIBLE ? 'bg-black' : ''} 
-          ${section.to === currentSection && TOP_SECTION_VISIBLE ? 'bg-white' : ''} `}
+       ${section.to === currentSection && !TOP_SECTION_VISIBLE ? 'bg-black' : ''} 
+       ${section.to === currentSection && TOP_SECTION_VISIBLE ? 'bg-white' : ''} `}
           />
         </div>
       ))}

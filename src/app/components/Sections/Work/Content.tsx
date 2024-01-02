@@ -38,7 +38,7 @@ export default function Content({ works }: Props) {
         prev={prev}
         curIdx={curIdx}
         n={works.length}
-        leftStyle="top-[40%] left-[-2%] mobile:top-[-18%] mobile:left-[75%] mobile:w-10 mobile:h-10 tablet:left-[85%] tablet:top-[-28%]"
+        leftStyle="top-[40%] left-[-2%] mobile:top-[-18%] mobile:left-[75%] mobile:w-10 mobile:h-10 tablet:left-[80%] tablet:top-[-28%]"
         rightStyle="top-[40%] left-[98%] mobile:top-[-18%] mobile:left-[88%] mobile:w-10 mobile:h-10 tablet:left-[92%] tablet:top-[-28%]"
       />
 

@@ -42,6 +42,11 @@ export type section =
   | 'study-section'
   | 'signal-section';
 
+export interface ISection {
+  name: string;
+  to: section;
+}
+
 export type MouseEventType<T = Element> = MouseEvent<T>;
 export type TouchEventType<T = Element> = TouchEvent<T>;
 

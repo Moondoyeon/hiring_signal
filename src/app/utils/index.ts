@@ -9,6 +9,6 @@ export const observeGlobalBgChange = (mode: string) => {
 };
 
 // DOM API
-export const scroll = (id: string) => {
+export const handleScrollView = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 };

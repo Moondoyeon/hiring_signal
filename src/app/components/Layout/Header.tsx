@@ -5,7 +5,7 @@ import { RiCloseFill, RiMenuLine } from '@remixicon/react';
 import useThrottle from '@/app/hooks/useThrottle';
 import { section } from '@/app/types';
 import Menu from './Menu';
-import { scroll } from '@/app/utils';
+import { handleScrollView } from '@/app/utils';
 import { useRecoilState } from 'recoil';
 import { currentSectionState } from '@/app/store';
 
@@ -31,7 +31,7 @@ export default function Header() {
   // 유저가 보고있는 섹션으로 이동
   const [currentSection, setCurrentSection] = useRecoilState(currentSectionState);
   const handleSectionChange = (destination: section) => {
-    scroll(destination);
+    handleScrollView(destination);
     setCurrentSection(destination);
   };
 

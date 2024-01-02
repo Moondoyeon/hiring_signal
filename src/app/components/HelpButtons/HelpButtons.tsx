@@ -5,11 +5,10 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { RiFlashlightFill, RiFlashlightLine } from '@remixicon/react';
 import { useQuery } from '@tanstack/react-query';
 import { ISignalCount } from '@/app/types';
-
-import { queryKeys } from '@/app/constant/queryKeys';
+import { queryKeys } from '@/app/constant';
 import { signalStatusState, currentSectionState } from '@/app/store';
 import { getSignalCount } from '@/app/utils/fetcher';
-import { scroll } from '@/app/utils';
+import { handleScrollView } from '@/app/utils';
 
 export default function HelpButtons() {
   const querySignalCount = useQuery<ISignalCount>({
@@ -36,7 +35,7 @@ export default function HelpButtons() {
       </Button>
       <Button
         onClick={() => {
-          scroll('movie-section');
+          handleScrollView('movie-section');
           setCurrentSection('movie-section');
         }}
         theme="black"
