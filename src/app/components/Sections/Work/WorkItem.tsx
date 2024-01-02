@@ -33,7 +33,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         />
       </div>
       <div className="basis-3/5 h-full p-4 mobile:flex-col mobile:relative tablet:relative mobile:h-[200px] mobile:py-2 ">
-        <div className="h-1/2 flex justify-between mobile:h-1/3 items-center">
+        <div className="h-1/2 flex justify-between mobile:h-1/3 mobile:items-center">
           <p className="text-2xl font-semibold mobile:text-xl">{work.companyName}</p>
           <p className="text-lg mobile:text-base">{work.position}</p>
         </div>
