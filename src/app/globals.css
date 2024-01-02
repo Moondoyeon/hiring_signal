@@ -2,20 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import 'tailwindcss/base'; */
-/* @import 'tailwindcss/components'; */
-/* @import './base.css'; */
-/* @import 'tailwindcss/utilities'; */
-
-/* @font-face {
-  font-family: 'EF_watermelonSalad';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_watermelonSalad.woff2')
-    format('woff2');
-  font-weight: normal;
-  font-style: normal;
-} */
 /* 배경색 좌에서 우로 채우는 효과 */
-
 .bg-color-container {
   position: relative;
 }
@@ -33,9 +20,8 @@
 .bg-color-container.hovered::before {
   transform: scaleX(1);
 }
-.bg-color-container:hover {
-}
 
+/* 전역 배경 색깔 */
 .peach-mode {
   animation-name: globalBgToPeach;
   animation-duration: 0.2s;
@@ -46,7 +32,7 @@
   animation-duration: 0.1s;
   animation-fill-mode: forwards;
 }
-/* 전역 배경 색깔 */
+
 @keyframes globalBgToPurple {
   from {
     background-color: white;
@@ -83,16 +69,6 @@ figure,
 p,
 pre {
   margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  /* font-family: EF_watermelonSalad; */
-  /* font-family: var(--font-gown-batang); */
 }
 
 ol,

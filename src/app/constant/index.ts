@@ -19,7 +19,7 @@ export const SECTION: ISection[] = [
     to: 'signal-section',
   },
 ];
-export const keyword = ['집요한', '꽤 유쾌한', '그냥 꾸준한'];
+export const keyword = ['보완해가는', '꽤 유쾌한', '계속 노력하는'];
 
 export const queryKeys = {
   SIGNAL_COUNT: 'signalCount',

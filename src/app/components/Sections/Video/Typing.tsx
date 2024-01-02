@@ -2,7 +2,6 @@
 
 import { keyword } from '@/app/constant';
 import useTyping from '@/app/hooks/useTyping';
-
 export default function Typing() {
   const word = useTyping(keyword);
 
@@ -14,7 +13,7 @@ export default function Typing() {
 
       <div className=" flex mx-3 mobile:mx-0 mobile:my-3 tablet:mx-0 tablet:my-5">
         <span> &lt;</span>
-        <span className="mx-3 text-[#00DD99]">{word}</span>
+        <span className="mx-3 text-[#59E1FF]">{word}</span>
         <span> &#47; &gt;</span>
       </div>
 
