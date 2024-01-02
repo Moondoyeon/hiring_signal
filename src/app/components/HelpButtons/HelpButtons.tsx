@@ -19,11 +19,10 @@ export default function HelpButtons() {
   const sentSignal = useRecoilValue(signalStatusState);
 
   const [currentSection, setCurrentSection] = useRecoilState(currentSectionState);
-  const bottom = currentSection === 'signal-section' ? 'bottom-28' : 'bottom-4';
 
   return (
     <div className={currentSection === 'movie-section' ? 'hidden' : ''}>
-      <Button theme="black" style={`mr-2 z-20 fixed ${bottom} right-16 transition`} disabled>
+      <Button theme="black" style={`mr-2 z-20 fixed bottom-8 right-16 transition`} disabled>
         <div className="relative z-30">
           {sentSignal ? (
             <RiFlashlightFill size={36} color="#FF5995" className="mx-auto" />
@@ -41,7 +40,7 @@ export default function HelpButtons() {
           setCurrentSection('movie-section');
         }}
         theme="black"
-        style={`rotate-90 z-30 fixed ${bottom} right-4`}>
+        style={`rotate-90 z-30 fixed bottom-8 right-4`}>
         &lt;
       </Button>
     </div>
