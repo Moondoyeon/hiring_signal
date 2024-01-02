@@ -15,18 +15,18 @@ import localFont from 'next/font/local';
 
 export const notoSansKr = localFont({
   src: [
-    { path: './src/app/fonts/NotoSansKR-light.ttf', weight: '300' },
-    { path: './src/app/fonts/NotoSansKR-Regular.ttf', weight: '400' },
-    { path: './src/app/fonts/NotoSansKR-Medium.ttf', weight: '500' },
-    { path: './src/app/fonts/NotoSansKR-SemiBold.ttf', weight: '600' },
-    { path: './src/app/fonts/NotoSansKR-Bold.ttf', weight: '700' },
+    { path: 'src/app/fonts/NotoSansKR-light.ttf', weight: '300' },
+    { path: 'src/app/fonts/NotoSansKR-Regular.ttf', weight: '400' },
+    { path: 'src/app/fonts/NotoSansKR-Medium.ttf', weight: '500' },
+    { path: 'src/app/fonts/NotoSansKR-SemiBold.ttf', weight: '600' },
+    { path: 'src/app/fonts/NotoSansKR-Bold.ttf', weight: '700' },
   ],
   display: 'swap',
 });
 export const gowunBatang = localFont({
   src: [
-    { path: './src/app/fonts/GowunBatang-Regular.ttf', weight: '400' },
-    { path: './src/app/fonts/GowunBatang-Bold.ttf', weight: '700' },
+    { path: 'src/app/fonts/GowunBatang-Regular.ttf', weight: '400' },
+    { path: 'src/app/fonts/GowunBatang-Bold.ttf', weight: '700' },
   ],
   display: 'swap',
 });
