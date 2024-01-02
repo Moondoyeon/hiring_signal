@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { RiAddCircleFill } from '@remixicon/react';
 import Link from 'next/link';
 import { IWork } from '@/app/types';
-// import { gowunBatang } from '@/app/fonts';
 
 interface Props {
   work: IWork;
@@ -34,8 +33,8 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         />
       </div>
       <div className="basis-3/5 h-full p-4 mobile:flex-col mobile:relative tablet:relative mobile:h-[200px] mobile:py-2 ">
-        <div className="h-1/2 flex justify-between mobile:h-1/3">
-          <p className="font-hahmlet text-2xl font-medium mobile:text-xl">{work.companyName}</p>
+        <div className="h-1/2 flex justify-between mobile:h-1/3 items-center">
+          <p className="text-2xl font-semibold mobile:text-xl">{work.companyName}</p>
           <p className="text-lg mobile:text-base">{work.position}</p>
         </div>
         <div className="h-1/3 mobile:h-1/3">

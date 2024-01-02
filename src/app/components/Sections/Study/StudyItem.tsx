@@ -1,6 +1,5 @@
 'use client';
 
-// import { gowunBatang } from '@/app/fonts';
 import { IStudy } from '@/app/types';
 import Image from 'next/image';
 
@@ -16,7 +15,7 @@ export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabl
   return (
     <div
       key={String(item._id)}
-      className={`cursor-pointer min-w-[550px] h-auto flex justify-center items-start py-16 ${desktopWidth} ${tabletWidth} ${mobileWidth} border-black border-solid border`}>
+      className={`cursor-pointer min-w-[550px] h-auto flex justify-center items-start py-12 ${desktopWidth} ${tabletWidth} ${mobileWidth} border-black border-solid border`}>
       <div className="flex-col h-auto w-[85%]">
         <div
           className={`w-28 h-28 ${theme} rounded-full mx-auto flex justify-center items-center mobile:w-20 mobile:h-20`}>
@@ -35,7 +34,7 @@ export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabl
           </div>
         </div>
 
-        <h3 className="font-hahmlet text-2xl font-semibold text-center mt-12 mb-8 mobile:my-6 mobile:text-[18px]">
+        <h3 className="text-2xl font-semibold text-center mt-12 mb-8 mobile:my-6 mobile:text-[18px]">
           {item.title}
         </h3>
         <p className="text-lg mobile:text-base">{item.content}</p>

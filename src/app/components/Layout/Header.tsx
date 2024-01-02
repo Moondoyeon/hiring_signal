@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { RiCloseLine, RiMenuLine } from '@remixicon/react';
+import { RiCloseFill, RiMenuLine } from '@remixicon/react';
 import useThrottle from '@/app/hooks/useThrottle';
 import { section } from '@/app/types';
 import Menu from './Menu';
@@ -53,7 +53,7 @@ export default function Header() {
           ${!TOP_SECTION_VISIBLE ? 'mobile:hidden tablet:hidden' : ''}`}>
           <h1
             onClick={() => handleSectionChange('movie-section')}
-            className={`font-hahmlet w-fit text-3xl cursor-pointer py-1 border-y whitespace-nowrap mobile:text-xl 
+            className={`w-fit text-3xl cursor-pointer pb-1 mobile:py-1 tablet:pb-1 border-y whitespace-nowrap mobile:text-xl 
             ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'} 
            `}>
             채용시그널
@@ -63,9 +63,11 @@ export default function Header() {
             ${TOP_SECTION_VISIBLE ? 'white' : 'black'}`}
             onClick={() => setMenuClick(!isMenuIconClicked)}>
             {isMenuIconClicked ? (
-              <RiCloseLine color="white" size={38} />
+              <RiCloseFill color="white" size={36} />
             ) : (
-              <RiMenuLine color="white" size={32} />
+              <div className="mr-1">
+                <RiMenuLine color="white" size={28} />
+              </div>
             )}
           </span>
         </div>

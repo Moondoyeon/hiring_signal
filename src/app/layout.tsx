@@ -4,7 +4,7 @@ import RecoilRootWrapper from '@/app/components/Container/RecoilRootWrapper';
 import Footer from '@/app/components/Layout/Footer';
 import Header from '@/app/components/Layout/Header';
 import './globals.css';
-import { hahmlet, noto_sans_kr } from './fonts';
+import { noto_sans_kr } from './fonts';
 
 export const metadata: Metadata = {
   title: '채용시그널 | 문도연 포트폴리오 ',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`dark z-0 ${noto_sans_kr.variable} ${hahmlet.variable}`}>
+    <html lang="en" className={`z-0 ${noto_sans_kr.variable}`}>
       <head>
         <meta
           name="google-site-verification"
@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta name="naver-site-verification" content="fcc931ca848fefd19264bf52415acfb852135bb3" />
       </head>
-      <body className="h-screen">
+      <body className="h-screen font-sansKR">
         <RecoilRootWrapper>
           <ReactQueryProviderWrapper>
             <div className="h-auto min-h-full pb-20">
