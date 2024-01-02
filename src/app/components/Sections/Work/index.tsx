@@ -30,9 +30,8 @@ export default async function WorkSection() {
   ];
 
   return (
-    <SectionContainer observeSection="work-section" style="pt-40 mobile:pt-20">
+    <SectionContainer observeSection="work-section" style="pt-40 mobile:pt-20 mobile:px-3">
       <h2 className="pb-12 text-4xl font-gown font-semibold mobile:text-2xl mobile:pb-8">WORK</h2>
-
       <Content works={fake} />
     </SectionContainer>
   );

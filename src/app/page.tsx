@@ -12,8 +12,8 @@ export default async function Home() {
       <HelpButtons />
 
       <VideoSection />
-      <div className="flex justify-center items-center ">
-        <div className="flex-col mobile:px-3">
+      <div className="flex justify-center items-center">
+        <div className="flex-col">
           <WorkSection />
           <ProjectSection />
           <EducationSection />
