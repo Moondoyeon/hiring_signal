@@ -71,8 +71,13 @@ export default async function StudySection() {
   const courses = fake.filter((study) => study.category === 'course');
 
   return (
+<<<<<<< HEAD:src/components/sections/Study/index.tsx
     <SectionContainer observeSection="study-section" style="pt-40 mobile:pt-20">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-2xl mobile:pb-8">STUDY</h2>
+=======
+    <SectionContainer observeSection="study-section" style="pt-48 mobile:pt-20">
+      <h2 className="pb-12 text-4xl font-gown font-semibold mobile:text-2xl mobile:pb-8">STUDY</h2>
+>>>>>>> parent of 01b1d8b (style: css 수정):src/app/components/sections/Study/index.tsx
       <div className="flex justify-between mobile:flex-col tablet:flex-col">
         <Content contentName={'도서'} list={books} theme="bg-yellow-300" />
         <Content contentName={'강의'} list={courses} theme="bg-blue-300" />

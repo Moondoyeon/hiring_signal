@@ -34,8 +34,15 @@ export default async function ProjectSection() {
   ];
 
   return (
+<<<<<<< HEAD:src/components/sections/Project/index.tsx
     <SectionContainer observeSection="project-section" threshold={0.8} style="pt-40 mobile:pt-20">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-2xl mobile:pb-8">PROJECT</h2>
+=======
+    <SectionContainer observeSection="project-section" threshold={0.8} style="pt-56 mobile:pt-20">
+      <h2 className="pb-12 text-4xl font-gown font-semibold mobile:text-2xl mobile:pb-8">
+        PROJECT
+      </h2>
+>>>>>>> parent of 01b1d8b (style: css 수정):src/app/components/sections/Project/index.tsx
       <Content projects={fake} />
     </SectionContainer>
   );
