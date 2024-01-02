@@ -8,7 +8,6 @@ import Menu from './Menu';
 import { scroll } from '@/app/utils';
 import { useRecoilState } from 'recoil';
 import { currentSectionState } from '@/app/store';
-import { gowunBatang } from '@/app/fonts';
 
 export default function Header() {
   // 스크롤 방향에 따라 헤더 가시성
@@ -54,9 +53,9 @@ export default function Header() {
           ${!TOP_SECTION_VISIBLE ? 'mobile:hidden tablet:hidden' : ''}`}>
           <h1
             onClick={() => handleSectionChange('movie-section')}
-            className={`w-fit text-3xl cursor-pointer py-1 border-y whitespace-nowrap mobile:text-xl 
+            className={`font-hahmlet w-fit text-3xl cursor-pointer py-1 border-y whitespace-nowrap mobile:text-xl 
             ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'} 
-            ${gowunBatang.className}`}>
+           `}>
             채용시그널
           </h1>
           <span

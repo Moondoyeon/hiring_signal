@@ -29,7 +29,7 @@ export default function ProjectItem({ project, tabletWidth, mobileWidth, desktop
       />
 
       <div className="text-white ml-6">
-        <span className={` absolute bottom-[18%] font-bold text-3xl mobile:text-2xl`}>
+        <span className="font-hahmlet absolute bottom-[18%] font-medium text-3xl mobile:text-2xl">
           {project.projectName}
         </span>
         <span className="absolute bottom-[10%] font-light text-2xl mobile:text-lg">
