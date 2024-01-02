@@ -9,6 +9,7 @@ export default function Video() {
       className="absolute w-screen h-screen object-cover brightness-50"
       loop
       preload="auto"
+      poster="/images/siagnal-thumbnail.png"
       data-setup="{}">
       <source src="/videos/signal.mp4" type="video/mp4"></source>
       <source src="/videos/signal.ogv" type="video/ogv"></source>
