@@ -5,10 +5,11 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { RiFlashlightFill, RiFlashlightLine } from '@remixicon/react';
 import { useQuery } from '@tanstack/react-query';
 import { ISignalCount } from '@/types';
-import { getSignalCount } from '@/utils/fetcher';
-import { currentSectionState, signalStatusState } from '@/recoil';
-import { scroll } from '@/utils';
+
 import { queryKeys } from '@/constant/queryKeys';
+import { signalStatusState, currentSectionState } from '@/store';
+import { getSignalCount } from '@/utils/fetcher';
+import { scroll } from '@/utils';
 
 export default function HelpButtons() {
   const querySignalCount = useQuery<ISignalCount>({

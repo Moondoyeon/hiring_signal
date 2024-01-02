@@ -4,7 +4,7 @@ import Image from 'next/image';
 import HighlightBgColor from '../../HighlightBgColor';
 import { eduItemBgStyles } from '@/constant/dynamicStyles';
 import { IEducation } from '@/types';
-import { gowunBatang } from '@/app/fonts';
+// import { gowunBatang } from '../../../app/fonts';
 
 interface Props {
   eduList: IEducation[];
@@ -17,9 +17,7 @@ export default function EducationItem({ eduList }: Props) {
           <div className="relative w-full">
             <div className="flex mb-6 h-[180px] mobile:h-[160px]">
               <div className="flex-col p-4 w-1/3 justify-start items-center mobile:">
-                <h2 className={`${gowunBatang.className} font-bold text-xl mobile:text-base`}>
-                  {edu.category}
-                </h2>
+                <h2 className={`font- font-bold text-xl mobile:text-base`}>{edu.category}</h2>
                 <div className="relative w-[65px] h-[65px] m-auto top-[10%] mobile:w-[40px] mobile:h-[40px] mobile:top-[18%]">
                   <Image
                     src={`${

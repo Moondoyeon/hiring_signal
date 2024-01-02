@@ -1,10 +1,10 @@
 'use client';
 
 import useInterSectionObserver from '@/hooks/useIntersectionObserver';
-import { currentSectionState } from '@/recoil';
 import { section } from '@/types';
 import { ReactNode } from 'react';
 import { useSetRecoilState } from 'recoil';
+import { currentSectionState } from '@/store';
 interface Props {
   children: ReactNode;
   observeSection: section;

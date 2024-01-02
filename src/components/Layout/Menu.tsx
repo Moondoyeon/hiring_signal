@@ -1,10 +1,10 @@
 'use client';
 
 import { sections } from '@/constant';
-import { currentSectionState } from '@/recoil';
 import { section } from '@/types';
-import { scroll } from '@/utils';
 import { useRecoilState } from 'recoil';
+import { currentSectionState } from '@/store';
+import { scroll } from '@/utils';
 
 export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean }) {
   const [currentSection, setCurrentSection] = useRecoilState(currentSectionState);

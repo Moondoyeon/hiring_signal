@@ -1,10 +1,10 @@
 import HelpButtons from '@/components/HelpButtons/HelpButtons';
+import EducationSection from '@/components/Sections/Education';
+import ProjectSection from '@/components/Sections/Project';
+import SignalSection from '@/components/Sections/Signal';
+import StudySection from '@/components/Sections/Study';
 import VideoSection from '@/components/Sections/Video';
 import WorkSection from '@/components/Sections/Work';
-import ProjectSection from '@/components/Sections/Project';
-import EducationSection from '@/components/Sections/Education';
-import StudySection from '@/components/Sections/Study';
-import SignalSection from '@/components/Sections/Signal';
 
 export default async function Home() {
   return (

@@ -1,14 +1,14 @@
 'use client';
 
-import { useRecoilState } from 'recoil';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { gowunBatang } from '@/app/fonts';
+import { RiCloseLine, RiMenuLine } from '@remixicon/react';
+// import { gowunBatang } from '../../app/fonts';
 import useThrottle from '@/hooks/useThrottle';
-import { currentSectionState } from '@/recoil';
 import { section } from '@/types';
 import Menu from './Menu';
 import { scroll } from '@/utils';
-import { RiCloseLine, RiMenuLine } from '@remixicon/react';
+import { useRecoilState } from 'recoil';
+import { currentSectionState } from '@/store';
 
 export default function Header() {
   // 스크롤 방향에 따라 헤더 가시성
@@ -55,9 +55,7 @@ export default function Header() {
           <h1
             onClick={() => handleSectionChange('movie-section')}
             className={`w-fit text-3xl cursor-pointer py-1 border-y whitespace-nowrap mobile:text-xl 
-            ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'} ${
-              gowunBatang.className
-            }`}>
+            ${TOP_SECTION_VISIBLE ? 'border-white text-white' : 'border-black text-black'}`}>
             채용시그널
           </h1>
           <span

@@ -1,9 +1,9 @@
 'use client';
-import { currentSectionState } from '@/recoil';
-import { scroll } from '@/utils';
-import Image from 'next/image';
 
+import Image from 'next/image';
 import { useSetRecoilState } from 'recoil';
+import { currentSectionState } from '@/store';
+import { scroll } from '@/utils';
 
 export default function ClickButton() {
   const setCurrentSection = useSetRecoilState(currentSectionState);
