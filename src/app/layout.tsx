@@ -1,9 +1,11 @@
 import { Metadata } from 'next';
-// import { notoSansKr } from './fonts';
-import ReactQueryProviderWrapper from '@/components/Container/ReactQueryProviderWrapper';
-import RecoilRootWrapper from '@/components/Container/RecoilRootWrapper';
-import Footer from '@/components/Layout/Footer';
-import Header from '@/components/Layout/Header';
+
+import ReactQueryProviderWrapper from '@/app/components/Container/ReactQueryProviderWrapper';
+import RecoilRootWrapper from '@/app/components/Container/RecoilRootWrapper';
+import Footer from '@/app/components/Layout/Footer';
+import Header from '@/app/components/Layout/Header';
+import './globals.css';
+import { notoSansKr } from './fonts';
 
 export const metadata: Metadata = {
   title: '채용시그널 | 문도연 포트폴리오 ',
@@ -13,8 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    // <html lang="en" className={`${notoSansKr.className} dark z-0`}>
-    <html lang="en" className={`dark z-0`}>
+    <html lang="en" className={`${notoSansKr.className} dark z-0`}>
       <head>
         <meta
           name="google-site-verification"
