@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function useTypingEffect({ words, fps = 5 }: { words: string[]; fps?: number }) {
+export default function useTypingEffect({ words, fps = 8 }: { words: string[]; fps?: number }) {
   const blankWords = useMemo(() => words.map((el) => el + '  '), [words]);
   const [displayText, setDisplayText] = useState('');
   const currentWordIdx = useRef(0);
@@ -18,8 +18,8 @@ export default function useTypingEffect({ words, fps = 5 }: { words: string[]; f
         lastTimestamp = window.performance.now();
       }
 
-      const interval = 1000 / fps;
-      const elapse = timestamp - lastTimestamp;
+      const interval = 1000 / fps; // fps 디폴트 8 의미 = 초당 8개의 프레임 렌더링 : 125 밀리세컨드 간격으로 프레임생성
+      const elapse = timestamp - lastTimestamp; // 경과시간
 
       if (elapse >= interval) {
         lastTimestamp = timestamp - (elapse % interval);
