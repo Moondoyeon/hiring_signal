@@ -3,6 +3,7 @@ import { MouseEvent, TouchEvent } from 'react';
 export interface IWork {
   _id: string;
   companyName: string;
+  period: string;
   content: string;
   notionLink: string;
   position: string;
