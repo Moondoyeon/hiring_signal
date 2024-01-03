@@ -35,8 +35,7 @@ export default function Header() {
     setCurrentSection(destination);
   };
 
-  const TOP_SECTION_VISIBLE =
-    currentSection === 'movie-section' || currentSection === 'work-section';
+  const TOP_SECTION_VISIBLE = currentSection === 'movie-section';
   const [isMenuIconClicked, setMenuClick] = useState(false);
 
   if (visible) {

@@ -13,8 +13,7 @@ export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean
     handleScrollView(destination);
     setCurrentSection(destination);
   };
-  const TOP_SECTION_VISIBLE =
-    currentSection === 'movie-section' || currentSection === 'work-section';
+  const TOP_SECTION_VISIBLE = currentSection === 'movie-section';
 
   return (
     <nav

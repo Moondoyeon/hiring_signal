@@ -16,9 +16,9 @@ interface Props {
 export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth }: Props) {
   return (
     <div
-      className={`h-[330px] flex items-center px-10 py-6 tablet:px-4 mobile:px-4 mobile:py-4 mobile:flex-col border border-solid border-black mobile:min-h-[500px] ${desktopWidth} ${tabletWidth} ${mobileWidth}`}>
-      <div className="basis-1/3 mr-6 mobile:basis-1/3 mobile:mr-0 tablet:w-auto tablet:mr-4 ">
-        <div className="w-[200px] mx-auto mobile:mt-14">
+      className={`h-[330px] flex items-center px-10 py-6 tablet:px-4 mobile:px-4 mobile:py-4 mobile:flex-col border border-solid border-black mobile:min-h-[480px] ${desktopWidth} ${tabletWidth} ${mobileWidth}`}>
+      <div className="basis-1/3 mr-6 mobile:basis-1/4 mobile:mr-0 tablet:w-auto tablet:mr-4 ">
+        <div className="w-[200px] mx-auto mobile:mt-10">
           <Image
             src={work.thumbnails}
             alt="work experience"
@@ -31,7 +31,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
           />
         </div>
       </div>
-      <div className="basis-2/3 h-full py-6 tablet:py-0 mobile:flex-col mobile:relative tablet:relative mobile:h-[200px] mobile:py-2 ">
+      <div className="basis-2/3 h-full py-6 tablet:py-0 mobile:flex-col mobile:relative tablet:relative mobile:basis-3/4 mobile:py-2 ">
         <div className="h-[50%] flex items-start justify-between tablet:h-[36%] tablet:flex-col tablet:justify-start mobile:h-auto mobile:flex-col">
           <div className="flex items-end">
             <HighlightBgColor willBg="before:bg-[#86E0C8]" customStyle="z-10">
