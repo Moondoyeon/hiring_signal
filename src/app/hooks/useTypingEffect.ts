@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function useTypingEffect(words: string[]) {
+export default function useTypingEffect({ words, fps = 5 }: { words: string[]; fps?: number }) {
   const blankWords = useMemo(() => words.map((el) => el + '  '), [words]);
   const [displayText, setDisplayText] = useState('');
   const currentWordIdx = useRef(0);
@@ -9,8 +9,8 @@ export default function useTypingEffect(words: string[]) {
     let isErasing = false;
     let displayIdx = 0;
     let start = 0;
-    let currentWord = blankWords[currentWordIdx.current];
     let lastTimestamp = 0;
+    let currentWord = blankWords[currentWordIdx.current];
 
     const typingText = (timestamp: number) => {
       if (start === 0 && lastTimestamp === 0) {
@@ -18,12 +18,8 @@ export default function useTypingEffect(words: string[]) {
         lastTimestamp = window.performance.now();
       }
 
-      const interval = 2000 / 10;
+      const interval = 1000 / fps;
       const elapse = timestamp - lastTimestamp;
-
-      // console.log('timestamp', timestamp);
-      // console.log('elapse', elapse);
-      // console.log('lastTimestamp', lastTimestamp);
 
       if (elapse >= interval) {
         lastTimestamp = timestamp - (elapse % interval);
@@ -56,7 +52,7 @@ export default function useTypingEffect(words: string[]) {
 
     const animateId = requestAnimationFrame(typingText);
     return () => cancelAnimationFrame(animateId);
-  }, [blankWords, currentWordIdx]);
+  }, [blankWords, currentWordIdx, fps]);
 
   return displayText;
 }

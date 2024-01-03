@@ -3,7 +3,7 @@
 import { keyword } from '@/app/constant';
 import useTypingEffect from '@/app/hooks/useTypingEffect';
 export default function Typing() {
-  const word = useTypingEffect(keyword);
+  const word = useTypingEffect({ words: keyword });
 
   return (
     <div
