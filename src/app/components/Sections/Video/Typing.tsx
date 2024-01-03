@@ -1,9 +1,9 @@
 'use client';
 
 import { keyword } from '@/app/constant';
-import useTyping from '@/app/hooks/useTyping';
+import useTypingEffect from '@/app/hooks/useTypingEffect';
 export default function Typing() {
-  const word = useTyping(keyword);
+  const word = useTypingEffect(keyword);
 
   return (
     <div
