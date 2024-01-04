@@ -32,8 +32,8 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         </div>
       </div>
 
-      <div className="basis-2/3 h-full py-6 tablet:py-0 mobile:flex-col mobile:basis-3/4 mobile:py-0">
-        <div className="h-[50%] flex items-start justify-between tablet:h-[36%] tablet:flex-col tablet:justify-start mobile:h-auto mobile:flex-col">
+      <div className="basis-2/3 h-full py-6 tablet:py-0 tablet:flex-col tablet:h-auto mobile:flex-col mobile:basis-3/4 mobile:py-0">
+        <div className="h-[50%] flex items-start justify-between tablet:flex-col tablet:justify-start mobile:h-auto mobile:flex-col">
           <div className="flex items-end">
             <HighlightBgColor willBg="before:bg-[#86E0C8]" customStyle="z-10">
               <Link
@@ -48,9 +48,9 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
           <span className="text-base mobile:text-[14px]">{work.period}</span>
         </div>
         <div className="h-[50%] mobile:h-auto">
-          <div id="border" className="w-full bg-black h-[1px] mb-4 mobile:my-2" />
+          <div id="border" className="w-full bg-black h-[1px] mb-4 tablet:my-2 mobile:my-2" />
           {work.content.map((el, idx) => (
-            <p className="tablet:text-[14.5px] mobile:text-[15px]" key={idx}>
+            <p className="tablet:text-base mobile:text-[15px]" key={idx}>
               &bull; {el}
             </p>
           ))}
@@ -59,7 +59,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
           {work.notionLink && (
             <Link href={work.notionLink} target="_blank" className="flex justify-end items-center">
               <RiAddCircleFill size={22} />
-              <p className="underline pb-[0.5px] ml-1 mobile:text-sm">자세히</p>
+              <p className="underline pb-[0.5px] ml-1 mobile:text-sm tablet:text-sm">자세히</p>
             </Link>
           )}
         </div>
