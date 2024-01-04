@@ -55,11 +55,13 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
             </p>
           ))}
         </div>
-        <div className="mobile:mt-4">
+        <div className="mobile:mt-4 flex justify-end items-center">
           {work.notionLink && (
-            <Link href={work.notionLink} target="_blank" className="flex justify-end items-center">
+            <Link href={work.notionLink} target="_blank" className="flex">
               <RiAddCircleFill size={22} />
-              <p className="underline pb-[0.5px] ml-1 mobile:text-sm tablet:text-sm">자세히</p>
+              <span className="underline pb-[0.5px] ml-1 mobile:text-sm tablet:text-sm">
+                자세히
+              </span>
             </Link>
           )}
         </div>

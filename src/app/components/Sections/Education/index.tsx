@@ -35,7 +35,7 @@ export default async function EducationSection() {
 
   return (
     <SectionContainer observeSection="education-section" style="pt-40 mobile:pt-20">
-      <h2 className="pb-12 text-4xl font-semibold mobile:text-2xl mobile:pb-8">EDUCATION</h2>
+      <h2 className="pb-12 text-4xl font-semibold mobile:text-3xl mobile:pb-8">EDUCATION</h2>
 
       <EducationItem eduList={fake} />
     </SectionContainer>
