@@ -14,7 +14,7 @@ export default async function ProjectSection() {
       _id: '657accb1ad5c1291816f0535',
       projectName: '채용시그널',
       type: '개인프로젝트',
-      link: 'https://github.com/Moondoyeon/hiring_signal',
+      link: 'https://moondoyeon.notion.site/b8b21d6b05134f9baf58990a956714cb?pvs=4',
       thumbnail: '/images/project-hiring-signal.png',
     },
     {
@@ -34,7 +34,7 @@ export default async function ProjectSection() {
   ];
 
   return (
-    <SectionContainer observeSection="project-section" threshold={0.8} style="pt-40 mobile:pt-20">
+    <SectionContainer observeSection="project-section" threshold={0.3} style="pt-40 mobile:pt-20">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-3xl mobile:pb-8">PROJECT</h2>
       <Content projects={fake} />
     </SectionContainer>
