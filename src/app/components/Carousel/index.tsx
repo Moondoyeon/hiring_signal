@@ -8,7 +8,7 @@ interface CarouselProps {
   children: ReactNode;
   moveStyle: Record<string, Record<string, string>>;
   mobileWidth: string;
-  desktopWidth: string;
+  desktopWidth?: string;
   tabletWidth?: string;
   style?: string;
   handleMouseDown?: (e: MouseEventType<HTMLDivElement>) => void;

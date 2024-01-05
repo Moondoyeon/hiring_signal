@@ -7,7 +7,7 @@ import './globals.css';
 import { noto_sans_kr } from './fonts';
 
 export const metadata: Metadata = {
-  title: '채용시그널 | 문도연 포트폴리오 ',
+  title: '문도연 포트폴리오',
   description: '채용시그널을 받길 염원하는 개발자 취준생의 포트폴리오 웹입니다',
   metadataBase: new URL('https://hiring-signal.vercel.app'),
 };

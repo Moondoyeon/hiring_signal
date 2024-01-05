@@ -16,7 +16,7 @@ interface Props {
 export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth }: Props) {
   return (
     <div
-      className={`h-[330px] flex items-center px-10 py-6 tablet:px-4 mobile:px-5 mobile:py-4 mobile:flex-col border border-solid border-black mobile:h-auto ${desktopWidth} ${tabletWidth} ${mobileWidth}`}>
+      className={`h-[330px] flex items-center px-10 py-6 tablet:h-auto tablet:px-4 tablet:py-6 mobile:px-5 mobile:py-4 mobile:flex-col border border-solid border-black mobile:h-auto ${desktopWidth} ${tabletWidth} ${mobileWidth}`}>
       <div className="basis-1/3 mr-6 mobile:basis-1/4 mobile:mr-0 tablet:w-auto tablet:mr-4 mobile:flex mobile:items-center">
         <div className="w-[200px] mx-auto mobile:my-10">
           <Image
@@ -32,7 +32,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         </div>
       </div>
 
-      <div className="basis-2/3 h-full py-6 tablet:py-0 tablet:flex-col tablet:h-auto mobile:flex-col mobile:basis-3/4 mobile:py-0">
+      <div className="basis-2/3 h-full py-6 tablet:flex-col tablet:h-auto tablet:py-0 mobile:flex-col mobile:w-full mobile:basis-3/4 mobile:py-0">
         <div className="h-[50%] flex items-start justify-between tablet:flex-col tablet:justify-start mobile:h-auto mobile:flex-col">
           <div className="flex items-end">
             <HighlightBgColor willBg="before:bg-[#86E0C8]" customStyle="z-10">
@@ -48,7 +48,10 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
           <span className="text-base mobile:text-[14px]">{work.period}</span>
         </div>
         <div className="h-[50%] mobile:h-auto">
-          <div id="border" className="w-full bg-black h-[1px] mb-4 tablet:my-2 mobile:my-2" />
+          <div
+            id="border"
+            className="w-full bg-black h-[2px] mb-4 tablet:mt-6 tablet:mb-2 mobile:mt-8 mobile:mb-2"
+          />
           {work.content.map((el, idx) => (
             <p className="tablet:text-base mobile:text-[15px]" key={idx}>
               &bull; {el}

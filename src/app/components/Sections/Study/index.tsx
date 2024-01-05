@@ -71,7 +71,7 @@ export default async function StudySection() {
   const courses = fake.filter((study) => study.category === 'course');
 
   return (
-    <SectionContainer observeSection="study-section" style="pt-40 mobile:pt-20">
+    <SectionContainer observeSection="study-section" style="pt-40 mobile:pt-16 mobile:mb-4">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-3xl mobile:pb-8">STUDY</h2>
 
       <div className="flex justify-between mobile:flex-col tablet:flex-col">

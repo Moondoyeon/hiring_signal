@@ -22,7 +22,7 @@ export default async function ProjectSection() {
       projectName: '랜덤영화뽑기',
       type: '개인프로젝트',
       thumbnail: '/images/project-random-movie-game.png',
-      link: 'https://github.com/Moondoyeon/random-movie-game',
+      link: 'https://moondoyeon.notion.site/43a82a4408f541e784c92a614a40cfb8?pvs=4',
     },
     {
       _id: '657acc4cad5c1291816f0533',
@@ -34,7 +34,10 @@ export default async function ProjectSection() {
   ];
 
   return (
-    <SectionContainer observeSection="project-section" threshold={0.3} style="pt-40 mobile:pt-20">
+    <SectionContainer
+      observeSection="project-section"
+      threshold={0.3}
+      style="pt-40 mobile:pt-16 mobile:mb-4">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-3xl mobile:pb-8">PROJECT</h2>
       <Content projects={fake} />
     </SectionContainer>

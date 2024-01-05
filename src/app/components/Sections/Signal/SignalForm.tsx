@@ -91,7 +91,6 @@ export default function SignalForm() {
           control={control}
           rules={{
             required: '반드시 입력해주세요.',
-            minLength: { value: 1, message: '1글자 이상 입력해주세요.' },
           }}
         />
         <Label style="py-2" htmlFor="email">
@@ -119,7 +118,10 @@ export default function SignalForm() {
           name="message"
           placeholder="SIGNAL MESSAGE"
           control={control}
-          rules={{ required: '반드시 입력해주세요.' }}
+          rules={{
+            required: '반드시 입력해주세요.',
+            minLength: { value: 5, message: '최소 5글자 이상 입력해주세요 :)' },
+          }}
           errorStyle="pt-0 mobile:mb-2"
         />
 
