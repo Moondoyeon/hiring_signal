@@ -4,11 +4,10 @@ import Image from 'next/image';
 import { RiAddCircleFill } from '@remixicon/react';
 import Link from 'next/link';
 import { IWork } from '@/app/types';
-import { IWork2 } from '.';
 import HighlightBgColor from '../../HighlightBgColor';
 
 interface Props {
-  work: IWork2;
+  work: IWork;
   mobileWidth: string;
   desktopWidth: string;
   tabletWidth: string;

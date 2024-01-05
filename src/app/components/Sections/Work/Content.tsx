@@ -5,10 +5,9 @@ import Carousel from '../../Carousel';
 import CarouselLeftRightButton from '../../Carousel/CarouselLeftRightButton';
 import WorkItem from './WorkItem';
 import useCarousel from '@/app/hooks/useCarousel';
-import { IWork2 } from '.';
 
 interface Props {
-  works: IWork2[];
+  works: IWork[];
 }
 export default function Content({ works }: Props) {
   const CAROUSEL_ITEM_WIDTH = 1280;

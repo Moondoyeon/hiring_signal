@@ -1,5 +1,4 @@
 // import { connectDB } from '@/utils/database';
-
 import SectionContainer from '../../Container/SectionContainer';
 import { IProject } from '@/app/types';
 import Content from './Content';
@@ -8,8 +7,8 @@ export default async function ProjectSection() {
   // const db = connectDB.db(process.env.DB_NAME);
   // const projects = await db.collection<IProject>('projects').find().toArray();
   // projects.map((item) => (item._id = item._id.toString()));
-  // console.log(projects);
-  const fake: IProject[] = [
+
+  const projectList: IProject[] = [
     {
       _id: '657accb1ad5c1291816f0535',
       projectName: '채용시그널',
@@ -39,7 +38,7 @@ export default async function ProjectSection() {
       threshold={0.3}
       style="pt-40 mobile:pt-16 mobile:mb-4">
       <h2 className="pb-12 text-4xl font-semibold mobile:text-3xl mobile:pb-8">PROJECT</h2>
-      <Content projects={fake} />
+      <Content projects={projectList} />
     </SectionContainer>
   );
 }

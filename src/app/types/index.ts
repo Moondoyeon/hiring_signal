@@ -4,8 +4,9 @@ export interface IWork {
   _id: string;
   companyName: string;
   period: string;
-  content: string;
+  content: string[];
   notionLink: string;
+  companyLink: string;
   position: string;
   thumbnails: string;
 }
@@ -31,8 +32,7 @@ export interface IEducation {
   category: string;
   title: string;
   period: string;
-  content: string;
-  grade?: string;
+  content: string[];
 }
 
 export type section =

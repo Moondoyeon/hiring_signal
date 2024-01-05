@@ -7,8 +7,8 @@ export default async function StudySection() {
   // const db = connectDB.db(process.env.DB_NAME);
   // const studyings = await db.collection<IStudy>('studyings').find().toArray();
   // studyings.map((item) => (item._id = item._id.toString()));
-  // console.log(studyings);
-  const fake: IStudy[] = [
+
+  const studyList: IStudy[] = [
     {
       _id: '657c1468a296c1a65106328e',
       category: 'book',
@@ -30,7 +30,7 @@ export default async function StudySection() {
       category: 'book',
       title: 'Clean Code',
       content:
-        '좋은 코드를 작성하는 방법을 알려주는 책입니다. 누구든 읽기 쉬운 코드를 작성하는 것의 중요성을 느끼게 되었고, 그러한 코드를 실제로 작성하기 위해 꾸준히 노력하겠습니다. *현재 읽고 있는 중입니다.',
+        '좋은 코드를 작성하는 방법을 알려주는 책입니다. 누구든 읽기 쉬운 코드를 작성하는 것의 중요성을 느끼게 되었고, 그러한 코드를 실제로 작성하기 위해 꾸준히 노력하겠습니다. (현재 읽고 있습니다)',
       image_url: '/images/book-clean-code.webp',
     },
     {
@@ -67,8 +67,8 @@ export default async function StudySection() {
       image_url: '/images/course-js-algorithm.png',
     },
   ];
-  const books = fake.filter((study) => study.category === 'book');
-  const courses = fake.filter((study) => study.category === 'course');
+  const books = studyList.filter((study) => study.category === 'book');
+  const courses = studyList.filter((study) => study.category === 'course');
 
   return (
     <SectionContainer observeSection="study-section" style="pt-40 mobile:pt-16 mobile:mb-4">

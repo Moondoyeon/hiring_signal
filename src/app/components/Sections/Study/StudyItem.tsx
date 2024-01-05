@@ -15,8 +15,8 @@ export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabl
   return (
     <div
       key={String(item._id)}
-      className={`cursor-pointer min-w-[550px] h-auto flex justify-center items-start py-12 ${desktopWidth} ${tabletWidth} ${mobileWidth} border-black border-solid border`}>
-      <div className="flex-col h-auto w-[85%]">
+      className={`cursor-pointer min-w-[550px] h-auto mobile:h-[480px] flex justify-center items-start pt-12 ${desktopWidth} ${tabletWidth} ${mobileWidth} border-black border-solid border`}>
+      <div className="flex-col h-auto w-[90%]">
         <div
           className={`w-28 h-28 ${theme} rounded-full mx-auto flex justify-center items-center mobile:w-20 mobile:h-20`}>
           <div className="relative w-24 h-24 mx-auto mobile:w-16 mobile:h-16">
@@ -37,7 +37,7 @@ export default function StudyItem({ item, theme, desktopWidth, mobileWidth, tabl
         <h3 className="text-2xl font-semibold text-center mt-12 mb-8 mobile:my-6 mobile:text-[18px]">
           {item.title}
         </h3>
-        <p className="text-lg mobile:text-base">{item.content}</p>
+        <p className="text-lg mobile:text-[15px]">{item.content}</p>
       </div>
     </div>
   );
