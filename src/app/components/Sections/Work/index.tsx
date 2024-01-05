@@ -17,7 +17,7 @@ export default async function WorkSection() {
         '환경데이터 수집하는 로봇제조 스타트업의 고객사용 웹(데모) 프론트엔드 개발 참여',
         '데모웹 통계페이지 - Nivo, react-day-picker를 이용해 실시간/기간 그래프 구현',
         '데모웹 통계페이지 - Zustand를 이용해 그래프/표 검색조건을 전역상태로 관리해 props drilling 방지',
-        '워드프레스로 회사소개 웹 제작 - 담당: 페이지(company, product, news), 메인레이아웃, 영문번역',
+        '워드프레스로 회사소개 웹 제작 - 담당: 페이지(company, product, news), 메인레이아웃, 한영번역',
       ],
       notionLink: 'https://moondoyeon.notion.site/Demo-Web-b2851245b5a0441e87cbe4964afef706?pvs=4',
       companyLink: 'https://www.artwa.kr/',

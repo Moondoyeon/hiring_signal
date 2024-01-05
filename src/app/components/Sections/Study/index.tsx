@@ -20,7 +20,7 @@ export default async function StudySection() {
     {
       _id: '657c14e1a296c1a651063290',
       category: 'book',
-      title: '그림으로 배우는 HTTP & Networks Basic',
+      title: 'HTTP & Networks Basic',
       content:
         'HTTP와 네트워크에 대한 기초지식을 알려주는 책입니다. 멀리 떨어진 컴퓨터 두 대가 TCP/IP 프로토콜의 약속을 따라 데이터를 주고받으며 네트워크를 형성한다는 것, 응용계층 프로토콜인 HTTP의 구조와 특성을 알게 되었습니다. 학습한 지식은 SSR, CSR, Hydraiton 과 같은 렌더링 관련 개념을 이해함에 도움이 되었습니다.',
       image_url: '/images/book-http-networks.jpeg',

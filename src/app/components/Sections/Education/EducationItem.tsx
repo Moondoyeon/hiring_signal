@@ -36,7 +36,7 @@ export default function EducationItem({ eduList }: Props) {
                 <p className="font-bold text-2xl tablet:text-xl mobile:text-lg">{edu.title}</p>
                 <p className="text-lg mb-4 mobile:text-[14px] mobile:mb-0">{edu.period}</p>
                 {edu.content.map((el, idx) => (
-                  <p key={idx} className="text-lg tablet:text-base mobile:text-[15px]">
+                  <p key={idx} className="text-lg tablet:text-lg mobile:text-[15px]">
                     &bull; {el}
                   </p>
                 ))}
