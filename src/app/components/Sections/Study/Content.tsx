@@ -21,6 +21,7 @@ export default function Content({ contentName, list, theme }: Props) {
     transitionStyles,
     handleMouseDown,
     handleMouseUp,
+    handleMouseMove,
     handleTouchStart,
     handleTouchEnd,
     handleTouchMove,
@@ -42,6 +43,7 @@ export default function Content({ contentName, list, theme }: Props) {
           tabletWidth={'tablet:max-w-[550px]'}
           handleMouseDown={handleMouseDown}
           handleMouseUp={handleMouseUp}
+          handleMouseMove={handleMouseMove}
           handleTouchStart={handleTouchStart}
           handleTouchMove={handleTouchMove}
           handleTouchEnd={handleTouchEnd}

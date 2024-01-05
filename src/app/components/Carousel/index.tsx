@@ -13,12 +13,14 @@ interface CarouselProps {
   style?: string;
   handleMouseDown?: (e: MouseEventType<HTMLDivElement>) => void;
   handleMouseUp?: (e: MouseEventType<HTMLDivElement>) => void;
+  handleMouseMove?: (e: MouseEventType<HTMLDivElement>) => void;
   handleTouchStart?: (e: TouchEventType<HTMLDivElement>) => void;
   handleTouchEnd?: (e: TouchEventType<HTMLDivElement>) => void;
   handleTouchMove?: (e: TouchEventType<HTMLDivElement>) => void;
 }
 export default function Carousel({
   handleMouseDown,
+  handleMouseMove,
   handleMouseUp,
   handleTouchStart,
   handleTouchEnd,
@@ -36,6 +38,7 @@ export default function Carousel({
     <div
       id="carousel-container"
       onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}

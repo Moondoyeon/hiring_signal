@@ -36,14 +36,16 @@ export default function useCarousel(n: number, desktopW: number, mobileW: number
     if (currentX - beforeX < -SLIDE_MIN) next();
     if (currentX - beforeX > SLIDE_MIN) prev();
   };
+
   const getCurrentMouseX = (e: MouseEvent) => {
     setCurrentX(e.clientX);
-    slide();
   };
   const getBeforeMouseX = (e: MouseEvent) => {
     setBeforeX(e.clientX);
   };
-
+  const handleMouseUp = () => {
+    slide();
+  };
   const handleTouchEnd = () => {
     slide();
   };
@@ -70,7 +72,8 @@ export default function useCarousel(n: number, desktopW: number, mobileW: number
     mobilePxTransitions,
     tabletPxTransitions,
     handleMouseDown: getBeforeMouseX,
-    handleMouseUp: getCurrentMouseX,
+    handleMouseMove: getCurrentMouseX,
+    handleMouseUp,
     handleTouchStart: getBeforeTouchX,
     handleTouchMove: getCurrentTouchX,
     handleTouchEnd,
