@@ -15,7 +15,7 @@ interface Props {
 export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth }: Props) {
   return (
     <div
-      className={`min-h-[380px] flex items-center px-10 py-6 tablet:h-auto tablet:px-4 tablet:py-6 mobile:px-5 mobile:py-4 mobile:flex-col border border-solid border-black mobile:h-auto ${desktopWidth} ${tabletWidth} ${mobileWidth}`}>
+      className={`min-h-[380px] flex items-center px-10 py-6 tablet:px-4 tablet:py-6 mobile:px-5 mobile:py-4 mobile:flex-col border border-solid border-black mobile:h-auto ${desktopWidth} ${tabletWidth} ${mobileWidth}`}>
       <div className="basis-1/3 mr-6 mobile:basis-1/4 mobile:mr-0 tablet:w-auto tablet:mr-4 mobile:flex mobile:items-center">
         <div className="w-[200px] mx-auto mobile:my-10">
           <Image
@@ -49,7 +49,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         <div className="h-[50%] mobile:h-auto">
           <div
             id="border"
-            className="w-full bg-black h-[2px] mb-4 tablet:mt-6 tablet:mb-2 mobile:mt-8 mobile:mb-2"
+            className="w-full bg-black h-[2px] mb-4 tablet:mt-10 tablet:mb-2 mobile:mt-8 mobile:mb-2"
           />
           {work.content.map((el, idx) => (
             <p className="text-lg mobile:text-[15px]" key={idx}>
