@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    // "baseUrl": "src",
+    "baseUrl": "./app",
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -20,16 +20,18 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@components/*": ["components/*"],
+      "@types/*": ["types/*"],
+      "@hooks/*": ["hooks/*"],
+      "@store/*": ["store/*"],
+      "@config/*": ["config/*"],
+      "@constant/*": ["constant/*"],
+      "@utils/*": ["utils/*"],
+      "@api/*": ["api/*"]
+      // "@/*": ["/*"]
     }
   },
-  "typeRoots": ["node_modules/@types", "src/types"],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/app/types/global.d.ts"
-  ],
+  "typeRoots": ["node_modules/@types", "@types"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "@types/global.d.ts"],
   "exclude": ["node_modules"]
 }
