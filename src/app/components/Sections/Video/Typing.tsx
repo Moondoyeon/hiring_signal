@@ -12,9 +12,11 @@ export default function Typing() {
       <span>저는</span>
 
       <div className=" flex mx-3 mobile:mx-0 mobile:my-3 tablet:mx-0 tablet:my-5">
-        <span> &lt;</span>
-        <span className="mx-3 text-[#59E1FF]">{word}</span>
-        <span> &#47; &gt;</span>
+        {/* <span>&#91; </span> */}
+
+        <span className="text-[#59E1FF]">{word}</span>
+        <span className="text-[#59E1FF] mb-[1px]">|</span>
+        {/* <span> &#93;</span> */}
       </div>
 
       <span>사람입니다</span>

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-export default function useTypingEffect({ words, fps = 8 }: { words: string[]; fps?: number }) {
-  const blankWords = useMemo(() => words.map((el) => el + '  '), [words]);
+export default function useTypingEffect({ words, fps = 6 }: { words: string[]; fps?: number }) {
+  const blankWords = useMemo(() => words.map((el) => '#' + el + '  '), [words]);
   const [displayText, setDisplayText] = useState('');
   const currentWordIdx = useRef(0);
 
