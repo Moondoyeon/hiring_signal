@@ -76,6 +76,10 @@ app 폴더 아래에 공식문서 예시를 따라 아래와 같은 파일을 �
 - manifest.ts, robot.ts, sitemap.ts
 - opengraph-image, opengraph-image.alt.txt, twitter-image, twitter-image.alt.txt
 - icon.png, apple-icon.png
+  <br/>
+  <img width="400" alt="메타데이터" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/3db5e7e2-2558-45dd-8b20-6e95457a9f18">
+  <br/>
+  <span>카카오톡 공유 / 트위터 공유 / 홈화면 아이콘</span>
 
 **이미지**
 
