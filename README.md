@@ -1,3 +1,4 @@
+![opengraph-image](https://github.com/Moondoyeon/hiring_signal/assets/102936206/41fabf25-7ea5-463b-8399-3532432c6ebe)
 _저를 소개하는 포트폴리오 웹입니다. 예능프로그램 하트시그널에서 아이디어를 얻어 채용담당자분의 시그널을 받겠다는 마음을 담아 개발했습니다._
 
 **URL**: [hiring-signal.vercel.app](http://hiring-signal.vercel.app/)
@@ -18,7 +19,7 @@ requestAnimationFrame을 활용해 재귀함수로 동작하는 타이핑 효과
 
 ### 특정 섹션으로 스크롤 이동
 
-최초에 react-scroll 라이브러리로 스크롤 이동을 구현했지만, 해당기능 외에 스크롤 관련 기능을 구현할 때 라이브러리 함수를 고려해야 한다는 점, 특정 prop을 전달했을때 자연스럽게 적용되지 않는 점이 불편하게 느껴져 document.geElemnetById.scrollIntoView 함수를 이용해 스크롤 이동을 직접 구현했습니다.
+최초에 react-scroll 라이브러리로 스크롤 이동을 구현했지만, 해당기능 외에 스크롤 관련 기능을 구현할 때 라이브러리 함수를 고려해야 한다는 점, 특정 prop을 전달했을때 자연스럽게 적용되지 않는 점이 불편하게 느껴져 document.getElementById.scrollIntoView 함수를 이용해 스크롤 이동을 직접 구현했습니다.
 
 ### 스크롤 위치 관찰
 
@@ -26,6 +27,7 @@ Intersection Observer API와 useRef를 활용해 뷰포트에 진입한 요소�
 
 - 유저가 보고있는 섹션 이름에 borderBottom 적용
 - 특정 섹션이 관찰될 때 페이지 배경색깔 제어
+  <br/>
   <img width="330" alt="스크롤 위치 관찰" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/f9257946-4fb3-4f62-8814-413cab4d5cad">
 
 ### 스크롤이벤트에 throttle 개념 적용
@@ -35,6 +37,8 @@ Intersection Observer API와 useRef를 활용해 뷰포트에 진입한 요소�
 ### 캐러셀
 
 캐러셀 구현을 위한 custom hook과 전용 컴포넌트를 만들어 주요 컨텐츠를 표현하는 데에 3번 재사용했습니다. 캐러셀 버튼을 클릭하거나 마우스 드래그 혹은 터치 슬라이드를 통해 캐러셀 아이템을 좌우로 넘길 수 있습니다.
+<br/>
+<img width="500" alt="스크롤 위치 관찰" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/111ba900-1bd5-43a3-a2c7-53deb8d1f571">
 
 ### React Hook Form 으로 폼 데이터 관리
 
@@ -57,7 +61,8 @@ Next.js가 제공하는 Route Hanlders 기능을 통해 GET, POST 메서드에 �
 
 ### 반응형 웹 적용
 
-react-responsive 라이브러리와 tailwind.config.js의 screens 설정을 통해 핸드폰, 타블렛, 노트북과 데스크탑에 대응하는 반응형 웹을 구현했습니다 .
+react-responsive 라이브러리와 tailwind.config.js의 screens 설정을 통해 핸드폰, 타블렛, 노트북과 데스크탑에 대응하는 반응형 웹을 구현했습니다.
+<br/>
 <img width="330" alt="반응형 웹" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/7caeb11e-6f61-442b-8ec9-b68d460f4c7b">
 
 ### 최적화
@@ -81,6 +86,34 @@ Next.js는 이미지 최적화를 위해 sizes prop을 제공하면 자동으로
 **웹폰트**
 
 next/font/google가 제공하는 구글폰트를 사용했습니다. 기존에는 브라우저의 네트워크 요청을 통해 웹폰트를 다운받는 방식을 취하다가, 공식문서에서 next/font 를 이용하면 빌드시에 폰트가 다운되어 브라우저가 더이상 네트워크 요청을 하지 않게 된다는 설명을 읽고, 페이지 로드 속도를 높일 수 있다는 이점을 취하고자 next/font를 사용했습니다.
+
+## 구현화면
+
+### 타이핑효과
+
+<img width="330" alt="typing" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/acade8a9-a884-4433-bc20-caf91f72e58d">
+
+### 스크롤 이동
+
+<img width="330" alt="scroll moving" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/3d917623-85fd-4c68-ad92-4eff5d2674ff">
+
+### 캐러셀
+
+| 1                                                                                                                                        | 2                                                                                                                                        | 3                                                                                                                                        |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="330" alt="carousel" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/d484fb14-09db-40d7-b887-0b49c1f9d844"> | <img width="330" alt="carousel" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/3c37c388-4c47-4de1-84ca-e150b431278c"> | <img width="330" alt="carousel" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/33f6b152-871e-4f57-859c-a7006e589667"> |
+
+### 마우스 오버시 배경색깔 변화
+
+| 1                                                                                                                                                             | 2                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <img width="330" alt="bgcolor change when mouseover" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/1ccd023a-376e-4914-a051-981c0ab7ba50"> | <img width="330" alt="bgcolor change when mouseover" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/7c431592-0366-429c-81a5-beb90954330d"> |
+
+### 폼 데이터 유효성 검증
+
+<img width="330" alt="form data management" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/0ebfed72-3498-464a-adae-f46b320fdfd7">
+
+## 기타
 
 ### UI Prototype ([Figma](https://www.figma.com/file/W8NbFXZV9rpYsQhhi3PWjJ/%EC%B1%84%EC%9A%A9%EC%8B%9C%EA%B7%B8%EB%84%90?type=design&node-id=0-1&mode=design&t=GzOjsb9hdM3X7BEx-0))
 
