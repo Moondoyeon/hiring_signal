@@ -16,7 +16,7 @@ export default function ProjectItem({ project, tabletWidth, mobileWidth, desktop
       href={project.link}
       target="_blank"
       key={String(project._id)}
-      className={`cursor-pointer h-[400px] relative overflow-hidden mr-6 ${desktopWidth} ${tabletWidth} ${mobileWidth} mobile:h-[400px] mobile:mr-2 tablet:mr-0 `}>
+      className={`cursor-pointer h-[500px] relative overflow-hidden mr-6 ${desktopWidth} ${tabletWidth} ${mobileWidth} mobile:h-[480px] mobile:mr-2 tablet:mr-0 `}>
       <Image
         src={project.thumbnail}
         style={{ objectFit: 'cover' }}

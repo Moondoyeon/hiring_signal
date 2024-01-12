@@ -25,6 +25,7 @@ export interface IStudy {
   title: string;
   content: string;
   image_url: string;
+  from?: string;
 }
 
 export interface IEducation {
@@ -33,6 +34,8 @@ export interface IEducation {
   title: string;
   period: string;
   content: string[];
+  learningLink?: string;
+  retrospectLink?: string;
 }
 
 export type section =

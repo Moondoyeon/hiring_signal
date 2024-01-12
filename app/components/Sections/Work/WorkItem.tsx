@@ -34,7 +34,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
       <div className="basis-2/3 h-full py-6 tablet:flex-col tablet:h-auto tablet:py-0 mobile:flex-col mobile:w-full mobile:basis-3/4 mobile:py-0">
         <div className="h-[50%] flex items-start justify-between tablet:flex-col tablet:justify-start mobile:h-auto mobile:flex-col">
           <div className="flex items-end">
-            <HighlightBgColor willBg="before:bg-[#86E0C8]" customStyle="z-10">
+            <HighlightBgColor willBg="before:bg-[#86E0C8]">
               <Link
                 href={work.companyLink}
                 target="_blank"
@@ -59,12 +59,12 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         </div>
         <div className="mobile:mt-4 flex justify-end items-center">
           {work.notionLink && (
-            <Link href={work.notionLink} target="_blank" className="flex">
-              <RiAddCircleFill size={22} />
-              <span className="underline pb-[0.5px] ml-1 mobile:text-sm tablet:text-sm">
-                자세히
-              </span>
-            </Link>
+            <HighlightBgColor willBg="before:bg-[#86E0C8]">
+              <Link href={work.notionLink} target="_blank" className="flex relative items-center">
+                <RiAddCircleFill size={22} />
+                <span className="underline ml-1 mobile:text-base tablet:text-lg">자세히</span>
+              </Link>
+            </HighlightBgColor>
           )}
         </div>
       </div>
