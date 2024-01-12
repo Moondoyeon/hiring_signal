@@ -33,6 +33,9 @@ Intersection Observer API와 useRef를 활용해 뷰포트에 진입한 요소�
 ### 스크롤이벤트에 throttle 개념 적용
 
 스크롤 방향에 따라 헤더 가시성을 결정하는 로직에 throttle 개념을 적용해 콜백함수의 호출주기를 제어하여 잦은 함수호출을 막아 렌더링 성능을 개선하였습니다.
+|**성능개선 전**|**성능개선 후**|
+|-|-|
+|스크롤 이벤트 발생횟수 = 콜백함수 호출횟수<br/><img width="350" alt="스트롤전" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/dc7752ea-acbb-4704-b1e5-f378a6b0b1c6">|0.25초에 한번씩 콜백함수 호출<br/><img width="350" alt="스로틀 후" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/a8d1ce52-1e91-4b85-96dc-5b50866ff79d">|
 
 ### 캐러셀
 
@@ -69,26 +72,21 @@ react-responsive 라이브러리와 tailwind.config.js의 screens 설정을 통�
 
 Next.js는 다양한 최적화 기능을 제공합니다. 그 중 직접 설정한 기능은 다음과 같습니다.
 
-**메타데이터**
+**메타데이터**<br/>
+app 폴더 아래에 공식문서 예시를 따라 아래와 같은 파일을 만들면(혹은 제공하면), Next.js가 알아서 메타태그를 생성해주는 등 간단하게 SEO처리를 할 수 있습니다.<br/>
 
-app 폴더 아래에 공식문서 예시를 따라 아래와 같은 파일을 만들면(혹은 제공하면), Next.js가 알아서 메타태그를 생성해주는 등 간단하게 SEO처리를 할 수 있습니다.
-
-- manifest.ts, robot.ts, sitemap.ts
-- opengraph-image, opengraph-image.alt.txt, twitter-image, twitter-image.alt.txt
-- icon.png, apple-icon.png
-  <br/>
-  <img width="400" alt="메타데이터" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/3db5e7e2-2558-45dd-8b20-6e95457a9f18">
+- manifest.ts, robot.ts, sitemap.ts<br/>
+- opengraph-image, opengraph-image.alt.txt, twitter-image, twitter-image.alt.txt<br/>
+- icon.png, apple-icon.png<br/>
+  <img width="450" alt="메타데이터" src="https://github.com/Moondoyeon/hiring_signal/assets/102936206/e1ad5933-e214-4e11-9ca8-5664fbc461ca">
   <br/>
   <span>카카오톡 공유 / 트위터 공유 / 홈화면 아이콘</span>
 
-**이미지**
-
-Next.js는 이미지 최적화를 위해 sizes prop을 제공하면 자동으로 디바이스에 맞는 이미지를 제공해주고, 알아서 파일포맷을 webp 로 적용해줍니다. 자동으로 레이아웃 누적이동 방지, lazy loading을 적용해줍니다.
-
+**이미지**<br/>
+Next.js는 이미지 최적화를 위해 sizes prop을 제공하면 자동으로 디바이스에 맞는 이미지를 제공해주고, 알아서 파일포맷을 webp 로 적용해줍니다. 자동으로 레이아웃 누적이동 방지, lazy loading을 적용해줍니다.<br/>
 저는 sizes prop을 통해 유저 뷰포트에 적합한 이미지를 제공했고, LCP 이미지에 priority 속성을 적용해서 해당 이미지가 우선으로 로딩되게 했습니다.
 
-**웹폰트**
-
+**웹폰트**<br/>
 next/font/google가 제공하는 구글폰트를 사용했습니다. 기존에는 브라우저의 네트워크 요청을 통해 웹폰트를 다운받는 방식을 취하다가, 공식문서에서 next/font 를 이용하면 빌드시에 폰트가 다운되어 브라우저가 더이상 네트워크 요청을 하지 않게 된다는 설명을 읽고, 페이지 로드 속도를 높일 수 있다는 이점을 취하고자 next/font를 사용했습니다.
 
 ## 구현화면
