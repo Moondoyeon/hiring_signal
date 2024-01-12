@@ -14,7 +14,7 @@ export default function EducationItem({ eduList }: Props) {
     <div>
       {eduList.map((edu, idx) => (
         <HighlightBgColor key={String(edu._id)} willBg={eduItemBgStyles[idx]} bg={'bg-[#f7f7f7]'}>
-          <div className="relative w-full px-2 py-4 mb-4">
+          <div className="relative w-full px-2 py-4 mb-4 mobile:px-1">
             <div className="flex h-[210px] mobile:flex-col mobile:items-center mobile:h-auto">
               <div className="grid grid-rows-3 w-1/3 mobile:w-[90%]">
                 <h3 className="font-semibold text-xl row-start-1 row-span-1 mobile:text-base">
@@ -38,22 +38,25 @@ export default function EducationItem({ eduList }: Props) {
                   {edu.title}
                 </span>
                 <br />
-
-                <span className="text-lg mb-4 mobile:text-[14px] mobile:mb-0">{edu.period}</span>
-                {edu.learningLink && (
-                  <Link href={edu.learningLink} className="relative">
-                    <span className="underline hover:text-white ml-2 text-lg mobile:text-[14px] z-20">
-                      학습링크
-                    </span>
-                  </Link>
-                )}
-                {edu.retrospectLink && (
-                  <Link href={edu.retrospectLink}>
-                    <span className="underline hover:text-white ml-2 text-lg mobile:text-[14px]">
-                      회고
-                    </span>
-                  </Link>
-                )}
+                <div className="mobile:flex-col">
+                  <span className="text-lg mb-4 mobile:text-[14px] mobile:mb-0">{edu.period}</span>
+                  <div>
+                    {edu.learningLink && (
+                      <Link
+                        href={edu.learningLink}
+                        className="underline hover:text-white mr-2 text-lg mobile:text-[14px]">
+                        학습링크
+                      </Link>
+                    )}
+                    {edu.retrospectLink && (
+                      <Link
+                        href={edu.retrospectLink}
+                        className="underline hover:text-white mr-2 text-lg mobile:text-[14px]">
+                        회고
+                      </Link>
+                    )}
+                  </div>
+                </div>
 
                 {edu.content.map((el, idx) => (
                   <p key={idx} className="text-lg tablet:text-lg mobile:text-[15px]">

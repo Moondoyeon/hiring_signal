@@ -19,12 +19,12 @@ export default async function EducationSection() {
     {
       _id: '657d4c0c8ff016634a0ff80b',
       category: '교육',
-      title: '[원티드] Pre-OnBoarding Course (Front-End) ',
+      title: '[원티드] Pre-OnBoarding Course, Front-End ',
       period: '2022년 10월 24일 - 2022년 11월 18일(1개월)',
       content: [
         'React 렌더링 최적화 학습',
-        'SPA, MPA, CSR, SSR 학습 및 Next.js 과제 진행',
-        'CI/CD(Github Actions) 학습, AWS S3 배포 실습',
+        'SPA, MPA, CSR, SSR 학습, Next.js 과제 진행',
+        'CI/CD 학습, AWS S3 배포 실습',
         'React 기반 과제 5회 진행',
       ],
       retrospectLink:
@@ -35,13 +35,13 @@ export default async function EducationSection() {
     {
       _id: '657d4c7c8ff016634a0ff80d',
       category: '교육',
-      title: '[코드스테이츠] Software Engineering Bootcamp (Front-End) ',
+      title: '[코드스테이츠] Software Engineering Bootcamp, Front-End',
       period: '2022년 4월 25일 - 2022년 10월 19일(6개월)',
       content: [
         'HTML, CSS, Javascript, React, Redux 학습',
         '자료구조·알고리즘 학습 및 문제풀이 진행',
         '네트워크, CS 기초 학습',
-        '페어 프로그래밍 풀참석, 협업 프로젝트 2회 진행',
+        '페어프로그래밍 풀참석, 협업프로젝트 2회 진행',
       ],
       retrospectLink: 'https://codestates.notion.site/Pre-Project-e9aedffe4dd14087856d2c1cc18d5f90',
       learningLink:
