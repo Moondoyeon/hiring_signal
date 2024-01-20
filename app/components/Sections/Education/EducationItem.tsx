@@ -14,7 +14,7 @@ export default function EducationItem({ eduList }: Props) {
     <div>
       {eduList.map((edu, idx) => (
         <HighlightBgColor key={String(edu._id)} willBg={eduItemBgStyles[idx]} bg={'bg-[#f7f7f7]'}>
-          <div className="relative w-full px-2 py-4 mb-4 mobile:px-1">
+          <div className="relative w-full px-4 py-4 mb-4 mobile:px-1">
             <div className="flex h-[210px] mobile:flex-col mobile:items-center mobile:h-auto">
               <div className="grid grid-rows-3 w-1/3 mobile:w-[90%]">
                 <h3 className="font-semibold text-xl row-start-1 row-span-1 mobile:text-base">
