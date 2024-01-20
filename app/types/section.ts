@@ -17,6 +17,7 @@ export interface IProject {
   type: string;
   thumbnail: string;
   link: string;
+  description: string;
 }
 
 export interface IStudy {

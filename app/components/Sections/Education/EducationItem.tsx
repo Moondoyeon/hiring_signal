@@ -37,7 +37,7 @@ export default function EducationItem({ eduList }: Props) {
                 <span className="font-bold text-2xl tablet:text-xl mobile:text-lg">
                   {edu.title}
                 </span>
-                <br />
+
                 <div className="mobile:flex-col">
                   <span className="text-lg mb-4 mobile:text-[14px] mobile:mb-0">{edu.period}</span>
                   <div>
@@ -45,7 +45,7 @@ export default function EducationItem({ eduList }: Props) {
                       <Link
                         href={edu.learningLink}
                         className="underline hover:text-white mr-2 text-lg mobile:text-[14px]">
-                        학습링크
+                        학습기록
                       </Link>
                     )}
                     {edu.retrospectLink && (
