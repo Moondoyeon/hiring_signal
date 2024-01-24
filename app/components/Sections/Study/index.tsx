@@ -63,10 +63,10 @@ export default async function StudySection() {
     {
       _id: '657c15dda296c1a651063294',
       category: 'course',
-      title: 'Next.js로 커머스 서비스 구축하기',
+      title: 'Next.js로 커머스 앱 구축하기',
       from: '패스트캠퍼스',
       content:
-        'Next.js로 복잡한 앱 서비스를 만들어 보고 싶어서 수강한 강의입니다. Next.js의 기본구조와 렌더링방식, getServerSideProps·getStaticProps와 같은 데이터페칭 함수의 사용법을 익혔습니다. 특히 Next.js가 제공하는 api 작성 기능을 통해, 한 서비스의 백엔드단 로직을 작성해본 것이 재밌었습니다.',
+        'Next.js로 앱을 만들어 보고자 수강한 강의입니다. Next.js의 기본구조와 렌더링방식, getServerSideProps·getStaticProps와 같은 데이터페칭 함수의 사용법을 익혔습니다. 특히 풀스택 프레임워크인 Next.js가 제공하는 api 작성 기능으로 커머스 서비스의 백엔드단 로직을 작성한 것이 재밌었습니다.',
       image_url: '/images/course-fast-nextjs.png',
     },
     {

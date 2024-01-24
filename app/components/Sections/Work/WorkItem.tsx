@@ -31,8 +31,8 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
         </div>
       </div>
 
-      <div className="basis-2/3 h-full py-6 tablet:flex-col tablet:h-auto tablet:py-0 mobile:flex-col mobile:w-full mobile:basis-3/4 mobile:py-0">
-        <div className="h-[50%] flex items-start justify-between tablet:flex-col tablet:justify-start mobile:h-auto mobile:flex-col">
+      <div className="basis-2/3 h-full flex-col justify-center items-center py-3 tablet:h-auto tablet:py-0 mobile:flex-col mobile:w-full mobile:basis-3/4 mobile:py-0">
+        <div className="h-[40%] flex items-start justify-between tablet:flex-col tablet:justify-start mobile:h-auto mobile:flex-col">
           <div className="flex items-end">
             <HighlightBgColor willBg="before:bg-[#86E0C8]">
               <Link
@@ -46,7 +46,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
           </div>
           <span className="text-lg mobile:text-[14px]">{work.period}</span>
         </div>
-        <div className="h-[50%] mobile:h-auto">
+        <div className="h-auto mobile:h-auto">
           <div
             id="border"
             className="w-full bg-black h-[2px] mb-4 tablet:mt-10 tablet:mb-2 mobile:mt-8 mobile:mb-2"
@@ -57,7 +57,7 @@ export default function WorkItem({ work, mobileWidth, desktopWidth, tabletWidth 
             </p>
           ))}
         </div>
-        <div className="mobile:mt-4 flex justify-end items-center">
+        <div className="mt-1 mobile:mt-4 flex justify-end items-center">
           {work.notionLink && (
             <HighlightBgColor willBg="before:bg-[#86E0C8]">
               <Link href={work.notionLink} target="_blank" className="flex relative items-center">
