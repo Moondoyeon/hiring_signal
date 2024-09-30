@@ -10,8 +10,25 @@ export default async function WorkSection() {
 
   const workList: IWork[] = [
     {
+      _id: '65770e13af09f0d42519220e2',
+      companyName: '(주)파이어스코프',
+      period: '2024년 3월 4일 - 2024년 9월 30일',
+      content: [
+        'PG(Payple) 연동을 통한 해외결제 기능 구현(NestJs, MySQL, Angular)',
+        'SendGrid 서비스 이용해 재결제 실패한 유저에게 이메일 전송 기능 구현',
+        'ngx-translate 이용해 브라우저 설정 언어에 따라 번역(영어, 한국어) 제공',
+        'nest/schedule과 Slack API 이용해 유저 활동 데이터(구독자 수, 글 작성 수) 슬램 알림 자동화',
+        'Firebase Auth 이용해 신규 서비스 인증 기능 구현(회원가입, 로그인)',
+        '재사용 가능한 UI 컴포넌트 구현(Table, Toast, Alarm Modal, Banner, Input, Button, Link)',
+      ],
+      notionLink: '',
+      companyLink: 'https://www.firescope.io/',
+      position: '개발팀 팀원',
+      thumbnails: '/images/work-firescope.png',
+    },
+    {
       _id: '65770e13af09f0d42519220e',
-      companyName: '아트와',
+      companyName: '(주)아트와',
       period: '2022년 12월 15일 - 2023년 2월 28일 (약 3개월)',
       content: [
         '환경데이터를 수집하는 로봇제조 스타트업의 고객사용 웹(데모) 프론트엔드 개발 참여',
