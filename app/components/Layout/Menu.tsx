@@ -27,7 +27,9 @@ export default function Menu({ isMenuIconClicked }: { isMenuIconClicked: boolean
       {SECTION.map((section) => (
         <div
           key={section.name}
-          className="relative ml-4 cursor-pointer font-medium text-2xl mobile:text-[15px] tablet:text-xl mobile:ml-0 mobile:mr-3 tablet:ml-0 tablet:mr-4"
+          className={`relative ml-4 cursor-pointer font-medium text-2xl mobile:text-[15px] tablet:text-xl mobile:ml-0 mobile:mr-3 tablet:ml-0 tablet:mr-4 ${
+            TOP_SECTION_VISIBLE ? 'hover:text-[#99E0FF]' : ''
+          }`}
           onClick={() => handleSectionChange(section.to)}>
           {section.name}
           <div
